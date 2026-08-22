@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Cecília Monteiro Ações Sociais</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #243447;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e7edf3;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .menu {
+      max-width: 1150px;
+      margin: auto;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .marca {
+      color: #0756a5;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    nav a {
+      color: #243447;
+      text-decoration: none;
+      margin-left: 22px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #0756a5;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #f5faff, #ffffff);
+      min-height: 78vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 24px;
+    }
+
+    .hero-conteudo {
+      max-width: 820px;
+    }
+
+    .simbolo {
+      font-size: 78px;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      color: #0756a5;
+      font-size: clamp(38px, 6vw, 68px);
+      margin-bottom: 6px;
+    }
+
+    .hero h2 {
+      color: #0756a5;
+      font-size: 22px;
+      letter-spacing: 5px;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      font-size: 22px;
+      max-width: 680px;
+      margin: 0 auto 34px;
+      color: #46596c;
+    }
+
+    .botoes {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .btn-principal {
+      background: #0756a5;
+      color: white;
+    }
+
+    .btn-secundario {
+      border: 2px solid #0756a5;
+      color: #0756a5;
+      background: white;
+    }
+
+    section {
+      padding: 85px 24px;
+    }
+
+    .container {
+      max-width: 1050px;
+      margin: auto;
+    }
+
+    .titulo {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .titulo h2 {
+      color: #0756a5;
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .titulo p {
+      color: #647586;
+    }
+
+    .historia {
+      max-width: 850px;
+      margin: auto;
+      font-size: 18px;
+    }
+
+    .historia p {
+      margin-bottom: 20px;
+    }
+
+    .fundo-claro {
+      background: #f5f9fc;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      padding: 30px 24px;
+      box-shadow: 0 6px 22px rgba(0,0,0,0.07);
+    }
+
+    .card .icone {
+      font-size: 38px;
+      margin-bottom: 14px;
+    }
+
+    .card h3 {
+      color: #0756a5;
+      margin-bottom: 10px;
+    }
+
+    .impacto {
+      text-align: center;
+    }
+
+    .numero {
+      font-size: 48px;
+      font-weight: 800;
+      color: #0756a5;
+    }
+
+    .como-ajudar {
+      text-align: center;
+      max-width: 760px;
+      margin: auto;
+    }
+
+    .como-ajudar p {
+      font-size: 18px;
+      margin-bottom: 28px;
+    }
+
+    .aviso {
+      margin-top: 35px;
+      padding: 18px;
+      border-radius: 12px;
+      background: #fff7e8;
+      color: #795400;
+      font-size: 14px;
+    }
+
+    footer {
+      background: #063d76;
+      color: white;
+      padding: 38px 24px;
+      text-align: center;
+    }
+
+    footer strong {
+      font-size: 20px;
+    }
+
+    footer p {
+      margin-top: 8px;
+      opacity: 0.9;
+    }
+
+    @media (max-width: 760px) {
+      .menu {
+        flex-direction: column;
+      }
+
+      nav {
+        text-align: center;
+      }
+
+      nav a {
+        margin: 5px 8px;
+        display: inline-block;
+      }
+
+      .hero {
+        min-height: 70vh;
+        padding-top: 60px;
+      }
+
+      .hero h2 {
+        letter-spacing: 3px;
+        font-size: 17px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      section {
+        padding: 65px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="menu">
+    <div class="marca">Cecília Monteiro</div>
+
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#historia">Nossa História</a>
+      <a href="#acoes">Ações</a>
+      <a href="#impacto">Impacto</a>
+      <a href="#ajudar">Como Ajudar</a>
+    </nav>
+  </div>
+</header>
+
+
+<main>
+
+  <section class="hero" id="inicio">
+    <div class="hero-conteudo">
+
+      <div class="simbolo">💙</div>
+
+      <h1>Cecília Monteiro</h1>
+
+      <h2>AÇÕES SOCIAIS</h2>
+
+      <p>
+        Juntos por uma comunidade melhor.
+        Solidariedade, acolhimento e mobilização para transformar realidades.
+      </p>
+
+      <div class="botoes">
+        <a class="btn btn-principal" href="#ajudar">Quero ajudar</a>
+        <a class="btn btn-secundario" href="#ajudar">Seja voluntário</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section id="historia">
+    <div class="container">
+
+      <div class="titulo">
+        <h2>Nossa História</h2>
+        <p>Uma iniciativa que nasceu da vontade de ajudar o próximo.</p>
+      </div>
+
+      <div class="historia">
+
+        <p>
+          A história da Cecília Monteiro Ações Sociais começou a partir de uma
+          realidade que Cecília conheceu de perto. Em 2009, ao se mudar para sua
+          comunidade, ela passou a conviver com famílias que enfrentavam grandes
+          dificuldades, incluindo falta de alimentação e de recursos básicos.
+        </p>
+
+        <p>
+          Mesmo sem possuir muitos recursos, Cecília decidiu começar com aquilo
+          que estava ao seu alcance. Procurava mercados e estabelecimentos da região
+          em busca de alimentos que ainda pudessem ser aproveitados e, com o que
+          conseguia arrecadar, preparava refeições para ajudar famílias da comunidade.
+        </p>
+
+        <p>
+          Com o passar do tempo, as ações cresceram. Além dos alimentos, Cecília
+          passou a buscar outras formas de apoio e também começou a arrecadar
+          brinquedos para as crianças.
+        </p>
+
+        <p>
+          Foi então que surgiu uma das iniciativas mais especiais de sua trajetória:
+          o Projeto das Cartinhas. As crianças escrevem um pouco sobre suas histórias,
+          suas realidades e deixam um pedido para o Natal.
+        </p>
+
+        <p>
+          Hoje, mesmo conciliando o projeto com o trabalho e contando com uma
+          estrutura limitada, Cecília continua mobilizando pessoas, arrecadando
+          doações e realizando ações que levam alimento, cuidado, presentes e
+          acolhimento a quem precisa.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="fundo-claro" id="acoes">
+    <div class="container">
+
+      <div class="titulo">
+        <h2>Nossas Ações</h2>
+        <p>Algumas das iniciativas desenvolvidas ao longo dos anos.</p>
+      </div>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="icone">🍲</div>
+          <h3>Alimentação Solidária</h3>
+          <p>
+            Mobilização e distribuição de alimentos e refeições para famílias
+            em situação de vulnerabilidade.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icone">🎄</div>
+          <h3>Projeto das Cartinhas</h3>
+          <p>
+            Crianças compartilham suas histórias e pedidos para tornar o Natal
+            um momento especial.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icone">🧸</div>
+          <h3>Dia das Crianças</h3>
+          <p>
+            Arrecadação de brinquedos e realização de ações destinadas às
+            crianças das comunidades atendidas.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icone">❤️</div>
+          <h3>Ações de Acolhimento</h3>
+          <p>
+            Iniciativas que também podem alcançar crianças em atendimento
+            hospitalar e pessoas idosas.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section id="impacto">
+    <div class="container">
+
+      <div class="titulo">
+        <h2>Nosso Impacto</h2>
+        <p>Números aproximados informados pela organização das ações.</p>
+      </div>
+
+      <div class="cards">
+
+        <div class="card impacto">
+          <div class="numero">200+</div>
+          <p>crianças alcançadas em ações, podendo chegar a aproximadamente 250.</p>
+        </div>
+
+        <div class="card impacto">
+          <div class="numero">85+</div>
+          <p>famílias alcançadas pelas iniciativas.</p>
+        </div>
+
+        <div class="card impacto">
+          <div class="numero">Várias</div>
+          <p>comunidades atendidas em Corumbá, Ladário e região.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="fundo-claro" id="ajudar">
+    <div class="container">
+
+      <div class="titulo">
+        <h2>Faça Parte</h2>
+        <p>Toda ajuda pode contribuir para que uma ação alcance mais pessoas.</p>
+      </div>
+
+      <div class="como-ajudar">
+
+        <p>
+          O projeto precisa especialmente de voluntários, doações e parceiros
+          que possam contribuir para a realização das ações sociais.
+        </p>
+
+        <p>
+          Atualmente, uma das principais necessidades também é contar com um
+          espaço mais adequado para organização e realização das atividades.
+        </p>
+
+        <div class="botoes">
+          <a class="btn btn-principal" href="#">Quero ser voluntário</a>
+          <a class="btn btn-secundario" href="#">Quero fazer uma doação</a>
+        </div>
+
+        <div class="aviso">
+          Os canais oficiais de contato e as formas de doação serão incluídos
+          após confirmação da responsável pelo projeto.
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+
+<footer>
+  <strong>Cecília Monteiro Ações Sociais</strong>
+  <p>Juntos por uma comunidade melhor.</p>
+</footer>
+
+</body>
+</html>
