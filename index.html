@@ -1088,6 +1088,32 @@
       }
     }
 
+
+    /* ===== Ajuste solicitado - v6 ===== */
+    @media (min-width: 981px) {
+      /* Logo: redução de 15% em relação à versão v5 */
+      .logo-principal {
+        width: min(867px, 85%) !important;
+      }
+
+      /* Texto ao lado da logo: aumento de 10% */
+      .hero-texto h1 {
+        font-size: clamp(29px, 3.41vw, 44px) !important;
+        line-height: 1.08 !important;
+      }
+
+      .hero-frase {
+        font-size: clamp(16.5px, 1.595vw, 19.8px) !important;
+        line-height: 1.6 !important;
+      }
+
+      .hero-texto .eyebrow,
+      .hero-texto .tag,
+      .hero-texto > span:first-child {
+        font-size: 110% !important;
+      }
+    }
+
   </style>
 </head>
 
