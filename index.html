@@ -2450,6 +2450,218 @@
       .hero{min-height:auto}.hero-texto::before{inset:-15px -8px}.acoes-lista{gap:32px}
     }
 
+
+    /* ===== V8 — PRÓXIMA AÇÃO + FRENTES PERMANENTES ===== */
+    .proxima-acao {
+      margin: 0 0 72px;
+      padding: 34px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #102f4b 0%, #155f9d 68%, #1d6ba9 100%);
+      color: #fff;
+      box-shadow: 0 28px 70px rgba(8,31,51,.18);
+      position: relative;
+      overflow: hidden;
+    }
+    .proxima-acao::before {
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(115deg,rgba(255,255,255,.08),transparent 38%,rgba(232,137,53,.08));
+      pointer-events:none;
+    }
+    .proxima-acao-topo {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:24px;
+      position:relative;
+      z-index:1;
+    }
+    .proxima-selo {
+      display:inline-flex;
+      padding:8px 13px;
+      border-radius:999px;
+      background:#e88935;
+      color:#fff;
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:1.2px;
+    }
+    .proxima-data { font-size:15px; font-weight:800; color:#eaf3f9; }
+    .proxima-acao-grid {
+      display:grid;
+      grid-template-columns:1.25fr .75fr;
+      gap:42px;
+      align-items:center;
+      position:relative;
+      z-index:1;
+    }
+    .proxima-frente {
+      color:#bcd6e9 !important;
+      font-size:14px !important;
+      font-weight:800;
+      margin-bottom:8px !important;
+    }
+    .proxima-acao h3 {
+      color:#fff;
+      font-size:clamp(32px,4vw,50px);
+      line-height:1.05;
+      margin-bottom:16px;
+    }
+    .proxima-acao p { color:#edf5fa; font-size:18px; max-width:720px; }
+    .proxima-meta {
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin:22px 0 2px;
+    }
+    .proxima-meta strong {
+      padding:7px 11px;
+      border-radius:999px;
+      background:rgba(255,255,255,.13);
+      font-size:12px;
+      letter-spacing:.8px;
+      text-transform:uppercase;
+    }
+    .proxima-meta span { font-weight:800; }
+    .proxima-visual {
+      min-height:250px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      border:1px solid rgba(255,255,255,.16);
+      border-radius:26px;
+      background:rgba(255,255,255,.08);
+      backdrop-filter:blur(10px);
+    }
+    .proxima-visual span { font-size:clamp(34px,5vw,58px); font-weight:950; letter-spacing:-1px; }
+    .proxima-visual strong { font-size:28px; color:#f4b06b; }
+    .proxima-visual small { margin-top:10px; color:#dceaf4; font-weight:700; }
+
+    .frentes-titulo {
+      max-width:760px;
+      margin:0 auto 38px;
+      text-align:center;
+    }
+    .frentes-titulo > span {
+      color:#5b9f55;
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:1.2px;
+      text-transform:uppercase;
+    }
+    .frentes-titulo h3 {
+      color:#081f33;
+      font-size:clamp(27px,3.5vw,38px);
+      line-height:1.15;
+      margin:8px 0 10px;
+    }
+    .frentes-titulo p { color:#647483; font-size:17px; }
+
+    .frentes-lista { gap:38px !important; }
+    .frente-card { overflow:visible !important; }
+    .frente-resumo {
+      min-height:260px;
+      border-radius:24px;
+      background:linear-gradient(145deg,#edf4f7,#fff);
+      border:1px solid rgba(16,47,75,.09);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:28px;
+    }
+    .frente-resumo span {
+      color:#5b9f55;
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:1.1px;
+      margin-bottom:8px;
+    }
+    .frente-resumo strong {
+      color:#102f4b;
+      font-size:clamp(25px,3vw,36px);
+      line-height:1.08;
+    }
+    .frente-resumo small { color:#647483; margin-top:10px; font-size:14px; }
+
+    .historico-acao { margin-top:22px; }
+    .historico-acao summary {
+      cursor:pointer;
+      list-style:none;
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+      padding:11px 16px;
+      border-radius:999px;
+      border:1px solid rgba(16,47,75,.13);
+      background:#fff;
+      color:#102f4b;
+      font-size:14px;
+      font-weight:850;
+      transition:.25s ease;
+    }
+    .historico-acao summary::-webkit-details-marker { display:none; }
+    .historico-acao summary::after { content:"+"; font-size:20px; line-height:1; color:#e88935; }
+    .historico-acao[open] summary::after { content:"−"; }
+    .historico-acao summary:hover {
+      transform:translateY(-2px);
+      border-color:rgba(21,95,157,.28);
+      box-shadow:0 10px 25px rgba(8,31,51,.08);
+    }
+    .historico-conteudo {
+      margin-top:18px;
+      padding:20px;
+      border-radius:20px;
+      background:#f7f9fb;
+      border:1px solid rgba(16,47,75,.08);
+      animation:historicoAbrir .3s ease;
+    }
+    @keyframes historicoAbrir {
+      from { opacity:0; transform:translateY(-6px); }
+      to { opacity:1; transform:translateY(0); }
+    }
+    .historico-status {
+      color:#5b9f55;
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:1px;
+      text-transform:uppercase;
+    }
+    .historico-item h4 { color:#102f4b; font-size:22px; margin:5px 0 7px; }
+    .historico-item p { font-size:15px; margin-bottom:14px; }
+    .historico-fotos {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:8px;
+    }
+    .historico-fotos img {
+      width:100%;
+      height:120px;
+      object-fit:cover;
+      border-radius:13px;
+      cursor:zoom-in;
+      transition:transform .25s ease;
+    }
+    .historico-fotos img:hover { transform:scale(1.02); }
+
+    @media(max-width:900px) {
+      .proxima-acao-grid { grid-template-columns:1fr; }
+      .proxima-visual { min-height:190px; }
+    }
+    @media(max-width:680px) {
+      .proxima-acao { padding:24px 20px; border-radius:24px; margin-bottom:54px; }
+      .proxima-acao-topo { align-items:flex-start; flex-direction:column; }
+      .proxima-acao p { font-size:16px; }
+      .historico-fotos { grid-template-columns:1fr; }
+      .historico-fotos img { height:190px; }
+      .frente-resumo { min-height:200px; }
+    }
+
   </style>
 </head>
 
@@ -2551,172 +2763,26 @@
       <div class="container">
 
         <div class="titulo-secao reveal-up">
-
           <span class="etiqueta">O que fazemos</span>
-
           <h2>Nossas Ações</h2>
-
           <p>
-            Cada ação faz parte da história do Transformar pelo Bem. Acompanhe a próxima
-            mobilização e conheça iniciativas já realizadas pelo projeto.
+            Acompanhe a próxima mobilização do Transformar pelo Bem e conheça
+            nossas frentes permanentes de atuação. Em cada frente, a edição mais
+            recente fica em destaque e as anteriores permanecem preservadas no histórico.
           </p>
-
         </div>
 
-        <div class="acoes-lista">
+        <!-- PRÓXIMA AÇÃO -->
+        <div class="proxima-acao reveal-up">
+          <div class="proxima-acao-topo">
+            <span class="proxima-selo">PRÓXIMA AÇÃO</span>
+            <span class="proxima-data">11 de outubro de 2026</span>
+          </div>
 
-          <article class="acao invertida reveal-up acao-destaque">
-
-            <div class="acao-texto">
-
-              <div class="acao-numero">ÚLTIMA AÇÃO REALIZADA · 29/08/2026</div>
-
-              <h3>Macarronada Solidária</h3>
-
-              <p>
-                Ação de preparo e distribuição de refeições à comunidade, realizada
-                com o apoio de voluntários, doadores e empresas parceiras. Nesta edição,
-                110 refeições foram distribuídas, levando alimento, cuidado e solidariedade
-                às pessoas atendidas.
-              </p>
-
-              <span class="acao-tag">
-                110 refeições distribuídas
-              </span>
-
-            </div>
-
-            <div class="mosaico">
-
-              <img
-                src="macarronada-solidaria-preparo.jpg"
-                alt="Voluntários preparando as refeições da Macarronada Solidária"
-                class="foto-ampliavel"
-              >
-
-              <img
-                src="macarronada-solidaria-refeicoes.jpg"
-                alt="Refeições prontas para distribuição na Macarronada Solidária"
-                class="foto-ampliavel"
-              >
-
-              <img
-                src="macarronada-solidaria-entrega.jpg"
-                alt="Entrega de refeições à comunidade durante a Macarronada Solidária"
-                class="foto-ampliavel"
-              >
-
-            </div>
-
-          </article>
-
-
-          <article class="acao reveal-up">
-
-            <div class="acao-texto">
-
-              <div class="acao-numero">HISTÓRICO DE AÇÕES</div>
-
-              <h3>Alimentação Solidária</h3>
-
-              <p>
-                Preparação, organização e distribuição de refeições para pessoas
-                e famílias em situação de vulnerabilidade. A ação envolve desde
-                o preparo dos alimentos até a entrega direta à comunidade.
-              </p>
-
-              <span class="acao-tag">
-                Alimento que se transforma em cuidado
-              </span>
-
-            </div>
-
-            <div class="mosaico">
-
-              <img
-                src="Alimentação solidaria 1.jpeg"
-                alt="Preparação de refeições da Alimentação Solidária"
-                class="foto-ampliavel"
-              >
-
-              <img
-                src="Alimentação solidaria 2.jpeg"
-                alt="Refeições preparadas para distribuição"
-                class="foto-ampliavel"
-              >
-
-              <img
-                src="Alimentação solidaria 3.jpeg"
-                alt="Entrega de refeição à comunidade"
-                class="foto-ampliavel"
-              >
-
-            </div>
-
-          </article>
-
-          <article class="acao invertida reveal-up">
-
-            <div class="acao-texto">
-
-              <div class="acao-numero">HISTÓRICO DE AÇÕES</div>
-
-              <h3>Adote uma Cartinha</h3>
-
-              <p>
-                Uma iniciativa de Natal que nasceu a partir das próprias crianças.
-                Elas compartilham um pouco de suas histórias e fazem um pedido ao
-                Papai Noel. Pessoas da comunidade podem participar ajudando a
-                transformar esses pedidos em presentes e momentos especiais.
-              </p>
-
-              <span class="acao-tag">
-                Campanha especial de Natal
-              </span>
-
-              <a
-                class="botao-campanha"
-                href="https://wa.me/5567996023875?text=Ol%C3%A1%2C%20Cec%C3%ADlia%21%20Conheci%20a%20campanha%20Adote%20uma%20Cartinha%20pelo%20site%20Transformar%20pelo%20Bem%20e%20gostaria%20de%20saber%20como%20posso%20participar."
-                target="_blank"
-                rel="noopener"
-              >
-                Quero saber sobre a campanha
-              </a>
-
-            </div>
-
-            <div class="mosaico">
-
-              <img
-                src="Adote uma cartinha 1.jpeg"
-                alt="Entrega de presente na campanha Adote uma Cartinha"
-                class="foto-ampliavel"
-              >
-
-              <img
-                src="Adote uma cartinha 2.jpeg"
-                alt="Crianças participando da campanha de Natal"
-                class="foto-ampliavel"
-              >
-
-              <img
-                src="Adote uma cartinha 3.jpeg"
-                alt="Presentes arrecadados para a campanha"
-                class="foto-ampliavel"
-              >
-
-            </div>
-
-          </article>
-
-          <article class="acao reveal-up">
-
-            <div class="acao-texto">
-
-              <div class="acao-numero">PRÓXIMA AÇÃO · 11/10/2026</div>
-
+          <div class="proxima-acao-grid">
+            <div>
+              <p class="proxima-frente">Frente: Dia das Crianças</p>
               <h3>Dia das Crianças 2026</h3>
-
               <p>
                 Nossa próxima mobilização será dedicada a aproximadamente 150 crianças.
                 A ação está sendo organizada com cachorro-quente, mini refrigerante,
@@ -2724,132 +2790,208 @@
                 proporcionar um momento especial de cuidado e convivência.
               </p>
 
-              <span class="acao-tag">
-                Meta: atender 150 crianças
-              </span>
+              <div class="proxima-meta">
+                <strong>Meta</strong>
+                <span>Atender 150 crianças</span>
+              </div>
 
               <a
                 class="botao-campanha"
                 href="https://wa.me/5567996023875?text=Ol%C3%A1%2C%20Cec%C3%ADlia%21%20Conheci%20a%20a%C3%A7%C3%A3o%20Dia%20das%20Crian%C3%A7as%202026%20pelo%20site%20Transformar%20pelo%20Bem%20e%20gostaria%20de%20contribuir."
                 target="_blank"
                 rel="noopener"
-              >
-                Quero contribuir
-              </a>
+              >Quero contribuir</a>
+            </div>
 
+            <div class="proxima-visual" aria-label="Próxima ação Dia das Crianças 2026">
+              <span>11 OUT</span>
+              <strong>2026</strong>
+              <small>Corumbá e Ladário</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="frentes-titulo reveal-up">
+          <span>Frentes permanentes</span>
+          <h3>Uma história que continua a cada nova edição</h3>
+          <p>
+            O nome da frente permanece. A ação mais recente assume o destaque e
+            as edições anteriores ficam disponíveis no histórico.
+          </p>
+        </div>
+
+        <div class="acoes-lista frentes-lista">
+
+          <!-- ALIMENTAÇÃO SOLIDÁRIA -->
+          <article class="acao invertida reveal-up acao-destaque frente-card">
+            <div class="acao-texto">
+              <div class="acao-numero">ALIMENTAÇÃO SOLIDÁRIA · EDIÇÃO MAIS RECENTE</div>
+              <h3>Macarronada Solidária</h3>
+              <p>
+                Realizada em 29 de agosto de 2026, esta edição reuniu voluntários,
+                doadores e empresas parceiras para o preparo e a distribuição de
+                refeições à comunidade.
+              </p>
+              <span class="acao-tag">110 refeições distribuídas</span>
+
+              <details class="historico-acao">
+                <summary>Ver histórico da Alimentação Solidária</summary>
+                <div class="historico-conteudo">
+                  <div class="historico-item">
+                    <span class="historico-status">Edição anterior</span>
+                    <h4>Alimentação Solidária</h4>
+                    <p>
+                      Preparação, organização e distribuição de refeições para pessoas
+                      e famílias em situação de vulnerabilidade, do preparo dos alimentos
+                      à entrega direta à comunidade.
+                    </p>
+                    <div class="historico-fotos">
+                      <img src="Alimentação solidaria 1.jpeg" alt="Registro anterior da Alimentação Solidária" class="foto-ampliavel">
+                      <img src="Alimentação solidaria 2.jpeg" alt="Refeições preparadas em edição anterior" class="foto-ampliavel">
+                      <img src="Alimentação solidaria 3.jpeg" alt="Entrega de refeição em edição anterior" class="foto-ampliavel">
+                    </div>
+                  </div>
+                </div>
+              </details>
             </div>
 
             <div class="mosaico">
-
-              <img
-                src="Dia das crianças 2.jpeg"
-                alt="Crianças reunidas em ação comunitária"
-                class="foto-ampliavel"
-              >
-
-              <img
-                src="Dia das crianças 1.jpeg"
-                alt="Personagens interagindo com as crianças"
-                class="foto-ampliavel"
-              >
-
-              <img
-                src="Dia das crianças 3.jpeg"
-                alt="Entrega de brinquedo no Dia das Crianças"
-                class="foto-ampliavel"
-              >
-
+              <img src="macarronada-solidaria-preparo.jpg" alt="Preparo da Macarronada Solidária" class="foto-ampliavel">
+              <img src="macarronada-solidaria-refeicoes.jpg" alt="Refeições da Macarronada Solidária" class="foto-ampliavel">
+              <img src="macarronada-solidaria-entrega.jpg" alt="Entrega da Macarronada Solidária" class="foto-ampliavel">
             </div>
-
           </article>
 
-          <article class="acao invertida reveal-up">
-
+          <!-- DIA DAS CRIANÇAS -->
+          <article class="acao reveal-up frente-card">
             <div class="acao-texto">
+              <div class="acao-numero">DIA DAS CRIANÇAS · HISTÓRICO</div>
+              <h3>Dia das Crianças</h3>
+              <p>
+                Uma frente dedicada a criar momentos de cuidado, convivência e
+                alegria para as crianças. A edição de 2026 está destacada acima
+                como a próxima mobilização do projeto.
+              </p>
+              <span class="acao-tag">Próxima edição: 11/10/2026</span>
 
-              <div class="acao-numero">HISTÓRICO DE AÇÕES</div>
+              <details class="historico-acao">
+                <summary>Ver histórico do Dia das Crianças</summary>
+                <div class="historico-conteudo">
+                  <div class="historico-item">
+                    <span class="historico-status">Registro de edição anterior</span>
+                    <h4>Dia das Crianças</h4>
+                    <p>
+                      Registros de uma edição anterior realizada pelo projeto,
+                      preservados como parte da trajetória das ações com crianças.
+                    </p>
+                    <div class="historico-fotos">
+                      <img src="Dia das crianças 2.jpeg" alt="Registro de edição anterior do Dia das Crianças" class="foto-ampliavel">
+                      <img src="Dia das crianças 1.jpeg" alt="Atividade de edição anterior do Dia das Crianças" class="foto-ampliavel">
+                      <img src="Dia das crianças 3.jpeg" alt="Registro de entrega em edição anterior do Dia das Crianças" class="foto-ampliavel">
+                    </div>
+                  </div>
+                </div>
+              </details>
+            </div>
 
+            <div class="frente-resumo">
+              <span>PRÓXIMA EDIÇÃO</span>
+              <strong>11 OUT 2026</strong>
+              <small>Meta: 150 crianças</small>
+            </div>
+          </article>
+
+          <!-- ADOTE UMA CARTINHA -->
+          <article class="acao invertida reveal-up frente-card">
+            <div class="acao-texto">
+              <div class="acao-numero">FRENTE PERMANENTE</div>
+              <h3>Adote uma Cartinha</h3>
+              <p>
+                Campanha de Natal em que crianças compartilham suas histórias e
+                fazem um pedido ao Papai Noel. Pessoas da comunidade podem participar
+                ajudando a transformar esses pedidos em momentos especiais.
+              </p>
+              <span class="acao-tag">Campanha especial de Natal</span>
+
+              <details class="historico-acao">
+                <summary>Ver registros da campanha</summary>
+                <div class="historico-conteudo">
+                  <div class="historico-fotos">
+                    <img src="Adote uma cartinha 1.jpeg" alt="Registro da campanha Adote uma Cartinha" class="foto-ampliavel">
+                    <img src="Adote uma cartinha 2.jpeg" alt="Registro de participação na campanha" class="foto-ampliavel">
+                    <img src="Adote uma cartinha 3.jpeg" alt="Presentes arrecadados para a campanha" class="foto-ampliavel">
+                  </div>
+                </div>
+              </details>
+            </div>
+
+            <div class="frente-resumo">
+              <span>NATAL</span>
+              <strong>Adote uma Cartinha</strong>
+              <small>Solidariedade que aproxima pessoas</small>
+            </div>
+          </article>
+
+          <!-- PÁSCOA SOLIDÁRIA -->
+          <article class="acao reveal-up frente-card">
+            <div class="acao-texto">
+              <div class="acao-numero">FRENTE PERMANENTE</div>
               <h3>Páscoa Solidária</h3>
-
               <p>
                 Mobilização para arrecadação, preparação e entrega de kits e
                 lembranças de Páscoa às crianças das comunidades atendidas,
                 transformando a data em um momento de encontro e solidariedade.
               </p>
+              <span class="acao-tag">Partilhar também é celebrar</span>
 
-              <span class="acao-tag">
-                Partilhar também é celebrar
-              </span>
-
+              <details class="historico-acao">
+                <summary>Ver registros da Páscoa Solidária</summary>
+                <div class="historico-conteudo">
+                  <div class="historico-fotos">
+                    <img src="pascoa 1.jpeg" alt="Registro da Páscoa Solidária" class="foto-ampliavel">
+                    <img src="pascoa 2.jpeg" alt="Organização da Páscoa Solidária" class="foto-ampliavel">
+                    <img src="pascoa 3.jpeg" alt="Itens preparados para a Páscoa Solidária" class="foto-ampliavel">
+                  </div>
+                </div>
+              </details>
             </div>
 
-            <div class="mosaico">
-
-              <img
-                src="pascoa 1.jpeg"
-                alt="Crianças com kits da Páscoa Solidária"
-                class="foto-ampliavel"
-              >
-
-              <img
-                src="pascoa 2.jpeg"
-                alt="Organização da ação de Páscoa"
-                class="foto-ampliavel"
-              >
-
-              <img
-                src="pascoa 3.jpeg"
-                alt="Itens preparados para distribuição na Páscoa"
-                class="foto-ampliavel"
-              >
-
+            <div class="frente-resumo">
+              <span>PÁSCOA</span>
+              <strong>Páscoa Solidária</strong>
+              <small>Encontro, cuidado e solidariedade</small>
             </div>
-
           </article>
 
-          <article class="acao reveal-up">
-
+          <!-- ACOLHIMENTO -->
+          <article class="acao invertida reveal-up frente-card">
             <div class="acao-texto">
-
-              <div class="acao-numero">HISTÓRICO DE AÇÕES</div>
-
+              <div class="acao-numero">FRENTE PERMANENTE</div>
               <h3>Acolhimento e Solidariedade</h3>
-
               <p>
-                O trabalho também alcança outros espaços, incluindo ações de
-                acolhimento com crianças em ambiente hospitalar e iniciativas
-                destinadas a pessoas idosas, conforme as possibilidades e
-                recursos disponíveis.
+                Ações de acolhimento em diferentes espaços e iniciativas destinadas
+                a crianças e pessoas idosas, conforme as possibilidades, necessidades
+                identificadas e recursos disponíveis.
               </p>
+              <span class="acao-tag">Presença que acolhe</span>
 
-              <span class="acao-tag">
-                Presença que acolhe
-              </span>
-
+              <details class="historico-acao">
+                <summary>Ver registros de acolhimento</summary>
+                <div class="historico-conteudo">
+                  <div class="historico-fotos">
+                    <img src="Acolhimento e solidariedade 1.jpeg" alt="Registro de ação de acolhimento" class="foto-ampliavel">
+                    <img src="Acolhimento e solidariedade 2.jpeg" alt="Atividade de acolhimento" class="foto-ampliavel">
+                    <img src="Acolhimento e solidariedade 3.jpeg" alt="Registro de iniciativa de acolhimento" class="foto-ampliavel">
+                  </div>
+                </div>
+              </details>
             </div>
 
-            <div class="mosaico">
-
-              <img
-                src="Acolhimento e solidariedade 1.jpeg"
-                alt="Ação de acolhimento em ambiente hospitalar"
-                class="foto-ampliavel"
-              >
-
-              <img
-                src="Acolhimento e solidariedade 2.jpeg"
-                alt="Atividade lúdica de acolhimento"
-                class="foto-ampliavel"
-              >
-
-              <img
-                src="Acolhimento e solidariedade 3.jpeg"
-                alt="Personagem participando da ação de acolhimento"
-                class="foto-ampliavel"
-              >
-
+            <div class="frente-resumo">
+              <span>ACOLHIMENTO</span>
+              <strong>Presença que transforma</strong>
+              <small>Apoio conforme as necessidades da comunidade</small>
             </div>
-
           </article>
 
         </div>
