@@ -2359,6 +2359,97 @@
       }
     }
 
+
+    /* ===== IDENTIDADE INSTITUCIONAL — V7 ===== */
+    :root {
+      --azul:#155f9d; --azul-escuro:#102f4b; --azul-profundo:#081f33;
+      --azul-claro:#eef5f9; --azul-claro-2:#f7f9fb;
+      --verde:#5b9f55; --laranja:#e88935; --rosa:#d85f7f;
+      --texto:#243746; --texto-suave:#647483;
+      --linha:rgba(16,47,75,.10);
+      --sombra:0 24px 70px rgba(10,42,68,.10);
+    }
+
+    html,body{background:#fff}
+    body::before,body::after,.floating-decor,
+    .hero::before,.hero::after,
+    #historia::before,#historia::after,#acoes::before,#acoes::after,
+    #impacto::before,#impacto::after,#parceiros::before,#parceiros::after,
+    #ajudar::before,#ajudar::after,#contato::before,#contato::after,
+    .acao-destaque::after,.impacto-card::after,.contato-box::after{
+      content:none!important;display:none!important;animation:none!important
+    }
+
+    header{background:rgba(255,255,255,.92)!important;border-bottom:1px solid var(--linha)!important;
+      box-shadow:0 8px 28px rgba(8,31,51,.055)!important;backdrop-filter:blur(18px)!important}
+    header.header-scrolled{background:rgba(255,255,255,.97)!important;box-shadow:0 12px 34px rgba(8,31,51,.09)!important}
+    .marca{color:var(--azul-profundo)} .marca span{color:var(--laranja)}
+    nav a{color:#385064} nav a::after{background:var(--azul);height:2px}
+    .scroll-progress{background:linear-gradient(90deg,var(--azul-profundo),var(--azul),var(--verde),var(--laranja));box-shadow:none}
+
+    .hero{min-height:610px;background:linear-gradient(110deg,#fff 0%,#f7fafc 55%,#eef4f7 100%)!important;
+      animation:none!important;border-bottom:1px solid var(--linha)}
+    .hero-logo-wrap::after{width:70%;height:58%;left:8%;top:20%;border-radius:48%;
+      background:linear-gradient(135deg,rgba(21,95,157,.09),rgba(91,159,85,.045),rgba(232,137,53,.04));
+      filter:blur(42px);animation:heroLogoGlow 8s ease-in-out infinite}
+    .hero-texto::before{inset:-24px -28px;background:rgba(255,255,255,.74);
+      border:1px solid rgba(16,47,75,.08);box-shadow:0 24px 70px rgba(8,31,51,.075);backdrop-filter:blur(16px)}
+    .hero-texto::after{width:92px;height:3px;background:linear-gradient(90deg,var(--azul),var(--verde),var(--laranja));animation:none}
+    .hero-etiqueta{background:#edf4ef;color:#477c45;box-shadow:none}
+    .hero-texto h1{color:var(--azul-profundo)}
+    .hero-texto h1 span{background:none;color:var(--laranja);-webkit-text-fill-color:initial}
+    .hero-frase{color:#506575}
+
+    #historia{background:linear-gradient(135deg,#f2f6f8 0%,#fff 52%,#f5f8f6 100%)!important}
+    #acoes{background:linear-gradient(180deg,#fff 0%,#f6f8fa 52%,#fff 100%)!important;background-size:auto!important;animation:none!important}
+    #impacto{background:linear-gradient(135deg,#eef4f7 0%,#fff 52%,#f3f7f3 100%)!important}
+    .parceiros-secao{background:#fff!important}
+    #ajudar{background:linear-gradient(135deg,#eaf1f5 0%,#f7f9fa 50%,#f7f0e8 100%)!important;background-size:auto!important;animation:none!important}
+    .contato-secao{background:linear-gradient(145deg,#fff,#f3f7f9)!important}
+
+    .titulo-secao .etiqueta,.desde,.contato-etiqueta{background:#fff;color:var(--azul-escuro);
+      border:1px solid var(--linha);box-shadow:none}
+    .titulo-secao h2,.historia-conteudo h2,.acao-texto h3,.ajuda-box h2,.contato-box h2{color:var(--azul-profundo)}
+    .titulo-secao h2::after,.historia-conteudo h2::after,.ajuda-box h2::after,.contato-box h2::after{
+      background:linear-gradient(90deg,var(--azul),var(--verde),var(--laranja));opacity:.72}
+
+    .historia-destaque{background:#fff;border-left:4px solid var(--laranja);box-shadow:0 14px 38px rgba(8,31,51,.07)}
+    .historia-foto::before{background:linear-gradient(135deg,rgba(21,95,157,.12),rgba(91,159,85,.07))}
+
+    .acoes-lista{gap:46px}
+    .acao,.acoes-lista .acao:nth-child(n){background:rgba(255,255,255,.94)!important;border:1px solid var(--linha)!important;
+      box-shadow:0 20px 58px rgba(8,31,51,.075);backdrop-filter:blur(12px)}
+    .acao:hover{transform:translateY(-6px) scale(1.004);box-shadow:0 30px 78px rgba(8,31,51,.12);
+      border-color:rgba(21,95,157,.20)!important}
+    .acao::before{display:none!important}.acao-destaque{border-left:4px solid var(--laranja)!important}
+    .acao-numero,.acao-destaque .acao-numero,.acoes-lista .acao:nth-child(4) .acao-numero{
+      background:#edf3f7!important;color:var(--azul-escuro)!important;box-shadow:none!important;letter-spacing:1.2px}
+    .acao-tag{background:#eef5ef!important;color:#477c45!important;box-shadow:none!important}
+    .acao:hover .acao-texto h3{color:var(--azul)}
+    .botao-campanha{background:var(--laranja);box-shadow:0 10px 24px rgba(232,137,53,.20)}
+
+    .impacto-card{background:rgba(255,255,255,.9)!important;border:1px solid var(--linha)!important;
+      box-shadow:0 18px 48px rgba(8,31,51,.075);animation:none!important}
+    .impacto-card::before{height:3px;background:linear-gradient(90deg,var(--azul),var(--verde),var(--laranja));opacity:.75}
+    .impacto-card strong,.impacto-card:nth-child(2) strong,.impacto-card:nth-child(3) strong{
+      background:none!important;color:var(--azul-profundo)!important;-webkit-text-fill-color:initial!important}
+
+    .parceiro-card{background:#fff!important;border:1px solid var(--linha);box-shadow:0 16px 42px rgba(8,31,51,.065);animation:none!important}
+    .parceiro-card:hover{transform:translateY(-5px);box-shadow:0 24px 58px rgba(8,31,51,.10)}
+
+    .ajuda-box,.contato-box{background:rgba(255,255,255,.9)!important;border:1px solid var(--linha)!important;
+      box-shadow:var(--sombra);backdrop-filter:blur(16px)}
+    .ajuda-card{border:1px solid var(--linha);box-shadow:0 14px 36px rgba(8,31,51,.06)}
+    .ajuda-card::before{height:3px}
+    .btn-principal{background:linear-gradient(135deg,var(--azul),var(--azul-escuro))!important}
+    .btn-secundario{background:linear-gradient(135deg,var(--laranja),#d66e24)!important}
+
+    footer{background:linear-gradient(135deg,#081f33,#103b5d)!important;animation:none!important}
+
+    @media(max-width:680px){
+      .hero{min-height:auto}.hero-texto::before{inset:-15px -8px}.acoes-lista{gap:32px}
+    }
+
   </style>
 </head>
 
@@ -2384,7 +2475,7 @@
 
   <main>
 
-    <section class="hero" id="inicio"><span class="floating-decor d1"></span><span class="floating-decor d2"></span><span class="floating-decor d3"></span><span class="floating-decor d4"></span>
+    <section class="hero" id="inicio">
       <div class="hero-conteudo">
         <div class="hero-logo-wrap reveal-left">
           <img class="logo-principal" src="logo-projeto-transformar-pelo-bem.png" alt="Logo oficial do Projeto Transformar pelo Bem">
@@ -2397,7 +2488,7 @@
       </div>
     </section>
 
-    <section class="secao fundo-azul" id="historia"><span class="floating-decor d1"></span><span class="floating-decor d2"></span><span class="floating-decor d3"></span><span class="floating-decor d4"></span>
+    <section class="secao fundo-azul" id="historia">
       <div class="container">
 
         <div class="historia-grid">
@@ -2456,7 +2547,7 @@
       </div>
     </section>
 
-    <section class="secao fundo-suave" id="acoes"><span class="floating-decor d1"></span><span class="floating-decor d2"></span><span class="floating-decor d3"></span><span class="floating-decor d4"></span>
+    <section class="secao fundo-suave" id="acoes">
       <div class="container">
 
         <div class="titulo-secao reveal-up">
@@ -2466,8 +2557,8 @@
           <h2>Nossas Ações</h2>
 
           <p>
-            Estas são algumas das iniciativas que mobilizam pessoas, doações e
-            voluntários para transformar cuidado em ação concreta na comunidade.
+            Cada ação faz parte da história do Transformar pelo Bem. Acompanhe a próxima
+            mobilização e conheça iniciativas já realizadas pelo projeto.
           </p>
 
         </div>
@@ -2478,7 +2569,7 @@
 
             <div class="acao-texto">
 
-              <div class="acao-numero">AÇÃO MAIS RECENTE</div>
+              <div class="acao-numero">ÚLTIMA AÇÃO REALIZADA · 29/08/2026</div>
 
               <h3>Macarronada Solidária</h3>
 
@@ -2524,7 +2615,7 @@
 
             <div class="acao-texto">
 
-              <div class="acao-numero">AÇÃO 01</div>
+              <div class="acao-numero">HISTÓRICO DE AÇÕES</div>
 
               <h3>Alimentação Solidária</h3>
 
@@ -2568,7 +2659,7 @@
 
             <div class="acao-texto">
 
-              <div class="acao-numero">AÇÃO 02</div>
+              <div class="acao-numero">HISTÓRICO DE AÇÕES</div>
 
               <h3>Adote uma Cartinha</h3>
 
@@ -2622,20 +2713,29 @@
 
             <div class="acao-texto">
 
-              <div class="acao-numero">PRÓXIMA AÇÃO</div>
+              <div class="acao-numero">PRÓXIMA AÇÃO · 11/10/2026</div>
 
-              <h3>Dia das Crianças</h3>
+              <h3>Dia das Crianças 2026</h3>
 
               <p>
-                A próxima mobilização do projeto será dedicada às crianças, com
-                brincadeiras, integração comunitária e distribuição de brinquedos
-                e presentes. O objetivo é criar um dia especial e proporcionar
-                momentos de alegria, convivência e cuidado.
+                Nossa próxima mobilização será dedicada a aproximadamente 150 crianças.
+                A ação está sendo organizada com cachorro-quente, mini refrigerante,
+                geladinho, doces e pipoca doce, reunindo voluntários e doadores para
+                proporcionar um momento especial de cuidado e convivência.
               </p>
 
               <span class="acao-tag">
-                Alegria, convivência e comunidade
+                Meta: atender 150 crianças
               </span>
+
+              <a
+                class="botao-campanha"
+                href="https://wa.me/5567996023875?text=Ol%C3%A1%2C%20Cec%C3%ADlia%21%20Conheci%20a%20a%C3%A7%C3%A3o%20Dia%20das%20Crian%C3%A7as%202026%20pelo%20site%20Transformar%20pelo%20Bem%20e%20gostaria%20de%20contribuir."
+                target="_blank"
+                rel="noopener"
+              >
+                Quero contribuir
+              </a>
 
             </div>
 
@@ -2667,7 +2767,7 @@
 
             <div class="acao-texto">
 
-              <div class="acao-numero">AÇÃO 04</div>
+              <div class="acao-numero">HISTÓRICO DE AÇÕES</div>
 
               <h3>Páscoa Solidária</h3>
 
@@ -2711,7 +2811,7 @@
 
             <div class="acao-texto">
 
-              <div class="acao-numero">AÇÃO 05</div>
+              <div class="acao-numero">HISTÓRICO DE AÇÕES</div>
 
               <h3>Acolhimento e Solidariedade</h3>
 
@@ -2756,7 +2856,7 @@
       </div>
     </section>
 
-    <section class="secao impacto-secao" id="impacto"><span class="floating-decor d1"></span><span class="floating-decor d2"></span><span class="floating-decor d3"></span><span class="floating-decor d4"></span>
+    <section class="secao impacto-secao" id="impacto">
       <div class="container">
         <div class="titulo-secao reveal-up">
           <span class="etiqueta">Alcance das ações</span>
@@ -2772,7 +2872,7 @@
     </section>
 
 
-    <section class="secao parceiros-secao" id="parceiros"><span class="floating-decor d1"></span><span class="floating-decor d2"></span><span class="floating-decor d3"></span><span class="floating-decor d4"></span>
+    <section class="secao parceiros-secao" id="parceiros">
       <div class="container">
         <div class="titulo-secao reveal-up">
           <span class="etiqueta">Empresas parceiras</span>
@@ -2794,7 +2894,7 @@
       </div>
     </section>
 
-    <section class="secao fundo-azul" id="ajudar"><span class="floating-decor d1"></span><span class="floating-decor d2"></span><span class="floating-decor d3"></span><span class="floating-decor d4"></span>
+    <section class="secao fundo-azul" id="ajudar">
       <div class="container">
         <div class="ajuda-box reveal-up">
           <h2>Faça parte dessa história</h2>
@@ -2816,7 +2916,7 @@
     </section>
 
 
-    <section class="secao contato-secao" id="contato"><span class="floating-decor d1"></span><span class="floating-decor d2"></span><span class="floating-decor d3"></span><span class="floating-decor d4"></span>
+    <section class="secao contato-secao" id="contato">
       <div class="container">
         <div class="contato-box reveal-up">
           <div>
