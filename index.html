@@ -2565,6 +2565,67 @@
   }
 </style>
 
+
+<style id="refinamento-hero-final-21-09">
+  /* Integração visual final da abertura */
+  .hero.hero-atualizada{
+    background:linear-gradient(112deg,#ffffff 0%,#fcfdff 62%,#fafcff 100%) !important;
+  }
+
+  /* Remove o efeito azul/cinza residual do lado esquerdo */
+  .hero.hero-atualizada::before{
+    opacity:.42 !important;
+    right:9% !important;
+    width:480px !important;
+    height:480px !important;
+    border-color:rgba(255,138,31,.055) !important;
+  }
+
+  .hero-atualizada .hero-logo-wrap{
+    background:transparent !important;
+    box-shadow:none !important;
+  }
+
+  .hero-atualizada .logo-principal{
+    background:transparent !important;
+    mix-blend-mode:normal !important;
+    box-shadow:none !important;
+  }
+
+  /* Leva o menino para o canto direito do hero */
+  .hero-atualizada-grid{
+    width:min(1320px,100%) !important;
+    grid-template-columns:minmax(0,1fr) minmax(300px,.60fr) !important;
+    gap:120px !important;
+  }
+
+  .hero-crianca-nova{
+    justify-content:flex-end !important;
+    margin-right:-42px !important;
+  }
+
+  .hero-crianca-nova img{
+    margin-left:auto !important;
+    object-position:right center !important;
+  }
+
+  @media(max-width:1180px){
+    .hero-crianca-nova{ margin-right:-24px !important; }
+    .hero-atualizada-grid{ gap:76px !important; }
+  }
+
+  @media(max-width:980px){
+    .hero-atualizada-grid{
+      grid-template-columns:1fr !important;
+      gap:32px !important;
+    }
+    .hero-crianca-nova{
+      margin-right:0 !important;
+      justify-content:center !important;
+    }
+  }
+</style>
+
 </head>
 
 <body>
