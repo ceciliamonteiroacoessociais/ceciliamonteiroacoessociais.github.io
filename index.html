@@ -7,213 +7,140 @@
 <meta name="description" content="Projeto social voluntário Transformar pelo Bem — mobilização comunitária, cuidado e solidariedade em Corumbá e Ladário.">
 <style>
 :root{
-  --navy:#063b78;--blue:#0b66b2;--sky:#21a8df;--green:#48ad43;
-  --orange:#f47b20;--pink:#e83d78;--ink:#173653;--muted:#597086;
-  --cream:#fffaf4;--ice:#f3faff;--white:#fff;--line:#dceaf4;
-  --shadow:0 18px 50px rgba(20,64,105,.11);--r:28px;
+  --navy:#063b78;--blue:#0b66b2;--sky:#22a8df;--green:#48ad43;
+  --orange:#f47b20;--pink:#e83d78;--ink:#173653;--muted:#5d7082;
+  --cream:#fffaf5;--ice:#f4fbff;--white:#fff;--line:#dceaf4;
+  --shadow:0 18px 50px rgba(6,59,120,.11);--r:28px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff;line-height:1.55;overflow-x:hidden}
-img{max-width:100%;display:block}
-a{text-decoration:none;color:inherit}
-section{scroll-margin-top:82px}
-.container{width:min(1180px,calc(100% - 40px));margin:auto}
-.scroll-progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--blue),var(--green),var(--orange));z-index:2000}
-header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.96);border-bottom:1px solid #e8eef3;backdrop-filter:blur(12px)}
-.menu{width:min(1260px,calc(100% - 36px));min-height:78px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
+img{display:block;max-width:100%} a{text-decoration:none;color:inherit}
+section{scroll-margin-top:88px}.container{width:min(1240px,calc(100% - 40px));margin:auto}
+.progress{position:fixed;z-index:3000;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--blue),var(--green),var(--orange))}
+header{position:sticky;top:0;z-index:2000;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid #edf2f6}
+.menu{width:min(1320px,calc(100% - 34px));min-height:78px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:26px}
 .brand{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:900;color:var(--navy);white-space:nowrap}
-.brand img{width:54px;height:54px;object-fit:contain}
-.brand span{color:var(--orange)}
-nav{display:flex;gap:25px;align-items:center}
-nav a{font-size:14px;font-weight:800;position:relative}
-nav a:after{content:"";position:absolute;left:0;right:100%;bottom:-10px;height:3px;border-radius:4px;background:var(--orange);transition:.25s}
+.brand img{width:52px;height:52px;object-fit:contain}.brand span{color:var(--orange)}
+nav{display:flex;align-items:center;gap:28px;flex-wrap:wrap;justify-content:flex-end}
+nav a{font-size:14px;font-weight:800;color:var(--navy);position:relative}
+nav a:after{content:"";position:absolute;left:0;right:100%;bottom:-9px;height:3px;border-radius:3px;background:var(--orange);transition:.25s}
 nav a:hover:after{right:0}
 
-/* HERO — child art intentionally static */
-.hero{position:relative;min-height:650px;overflow:hidden;background:linear-gradient(120deg,#fff 0%,#fffaf3 100%)}
-.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(125deg,transparent 62%,rgba(244,123,32,.07));pointer-events:none}
-.hero-inner{width:min(1240px,calc(100% - 40px));min-height:650px;margin:auto;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;position:relative;z-index:2}
-.hero-copy{padding:58px 0 105px}
-.hero-logo{width:min(650px,100%);margin-bottom:24px}
-.hero-logo img{width:100%;height:auto}
-.hero-copy p{font-size:20px;max-width:610px;color:#425d74}
-.hero-child{align-self:stretch;display:flex;align-items:flex-end;justify-content:flex-end;pointer-events:none}
-.hero-child img{width:min(520px,100%);max-height:610px;object-fit:contain;object-position:right bottom;animation:none!important;transform:none!important}
-.wave{position:absolute;left:-3%;right:-3%;bottom:-1px;height:125px;z-index:3;background:
- linear-gradient(165deg,transparent 0 46%,rgba(255,194,128,.65) 47% 62%,transparent 63%),
- linear-gradient(170deg,transparent 0 58%,rgba(99,194,171,.45) 59% 73%,transparent 74%),
- linear-gradient(174deg,transparent 0 69%,rgba(17,111,176,.92) 70% 100%)}
+/* HERO */
+.hero{position:relative;min-height:690px;overflow:hidden;background:linear-gradient(115deg,#fff 0 66%,#fff8f1 100%)}
+.hero:before{content:"";position:absolute;right:-110px;top:80px;width:620px;height:500px;border:34px solid rgba(244,123,32,.10);border-left-color:transparent;border-bottom-color:transparent;border-radius:48%}
+.hero-inner{width:min(1320px,calc(100% - 40px));min-height:690px;margin:auto;display:grid;grid-template-columns:1.18fr .82fr;align-items:center;position:relative;z-index:2}
+.hero-copy{padding:58px 0 105px}.hero-logo{width:min(680px,100%);max-height:410px;object-fit:contain;object-position:left center}
+.hero-copy p{max-width:610px;margin:20px 0 0;font-size:21px;color:#425c73}
+.hero-child{align-self:stretch;position:relative;display:flex;align-items:flex-end;justify-content:flex-end;pointer-events:none}
+.hero-child img{width:min(500px,100%);max-height:590px;object-fit:contain;object-position:right bottom;animation:none!important;transform:none!important}
+.hero-child .fallback{display:none;font-size:120px;padding-bottom:130px}
+.wave{position:absolute;left:0;right:0;bottom:0;height:115px;overflow:hidden;pointer-events:none}
+.wave i{position:absolute;left:-4%;width:108%;height:100px;border-radius:50% 55% 0 0/100% 100% 0 0;transform-origin:center bottom}
+.wave .w1{bottom:-54px;background:#ffd4a9;transform:rotate(2deg)}.wave .w2{bottom:-68px;background:#cbe8c9;transform:rotate(-2deg)}
+.wave .w3{bottom:-78px;background:#72c8df;transform:rotate(1deg)}.wave .w4{bottom:-90px;background:#0874bd;transform:rotate(-1deg)}
 
-/* shared */
-.section{padding:78px 0;position:relative}
-.section-head{text-align:center;max-width:800px;margin:0 auto 38px}
-.eyebrow{display:inline-block;padding:7px 15px;border-radius:999px;background:#edf6fd;color:var(--navy);font-size:12px;font-weight:900;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:12px}
-.section-head h2,.history h2{font-size:clamp(34px,4vw,50px);line-height:1.05;color:var(--navy);margin-bottom:13px}
-.section-head h2 .orange,.orange{color:var(--orange)}
-.section-head p{font-size:17px;color:var(--muted)}
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .75s ease,transform .75s ease}
-.reveal.left{transform:translateX(-34px)}
-.reveal.right{transform:translateX(34px)}
-.reveal.visible{opacity:1;transform:none}
+/* COMMON */
+.section{padding:82px 0;position:relative}.section-head{text-align:center;max-width:900px;margin:0 auto 42px}
+.kicker{display:inline-flex;padding:8px 16px;border-radius:999px;background:#eef7fd;color:var(--navy);font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
+.section-head h2{margin:10px 0 8px;font-size:clamp(36px,5vw,56px);line-height:1.06;color:var(--navy)}
+.section-head p{font-size:18px;color:var(--muted)}.orange{color:var(--orange)}.green{color:var(--green)}.blue{color:var(--blue)}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}.reveal.show{opacity:1;transform:none}
 
-/* history */
-.history{background:linear-gradient(180deg,#f6fbff,#fff)}
-.history-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:55px;align-items:center}
-.history .since{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 15px;font-weight:900;margin-bottom:15px}
-.history .lead{font-size:21px;font-weight:800;color:var(--navy);margin:16px 0 22px}
-.history p{font-size:17px;color:#425d74;margin-bottom:14px}
-.history-note{border-left:4px solid var(--orange);padding:14px 18px;margin-top:22px;background:#fff;border-radius:10px;font-weight:800}
-.history-photo img{width:100%;border-radius:28px;box-shadow:var(--shadow)}
+/* HISTÓRIA */
+.history{background:linear-gradient(135deg,#f4fbff 0%,#fff 48%,#fff8f1 100%)}
+.history-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:58px;align-items:center}
+.since{display:inline-flex;padding:9px 16px;border-radius:999px;background:#fff;color:var(--green);font-weight:900;box-shadow:0 7px 22px rgba(6,59,120,.07)}
+.history h2{font-size:clamp(38px,5vw,58px);line-height:1.05;color:var(--navy);margin:18px 0}.history h2 span{color:var(--orange)}
+.history .lead{font-size:22px;font-weight:900;color:var(--navy);margin-bottom:25px}.history p{font-size:18px;color:#435b70;margin-bottom:16px}
+.history-note{margin-top:24px;padding:19px 22px;background:#fff;border-left:5px solid var(--orange);border-radius:15px;font-weight:800;color:var(--navy);box-shadow:0 12px 30px rgba(6,59,120,.07)}
+.history-photo img{width:100%;border-radius:30px;box-shadow:var(--shadow)}
 
-/* actions */
-.actions{background:linear-gradient(180deg,#fffaf6,#fff 34%,#f6fbff)}
-.next-card{position:relative;overflow:hidden;border-radius:30px;background:#fff;box-shadow:var(--shadow);display:grid;grid-template-columns:1.05fr .95fr;min-height:450px;border:1px solid #edf0f2}
-.next-copy{padding:38px 28px 110px 38px;z-index:2}
-.next-badge{display:inline-block;background:#fff1e7;color:#bd5c15;padding:8px 15px;border-radius:999px;font-size:13px;font-weight:900;letter-spacing:1.4px}
-.next-card h3{font-size:clamp(38px,5vw,58px);line-height:1.02;color:var(--navy);margin:17px 0}
-.next-card h3 span{color:var(--orange)}
-.meta-row{display:flex;gap:25px;flex-wrap:wrap;font-weight:800;margin:12px 0 17px}
-.meta-row b{color:var(--green)}
-.next-copy>p{font-size:17px;color:#405a70;max-width:610px}
-.items{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
-.item{background:#fff8f2;border-radius:16px;padding:12px 8px;text-align:center;font-weight:800;font-size:13px}
-.item .ico{font-size:28px;display:block;margin-bottom:5px}
-.cta{display:inline-flex;align-items:center;gap:20px;background:linear-gradient(135deg,#ff5a0a,var(--orange));color:#fff;padding:14px 28px;border-radius:999px;font-weight:900;box-shadow:0 10px 24px rgba(244,123,32,.25);transition:.25s}
-.cta:hover{transform:translateY(-3px);box-shadow:0 15px 30px rgba(244,123,32,.3)}
-.next-art{display:flex;align-items:flex-end;justify-content:center;position:relative;z-index:2;pointer-events:none}
-.next-art img{width:min(590px,100%);max-height:420px;object-fit:contain;object-position:center bottom;animation:none!important;transform:none!important}
-.next-wave{position:absolute;left:0;right:0;bottom:0;height:92px;background:linear-gradient(170deg,transparent 0 34%,#ffe0bd 35% 52%,#cce9dc 53% 69%,#3aa8d8 70%);z-index:1}
-.history-title{text-align:center;margin:72px 0 30px}
-.history-title h3{font-size:clamp(30px,4vw,45px);color:var(--navy)}
-.history-title h3 span{color:var(--orange)}
-.history-title p{color:var(--muted);margin-top:10px}
-.mac-card{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;background:#fff;border:1px solid #e6f0f6;border-radius:30px;padding:22px;box-shadow:var(--shadow)}
-.mac-gallery{display:grid;grid-template-columns:1.15fr .85fr;grid-template-rows:1fr 1fr;gap:10px;min-height:500px}
-.mac-gallery img{width:100%;height:100%;object-fit:cover;border-radius:20px;cursor:zoom-in;transition:transform .3s}
-.mac-gallery img:hover{transform:scale(1.015)}
-.mac-gallery img:first-child{grid-row:1/3}
-.mac-copy{padding:22px 12px;align-self:center}
-.mac-label{display:inline-block;background:#eaf6fd;color:var(--blue);padding:7px 12px;border-radius:999px;font-size:12px;font-weight:900;letter-spacing:1px}
-.mac-copy h3{font-size:clamp(34px,4vw,48px);line-height:1.05;color:var(--navy);margin:15px 0}
-.mac-copy h3 span{color:var(--orange)}
-.mac-copy p{font-size:17px;color:var(--muted)}
-.result{margin:20px 0;background:#effaf2;border-radius:16px;padding:17px;color:#15934b;font-size:19px;font-weight:900}
-.result strong{font-size:40px;margin-right:8px}
-.history-btn{display:inline-flex;border:1px solid #bfd5e5;border-radius:999px;padding:12px 20px;font-weight:900;color:var(--navy);transition:.25s}
-.history-btn:hover{border-color:var(--orange);color:var(--orange)}
-.fronts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}
-.front{background:#fff;border:1px solid #e5eef5;border-radius:22px;padding:24px;box-shadow:0 10px 28px rgba(20,64,105,.06);transition:.3s}
-.front:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-.front small{color:var(--green);font-weight:900;letter-spacing:1px}
-.front h4{font-size:23px;color:var(--navy);margin:8px 0}
-.front p{color:var(--muted);font-size:15px}
+/* AÇÕES */
+.actions{background:linear-gradient(180deg,#fff,#f8fcff 50%,#fffaf5)}
+.actions .section-head h2{font-size:clamp(38px,5vw,54px)}
+.next-card{position:relative;overflow:hidden;display:grid;grid-template-columns:1.05fr .95fr;min-height:520px;background:#fff;border:1px solid #edf1f3;border-radius:34px;box-shadow:var(--shadow)}
+.next-copy{padding:38px 24px 105px 42px;position:relative;z-index:3}.next-badge{display:inline-flex;background:#fff1e6;color:#b95b15;padding:8px 16px;border-radius:999px;font-weight:900;letter-spacing:2px;font-size:12px}
+.next-title{font-size:clamp(40px,5vw,62px);line-height:1.03;color:var(--navy);margin:14px 0}.next-meta{display:flex;gap:28px;flex-wrap:wrap;margin:15px 0 12px;font-weight:900;color:var(--navy)}
+.next-meta .goal{color:var(--green)}.next-copy>p{font-size:18px;color:#40586e;max-width:650px}
+.items{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0 20px}.item{min-height:116px;padding:12px 8px;text-align:center;border-radius:18px;background:#fffaf6;font-weight:800;color:var(--navy)}
+.item b{display:block;font-size:37px;line-height:1.1;margin-bottom:6px}.item small{display:block;font-size:12px;color:var(--muted);font-weight:700}
+.cta{display:inline-flex;align-items:center;gap:18px;padding:14px 26px;border-radius:999px;background:linear-gradient(135deg,var(--orange),#ff4f12);color:#fff;font-weight:900;box-shadow:0 10px 25px rgba(244,123,32,.25);transition:.25s}.cta:hover{transform:translateY(-2px)}
+.next-art{position:relative;z-index:2;display:flex;align-items:flex-end;justify-content:flex-end;overflow:hidden}.next-art img{width:100%;max-height:500px;object-fit:contain;object-position:right bottom;animation:none!important;transform:none!important}
+.next-art .fallback{display:none;font-size:110px;padding:0 40px 120px 0}
+.next-card .wave{height:105px;z-index:1}
 
-/* impact */
-.impact{background:linear-gradient(180deg,#f4faff,#fff);overflow:hidden}
-.impact:after{content:"";display:block;height:80px;margin-top:35px;background:linear-gradient(170deg,transparent 0 40%,rgba(38,167,222,.22) 41% 58%,rgba(75,174,67,.16) 59% 72%,rgba(244,123,32,.16) 73%)}
-.impact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.impact-card{background:#fff;border:1px solid #e4edf4;border-radius:22px;padding:30px 20px;text-align:center;box-shadow:0 10px 30px rgba(20,64,105,.07);position:relative;overflow:hidden;transition:.3s}
-.impact-card:hover{transform:translateY(-5px)}
-.impact-card:before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--blue)}
-.impact-card:nth-child(2):before{background:var(--green)}
-.impact-card:nth-child(3):before{background:var(--orange)}
-.impact-icon{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;margin:0 auto 10px;background:#e8f5fd;font-size:27px}
-.impact-card:nth-child(2) .impact-icon{background:#e9f8ee}.impact-card:nth-child(3) .impact-icon{background:#fff0e7}
-.impact-card strong{display:block;font-size:42px;line-height:1;color:var(--navy);margin:10px 0}
-.impact-card b{display:block;color:var(--orange);font-size:18px}
-.impact-card small{color:var(--muted)}
+/* história das ações */
+.story-title{text-align:center;padding:70px 0 30px}.story-title h3{font-size:clamp(31px,4vw,45px);color:var(--navy)}.story-title p{font-size:18px;color:var(--muted);margin-top:8px}
+.food-card{display:grid;grid-template-columns:1.18fr .82fr;gap:30px;background:#fff;border-radius:34px;padding:26px;box-shadow:var(--shadow)}
+.food-photos{display:grid;grid-template-columns:1.18fr .82fr;grid-template-rows:1fr 1fr;gap:10px;min-height:550px}.food-photos img{width:100%;height:100%;object-fit:cover;border-radius:20px;cursor:zoom-in}.food-photos img:first-child{grid-row:1/3}
+.food-info{padding:20px 12px;display:flex;flex-direction:column;justify-content:center}.food-info .kicker{align-self:flex-start}.food-info h3{font-size:clamp(38px,4vw,53px);line-height:1.04;color:var(--navy);margin:14px 0}.food-info p{font-size:18px;color:var(--muted)}
+.result{margin:24px 0 18px;padding:18px 20px;border-radius:18px;background:#eefaf0;color:#178b40;font-weight:900;font-size:20px}.result strong{font-size:46px;margin-right:10px}
+.history-btn{border:1px solid #cfe0ec;background:#fff;color:var(--navy);padding:14px 20px;border-radius:999px;font-weight:900;cursor:pointer;text-align:left}
+.history-panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s ease}.history-panel>div{overflow:hidden}.history-panel.open{grid-template-rows:1fr}
+.history-inner{margin-top:18px;padding:22px;border-radius:20px;background:#f7fbff;border:1px solid #e0edf5}.history-inner h4{font-size:23px;color:var(--navy);margin-bottom:8px}
+.fronts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}.front{padding:25px;border-radius:24px;background:#fff;border:1px solid #e6eef4;box-shadow:0 10px 28px rgba(6,59,120,.06);transition:.25s}.front:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.front .label{font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:var(--green);font-weight:900}.front h4{font-size:25px;color:var(--navy);margin:8px 0}.front p{color:var(--muted)}
 
-/* partners */
-.partners{background:#fff}
-.partner-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.partner{height:165px;background:#fff;border:1px solid #e7edf2;border-radius:20px;display:grid;place-items:center;padding:22px;box-shadow:0 9px 26px rgba(20,64,105,.05);transition:.3s}
-.partner:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-.partner img{max-height:105px;max-width:85%;object-fit:contain}
+/* IMPACT */
+.impact{background:linear-gradient(180deg,#f7fcff,#fff)}.impact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.impact-card{position:relative;text-align:center;padding:30px 20px;background:#fff;border:1px solid #e6eef4;border-radius:22px;box-shadow:0 10px 30px rgba(6,59,120,.07);overflow:hidden;transition:.25s}.impact-card:hover{transform:translateY(-4px)}
+.impact-card:before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--blue)}.impact-card:nth-child(2):before{background:var(--green)}.impact-card:nth-child(3):before{background:var(--orange)}
+.impact-icon{width:64px;height:64px;border-radius:50%;margin:0 auto 10px;display:grid;place-items:center;background:#eaf7ff;font-size:30px}.impact-card:nth-child(2) .impact-icon{background:#eef9ea}.impact-card:nth-child(3) .impact-icon{background:#fff1e7}
+.impact-card strong{display:block;font-size:46px;line-height:1.05;color:var(--navy)}.impact-card h3{color:var(--orange);font-size:21px}.impact-card p{color:var(--muted)}
+.soft-wave{height:70px;background:linear-gradient(168deg,transparent 0 45%,rgba(34,168,223,.18) 46% 55%,rgba(244,123,32,.14) 56% 65%,rgba(72,173,67,.14) 66% 75%,transparent 76%)}
 
-/* help/contact */
-.help{background:linear-gradient(110deg,#f2faff,#fff7ed)}
-.help-box{display:grid;grid-template-columns:1fr 1.05fr;gap:35px;align-items:center;background:rgba(255,255,255,.82);border:1px solid #e6edf3;border-radius:30px;padding:34px;box-shadow:var(--shadow)}
-.help-copy h2,.contact h2{font-size:clamp(34px,4vw,47px);line-height:1.05;color:var(--navy)}
-.help-copy h2 span,.contact h2 span{color:var(--orange)}
-.help-copy p,.contact p{color:var(--muted);margin-top:14px}
-.help-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.help-card{background:#fff;border:1px solid #e8edf2;border-radius:20px;padding:24px;text-align:center}
-.help-card .circle{width:58px;height:58px;border-radius:50%;background:#e9f5ff;display:grid;place-items:center;margin:0 auto 12px;font-size:26px}
-.help-card:nth-child(2) .circle{background:#fff0e7}
-.help-card h3{color:var(--navy);font-size:19px;line-height:1.15}
-.help-card p{font-size:14px;min-height:66px}
-.help-card .btn{display:block;margin-top:14px;padding:12px;border-radius:999px;background:var(--blue);color:#fff;font-weight:900;transition:.25s}
-.help-card:nth-child(2) .btn{background:var(--orange)}
-.help-card .btn:hover{transform:translateY(-2px)}
-.contact{background:#eff8ff}
-.contact-box{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
-.contact-actions{display:grid;gap:12px}
-.contact-actions a{display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:999px;font-weight:900;border:2px solid var(--navy);color:var(--navy);background:#fff;transition:.25s}
-.contact-actions a:first-child{background:var(--blue);color:#fff;border-color:var(--blue)}
-.contact-actions a:hover{transform:translateY(-2px)}
-footer{background:linear-gradient(135deg,#063b78,#062f61);color:#fff;text-align:center;padding:35px 20px}
-footer strong{font-size:20px}footer strong span{color:var(--orange)}footer p{opacity:.82;margin-top:7px}
-.footer-line{width:105px;height:3px;margin:18px auto 0;border-radius:4px;background:linear-gradient(90deg,var(--orange) 0 33%,var(--green) 33% 66%,var(--blue) 66%)}
+/* PARTNERS / HELP / CONTACT */
+.partners{padding-top:55px}.partner-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.partner{min-height:185px;display:grid;place-items:center;background:#fff;border:1px solid #e8eef3;border-radius:22px;box-shadow:0 9px 25px rgba(6,59,120,.05);padding:24px}.partner img{max-height:115px;object-fit:contain}
+.help{background:linear-gradient(120deg,#fff8f0,#fff 45%,#f2fbff)}.help-grid{display:grid;grid-template-columns:1.1fr .75fr .75fr;gap:18px;align-items:stretch}.help-intro,.help-card{padding:28px;border-radius:25px;background:#fff;border:1px solid #e8eef3}.help-intro{background:transparent;border:0}.help-intro h2{font-size:42px;line-height:1.05;color:var(--navy)}.help-intro h2 span{color:var(--orange)}.help-intro p,.help-card p{color:var(--muted);margin:10px 0 18px}.help-card{text-align:center}.help-card b{font-size:22px;color:var(--navy)}.btn{display:inline-flex;padding:13px 20px;border-radius:999px;color:#fff;background:var(--navy);font-weight:900}.help-card:last-child .btn{background:var(--orange)}
+.contact{background:#f4fbff}.contact-box{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}.contact h2{font-size:43px;color:var(--navy)}.contact h2 span{color:var(--orange)}.contact p{color:var(--muted)}.contact-actions{display:grid;gap:12px}.contact-actions a{padding:14px 18px;border-radius:999px;text-align:center;font-weight:900;border:2px solid var(--navy);color:var(--navy);background:#fff}.contact-actions a:first-child{background:var(--navy);color:#fff}
+footer{padding:38px 20px;text-align:center;background:var(--navy);color:#fff}footer strong{font-size:21px}footer span{color:var(--orange)}footer p{opacity:.85;margin-top:6px}
 
 /* lightbox */
-.lightbox{position:fixed;inset:0;background:rgba(5,22,40,.92);display:none;align-items:center;justify-content:center;padding:25px;z-index:3000}
-.lightbox.open{display:flex}.lightbox img{max-height:88vh;max-width:94vw;border-radius:18px}.close{position:absolute;right:25px;top:20px;border:0;border-radius:50%;width:44px;height:44px;font-size:24px;cursor:pointer}
+.lightbox{position:fixed;inset:0;z-index:4000;background:rgba(2,18,34,.92);display:none;align-items:center;justify-content:center;padding:24px}.lightbox.open{display:flex}.lightbox img{max-width:94vw;max-height:88vh;border-radius:18px}.lightbox button{position:absolute;right:25px;top:20px;width:45px;height:45px;border:0;border-radius:50%;font-size:25px;cursor:pointer}
 
-@media(max-width:900px){
- nav{gap:12px;flex-wrap:wrap;justify-content:flex-end}
- .hero-inner,.history-grid,.next-card,.mac-card,.help-box,.contact-box{grid-template-columns:1fr}
- .hero{min-height:auto}.hero-inner{min-height:auto}.hero-copy{text-align:center;padding:45px 0 20px}.hero-logo{margin:0 auto 20px}.hero-copy p{margin:auto}
- .hero-child{justify-content:center}.hero-child img{max-height:420px}
- .items{grid-template-columns:repeat(2,1fr)}
- .next-copy{padding-bottom:25px}.next-art img{max-height:360px}
- .fronts,.impact-grid,.partner-grid{grid-template-columns:1fr}
- .help-cards{grid-template-columns:1fr 1fr}
+@media(max-width:950px){
+ .hero-inner,.history-grid,.next-card,.food-card,.contact-box{grid-template-columns:1fr}.hero-child{min-height:360px}.hero-copy{padding-bottom:20px}
+ .next-art{min-height:350px}.fronts,.impact-grid,.partner-grid{grid-template-columns:1fr 1fr}.help-grid{grid-template-columns:1fr}
+ .food-photos{min-height:480px}
 }
-@media(max-width:650px){
- .menu{min-height:72px;align-items:flex-start;flex-direction:column;padding:12px 0}.brand{font-size:17px}.brand img{width:42px;height:42px}
- nav{justify-content:center;gap:9px 15px}nav a{font-size:12px}
- .container,.hero-inner,.menu{width:min(100% - 28px,1180px)}
- .section{padding:58px 0}.hero-copy p{font-size:17px}.hero-child img{max-height:330px}
- .wave{height:75px}
- .next-card h3{font-size:38px}.next-copy{padding:25px 18px 18px}.meta-row{gap:10px}.items{grid-template-columns:1fr 1fr}
- .mac-gallery{min-height:auto;grid-template-columns:1fr 1fr;grid-template-rows:240px 150px}.mac-gallery img:first-child{grid-column:1/3;grid-row:auto}
- .fronts{grid-template-columns:1fr}.help-cards{grid-template-columns:1fr}.help-box{padding:22px}.contact-box{text-align:center}
+@media(max-width:700px){
+ .menu{padding:12px 0;align-items:flex-start}.brand{font-size:16px}.brand img{width:42px;height:42px}nav{gap:10px 14px}nav a{font-size:12px}
+ .hero,.hero-inner{min-height:auto}.hero-inner{padding-top:25px}.hero-logo{max-height:290px}.hero-copy p{font-size:17px}.hero-child{min-height:300px}
+ .section{padding:58px 0}.container{width:min(100% - 28px,1240px)}
+ .items{grid-template-columns:1fr 1fr}.next-copy{padding:28px 20px 95px}.next-title{font-size:42px}
+ .food-photos{min-height:auto;grid-template-columns:1fr 1fr;grid-template-rows:260px 180px}.food-photos img:first-child{grid-column:1/3;grid-row:auto}
+ .fronts,.impact-grid,.partner-grid{grid-template-columns:1fr}.contact h2,.help-intro h2{font-size:36px}
 }
-@media(prefers-reduced-motion:reduce){
- html{scroll-behavior:auto}.reveal,.reveal.left,.reveal.right{opacity:1;transform:none;transition:none}
- *{animation:none!important;transition:none!important}
-}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}*{animation:none!important;transition-duration:.01ms!important}}
 </style>
 </head>
 <body>
-<div class="scroll-progress" id="progress"></div>
+<div class="progress" id="progress"></div>
 <header>
  <div class="menu">
-  <a class="brand" href="#inicio"><img src="logo-projeto-transformar-pelo-bem.png" alt=""><div>Projeto Transformar <span>pelo Bem</span></div></a>
-  <nav>
-   <a href="#inicio">Início</a><a href="#historia">Nossa História</a><a href="#acoes">Nossas Ações</a>
-   <a href="#impacto">Nosso Impacto</a><a href="#parceiros">Parceiros</a><a href="#ajudar">Como Ajudar</a><a href="#contato">Contato</a>
-  </nav>
+  <a class="brand" href="#inicio"><img src="logo-projeto-transformar-pelo-bem.png" alt=""><b>Projeto Transformar <span>pelo Bem</span></b></a>
+  <nav><a href="#inicio">Início</a><a href="#historia">Nossa História</a><a href="#acoes">Nossas Ações</a><a href="#impacto">Nosso Impacto</a><a href="#parceiros">Parceiros</a><a href="#ajudar">Como Ajudar</a><a href="#contato">Contato</a></nav>
  </div>
 </header>
-
 <main>
 <section class="hero" id="inicio">
  <div class="hero-inner">
-  <div class="hero-copy reveal left">
-   <div class="hero-logo"><img src="logo-projeto-transformar-pelo-bem.png" alt="Logo oficial do Projeto Transformar pelo Bem"></div>
+  <div class="hero-copy reveal">
+   <img class="hero-logo" src="logo-projeto-transformar-pelo-bem.png" alt="Logo oficial do Projeto Transformar pelo Bem">
    <p>Mobilização comunitária, cuidado, voluntariado e ações que aproximam pessoas dispostas a contribuir de quem precisa de apoio.</p>
   </div>
-  <div class="hero-child"><img src="criancas-dia-das-criancas-2026.png" alt="Ilustração infantil do Projeto Transformar pelo Bem"></div>
+  <div class="hero-child"><img src="crianca-hero.png" alt="" onerror="this.style.display='none'"></div>
  </div>
- <div class="wave"></div>
+ <div class="wave"><i class="w1"></i><i class="w2"></i><i class="w3"></i><i class="w4"></i></div>
 </section>
 
 <section class="section history" id="historia">
  <div class="container history-grid">
-  <div class="reveal left">
-   <span class="since">Desde 2009</span><h2>Nossa História</h2>
+  <div class="reveal">
+   <span class="since">Desde 2009</span>
+   <h2>Nossa <span>História</span></h2>
    <p class="lead">Uma iniciativa que nasceu da vontade de ajudar o próximo.</p>
    <p>Em 2009, ao se mudar para sua comunidade, Cecília passou a conviver de perto com famílias que enfrentavam grandes dificuldades, incluindo falta de alimentação e de recursos básicos.</p>
    <p>Mesmo sem possuir muitos recursos, decidiu começar com aquilo que estava ao seu alcance. Procurava alimentos que ainda pudessem ser aproveitados e preparava refeições para ajudar famílias da comunidade.</p>
@@ -221,77 +148,80 @@ footer strong{font-size:20px}footer strong span{color:var(--orange)}footer p{opa
    <p>Hoje, mesmo conciliando o projeto com o trabalho e contando com estrutura limitada, Cecília continua reunindo pessoas, doações e voluntários para levar cuidado, alimento, alegria e acolhimento.</p>
    <div class="history-note">Uma história construída com solidariedade, proximidade e disposição para transformar pequenas iniciativas em ações que alcançam muitas pessoas.</div>
   </div>
-  <div class="history-photo reveal right"><img src="nossa-historia-transformar-pelo-bem.jpg" alt="Voluntários do Projeto Transformar pelo Bem em ação comunitária"></div>
+  <div class="history-photo reveal"><img src="nossa-historia-transformar-pelo-bem.jpg" alt="Voluntários do Projeto Transformar pelo Bem em ação comunitária"></div>
  </div>
 </section>
 
 <section class="section actions" id="acoes">
  <div class="container">
-  <div class="section-head reveal"><span class="eyebrow">Nossas ações</span><h2>O que fazemos</h2>
-   <p>Acompanhe a próxima mobilização do Transformar pelo Bem e conheça nossas frentes permanentes de atuação. A edição mais recente fica em destaque e as anteriores permanecem preservadas no histórico.</p>
-  </div>
+  <div class="section-head reveal"><span class="kicker">Nossas ações</span><h2>O que fazemos</h2><p>Acompanhe a próxima mobilização do Transformar pelo Bem e conheça nossas frentes permanentes de atuação. Em cada frente, a edição mais recente fica em destaque e as anteriores permanecem preservadas no histórico.</p></div>
 
   <article class="next-card reveal">
    <div class="next-copy">
     <span class="next-badge">PRÓXIMA AÇÃO</span>
-    <h3>Dia das <span>Crianças</span> 2026</h3>
-    <div class="meta-row"><span>11 de outubro de 2026 (domingo)</span><b>Meta: 150 crianças</b></div>
+    <h3 class="next-title">Dia das <span class="orange">Crianças</span> 2026</h3>
+    <div class="next-meta"><span>📅 11 de outubro de 2026 (domingo)</span><span class="goal">👥 Meta: 150 crianças da nossa comunidade</span></div>
     <p>Vamos proporcionar um dia especial, com muito sabor, alegria e convivência. As crianças vão receber:</p>
     <div class="items">
-     <div class="item"><span class="ico">🌭</span>Cachorro-quente</div>
-     <div class="item"><span class="ico">🥤</span>Mini refrigerante</div>
-     <div class="item"><span class="ico">🧊</span>Geladinho</div>
-     <div class="item"><span class="ico">🍬</span>Saquinho de doces</div>
+     <div class="item"><b>🌭</b>Cachorro-quente</div>
+     <div class="item"><b>🥤</b>Mini refrigerante</div>
+     <div class="item"><b>🧊</b>Geladinho</div>
+     <div class="item"><b>🍬</b>Saquinho de doces<small>com pipoca doce, balas, pirulitos e outros</small></div>
     </div>
     <a class="cta" href="https://wa.me/5567996023875?text=Ol%C3%A1%2C%20Cec%C3%ADlia%21%20Gostaria%20de%20contribuir%20com%20a%20a%C3%A7%C3%A3o%20Dia%20das%20Crian%C3%A7as%202026%20do%20Projeto%20Transformar%20pelo%20Bem." target="_blank" rel="noopener">Quero contribuir →</a>
    </div>
-   <div class="next-art"><img src="criancas-dia-das-criancas-2026.png" alt="Ilustração das crianças da ação Dia das Crianças 2026"></div>
-   <div class="next-wave"></div>
+   <div class="next-art"><img src="criancas-dia-das-criancas-2026.png" alt="" onerror="this.style.display='none'"></div>
+   <div class="wave"><i class="w1"></i><i class="w2"></i><i class="w3"></i><i class="w4"></i></div>
   </article>
 
-  <div class="history-title reveal"><h3>Ações que fazem parte da <span>nossa história</span></h3>
-   <p>Algumas iniciativas acompanham o Transformar pelo Bem ao longo do tempo. Cada nova edição soma pessoas, experiências e novos capítulos a essa história de solidariedade.</p>
-  </div>
+  <div class="story-title reveal"><h3><span class="blue">Ações</span> que fazem parte da <span class="orange">nossa história</span></h3><p>Algumas iniciativas acompanham o Transformar pelo Bem ao longo do tempo. Cada nova edição soma pessoas, experiências e novos capítulos a essa história de solidariedade.</p></div>
 
-  <article class="mac-card reveal">
-   <div class="mac-gallery">
+  <article class="food-card reveal">
+   <div class="food-photos">
     <img class="zoom" src="macarronada-solidaria-preparo.jpg" alt="Preparo da Macarronada Solidária">
     <img class="zoom" src="macarronada-solidaria-refeicoes.jpg" alt="Refeições da Macarronada Solidária">
     <img class="zoom" src="macarronada-solidaria-entrega.jpg" alt="Entrega da Macarronada Solidária">
    </div>
-   <div class="mac-copy">
-    <span class="mac-label">ALIMENTAÇÃO SOLIDÁRIA · EDIÇÃO MAIS RECENTE</span>
-    <h3>Macarronada <span>Solidária</span></h3>
+   <div class="food-info">
+    <span class="kicker">Alimentação Solidária · edição mais recente</span>
+    <h3>Macarronada <span class="orange">Solidária</span></h3>
     <p>Realizada em 29 de agosto de 2026, esta edição reuniu voluntários, doadores e empresas parceiras para o preparo e a distribuição de refeições à comunidade.</p>
     <div class="result"><strong>110</strong> refeições distribuídas</div>
-    <a class="history-btn" href="#historico-alimentacao">Ver histórico da Alimentação Solidária →</a>
+    <button class="history-btn" type="button" aria-expanded="false" aria-controls="historico-alimentacao">Ver histórico da Alimentação Solidária →</button>
+    <div class="history-panel" id="historico-alimentacao"><div>
+      <div class="history-inner">
+       <h4>Histórico da Alimentação Solidária</h4>
+       <p>As edições anteriores desta frente ficam preservadas aqui. À medida que novos registros, datas, resultados e fotografias forem organizados, eles podem ser acrescentados sem substituir as ações já realizadas.</p>
+      </div>
+    </div></div>
    </div>
   </article>
 
-  <div class="fronts" id="historico-alimentacao">
-   <article class="front reveal"><small>FRENTE PERMANENTE</small><h4>Alimentação Solidária</h4><p>Preparação, organização e distribuição de refeições para pessoas e famílias em situação de vulnerabilidade, do preparo à entrega direta à comunidade.</p></article>
-   <article class="front reveal"><small>PRÓXIMA EDIÇÃO · 11/10/2026</small><h4>Dia das Crianças</h4><p>Uma frente dedicada a criar momentos de cuidado, convivência e alegria para as crianças. Cada edição permanece registrada no histórico do projeto.</p></article>
-   <article class="front reveal"><small>NATAL</small><h4>Adote uma Cartinha</h4><p>Campanha de Natal em que crianças compartilham suas histórias e pedidos, aproximando pessoas dispostas a contribuir.</p></article>
-   <article class="front reveal"><small>PÁSCOA</small><h4>Páscoa Solidária</h4><p>Mobilização para arrecadação, preparação e entrega de kits e lembranças de Páscoa às crianças das comunidades atendidas.</p></article>
-   <article class="front reveal"><small>ACOLHIMENTO</small><h4>Acolhimento e Solidariedade</h4><p>Ações de acolhimento em diferentes espaços, destinadas a crianças e pessoas idosas conforme as necessidades identificadas e os recursos disponíveis.</p></article>
+  <div class="fronts">
+   <article class="front reveal"><span class="label">Frente permanente</span><h4>Alimentação Solidária</h4><p>Preparação, organização e distribuição de refeições para pessoas e famílias em situação de vulnerabilidade, do preparo à entrega direta à comunidade.</p></article>
+   <article class="front reveal"><span class="label">Próxima edição · 11/10/2026</span><h4>Dia das Crianças</h4><p>Uma frente dedicada a criar momentos de cuidado, convivência e alegria para as crianças. Cada edição permanece registrada no histórico do projeto.</p></article>
+   <article class="front reveal"><span class="label">Natal</span><h4>Adote uma Cartinha</h4><p>Campanha de Natal em que crianças compartilham suas histórias e pedidos, aproximando pessoas dispostas a contribuir.</p></article>
+   <article class="front reveal"><span class="label">Páscoa</span><h4>Páscoa Solidária</h4><p>Mobilização para arrecadação, preparação e entrega de kits e lembranças de Páscoa às crianças das comunidades atendidas.</p></article>
+   <article class="front reveal"><span class="label">Acolhimento</span><h4>Acolhimento e Solidariedade</h4><p>Ações de acolhimento em diferentes espaços, destinadas a crianças e pessoas idosas conforme as necessidades identificadas e os recursos disponíveis.</p></article>
   </div>
  </div>
 </section>
 
 <section class="section impact" id="impacto">
  <div class="container">
-  <div class="section-head reveal"><span class="eyebrow">Alcance das ações</span><h2>Nosso <span class="orange">Impacto</span></h2><p>Resultados que ajudam a dimensionar o alcance das nossas iniciativas.</p></div>
+  <div class="section-head reveal"><span class="kicker">Alcance das ações</span><h2>Nosso <span class="orange">Impacto</span></h2><p>Resultados que ajudam a dimensionar o alcance das nossas iniciativas.</p></div>
   <div class="impact-grid">
-   <div class="impact-card reveal"><div class="impact-icon">👥</div><strong>200+</strong><b>Crianças alcançadas</b><small>em diferentes ações realizadas</small></div>
-   <div class="impact-card reveal"><div class="impact-icon">👥</div><strong>85+</strong><b>Famílias alcançadas</b><small>pelas iniciativas do projeto</small></div>
-   <div class="impact-card reveal"><div class="impact-icon">●</div><strong style="font-size:34px">Corumbá e Ladário</strong><b>Região de atuação</b><small>incluindo localidades próximas</small></div>
+   <div class="impact-card reveal"><div class="impact-icon">👥</div><strong>200+</strong><h3>Crianças alcançadas</h3><p>em diferentes ações realizadas</p></div>
+   <div class="impact-card reveal"><div class="impact-icon">👥</div><strong>85+</strong><h3>Famílias alcançadas</h3><p>pelas iniciativas do projeto</p></div>
+   <div class="impact-card reveal"><div class="impact-icon">📍</div><strong style="font-size:34px">Corumbá e Ladário</strong><h3>Região de atuação</h3><p>incluindo localidades próximas</p></div>
   </div>
  </div>
 </section>
+<div class="soft-wave"></div>
 
 <section class="section partners" id="parceiros">
  <div class="container">
-  <div class="section-head reveal"><span class="eyebrow">Empresas parceiras</span><h2>Quem transforma <span class="orange">com a gente</span></h2><p>Empresas que apoiam e fortalecem as ações do Projeto Transformar pelo Bem.</p></div>
+  <div class="section-head reveal"><span class="kicker">Empresas parceiras</span><h2>Quem transforma <span class="orange">com a gente</span></h2><p>Empresas que apoiam e fortalecem as ações do Projeto Transformar pelo Bem.</p></div>
   <div class="partner-grid">
    <div class="partner reveal"><img src="parceiro-grafiotex.jpg" alt="Grafiotex Camisetas"></div>
    <div class="partner reveal"><img src="parceiro-visootica.jpg" alt="Visootica"></div>
@@ -301,37 +231,41 @@ footer strong{font-size:20px}footer strong span{color:var(--orange)}footer p{opa
 </section>
 
 <section class="section help" id="ajudar">
- <div class="container help-box reveal">
-  <div class="help-copy"><span class="eyebrow">Faça parte dessa história</span><h2>Vamos transformar <span>juntos?</span></h2><p>O Projeto Transformar pelo Bem é construído por pessoas dispostas a contribuir. Você pode participar oferecendo seu tempo como voluntário ou ajudando com doações para as ações.</p></div>
-  <div class="help-cards">
-   <div class="help-card"><div class="circle">👥</div><h3>Quero ser voluntário</h3><p>Participe das ações e ajude com seu tempo, disposição e colaboração.</p><a class="btn" href="https://wa.me/5567999021152?text=Ol%C3%A1%21%20Conheci%20a%20Transformar%20pelo%20Bem%20pelo%20site%20e%20gostaria%20de%20participar%20como%20volunt%C3%A1rio.%20Como%20posso%20ajudar%3F" target="_blank" rel="noopener">Quero ser voluntário →</a></div>
-   <div class="help-card"><div class="circle">♡</div><h3>Quero fazer uma doação</h3><p>Contribua com alimentos, itens para campanhas ou outros recursos necessários às ações.</p><a class="btn" href="https://wa.me/5567996023875?text=Ol%C3%A1%2C%20Cec%C3%ADlia%21%20Conheci%20a%20Transformar%20pelo%20Bem%20pelo%20site%20e%20gostaria%20de%20contribuir%20com%20uma%20doa%C3%A7%C3%A3o." target="_blank" rel="noopener">Quero fazer uma doação →</a></div>
-  </div>
+ <div class="container help-grid">
+  <div class="help-intro reveal"><span class="kicker">Faça parte dessa história</span><h2>Vamos transformar <span>juntos?</span></h2><p>O Projeto Transformar pelo Bem é construído por pessoas dispostas a contribuir. Você pode participar oferecendo seu tempo como voluntário ou ajudando com doações para as ações.</p></div>
+  <div class="help-card reveal"><div class="impact-icon">👥</div><b>Quero ser voluntário</b><p>Participe das ações e ajude com seu tempo, disposição e colaboração.</p><a class="btn" href="https://wa.me/5567999021152?text=Ol%C3%A1%21%20Conheci%20a%20Transformar%20pelo%20Bem%20pelo%20site%20e%20gostaria%20de%20participar%20como%20volunt%C3%A1rio.%20Como%20posso%20ajudar%3F" target="_blank" rel="noopener">Quero ser voluntário →</a></div>
+  <div class="help-card reveal"><div class="impact-icon">♡</div><b>Quero fazer uma doação</b><p>Contribua com alimentos, itens para campanhas ou outros recursos necessários às ações.</p><a class="btn" href="https://wa.me/5567996023875?text=Ol%C3%A1%2C%20Cec%C3%ADlia%21%20Conheci%20a%20Transformar%20pelo%20Bem%20pelo%20site%20e%20gostaria%20de%20contribuir%20com%20uma%20doa%C3%A7%C3%A3o.%20Como%20posso%20ajudar%3F" target="_blank" rel="noopener">Quero fazer uma doação →</a></div>
  </div>
 </section>
 
 <section class="section contact" id="contato">
  <div class="container contact-box reveal">
-  <div><span class="eyebrow">Contato institucional</span><h2>Vamos <span>conversar?</span></h2><p>Para parcerias, apoio às campanhas, voluntariado ou informações sobre o projeto, fale com a nossa equipe.</p></div>
-  <div class="contact-actions">
-   <a href="mailto:projetotransformarpelobem@outlook.com">✉ &nbsp; projetotransformarpelobem@outlook.com</a>
-   <a href="https://www.facebook.com/share/1DVMB7E72h/" target="_blank" rel="noopener">Facebook do projeto</a>
-  </div>
+  <div><span class="kicker">Contato institucional</span><h2>Vamos <span>conversar?</span></h2><p>Para parcerias, apoio às campanhas, voluntariado ou informações sobre o projeto, fale com a nossa equipe.</p></div>
+  <div class="contact-actions"><a href="mailto:projetotransformarpelobem@outlook.com">✉ projetotransformarpelobem@outlook.com</a><a href="https://www.facebook.com/share/1DVMB7E72h/" target="_blank" rel="noopener">Facebook do projeto</a></div>
  </div>
 </section>
 </main>
+<footer><strong>Projeto Transformar <span>pelo Bem</span></strong><p>Solidariedade, mobilização e cuidado em ação.</p></footer>
 
-<footer><strong>Projeto Transformar <span>pelo Bem</span></strong><p>Solidariedade, mobilização e cuidado em ação.</p><div class="footer-line"></div></footer>
-
-<div class="lightbox" id="lightbox"><button class="close" aria-label="Fechar">×</button><img alt=""></div>
+<div class="lightbox" id="lightbox"><button type="button" aria-label="Fechar">×</button><img alt=""></div>
 <script>
 const progress=document.getElementById('progress');
-addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-innerHeight;progress.style.width=(h?scrollY/h*100:0)+'%'});
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.12});
+addEventListener('scroll',()=>{const d=document.documentElement;progress.style.width=((d.scrollTop/(d.scrollHeight-d.clientHeight))*100)+'%'},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+const hb=document.querySelector('.history-btn'), hp=document.getElementById('historico-alimentacao');
+hb.addEventListener('click',()=>{
+ const open=hp.classList.toggle('open');
+ hb.setAttribute('aria-expanded',open);
+ hb.textContent=open?'Fechar histórico da Alimentação Solidária ↑':'Ver histórico da Alimentação Solidária →';
+ if(open) setTimeout(()=>hp.scrollIntoView({behavior:'smooth',block:'nearest'}),180);
+});
+
 const lb=document.getElementById('lightbox'),lbi=lb.querySelector('img');
 document.querySelectorAll('.zoom').forEach(img=>img.addEventListener('click',()=>{lbi.src=img.src;lbi.alt=img.alt;lb.classList.add('open')}));
 function closeLB(){lb.classList.remove('open');lbi.src=''}
-lb.querySelector('.close').onclick=closeLB;lb.addEventListener('click',e=>{if(e.target===lb)closeLB()});addEventListener('keydown',e=>{if(e.key==='Escape')closeLB()});
+lb.querySelector('button').onclick=closeLB;lb.addEventListener('click',e=>{if(e.target===lb)closeLB()});addEventListener('keydown',e=>{if(e.key==='Escape')closeLB()});
 </script>
-</body></html>
+</body>
+</html>
