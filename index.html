@@ -1,271 +1,3095 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Projeto Transformar pelo Bem</title>
-<meta name="description" content="Projeto social voluntário Transformar pelo Bem — mobilização comunitária, cuidado e solidariedade em Corumbá e Ladário.">
-<style>
-:root{
-  --navy:#063b78;--blue:#0b66b2;--sky:#22a8df;--green:#48ad43;
-  --orange:#f47b20;--pink:#e83d78;--ink:#173653;--muted:#5d7082;
-  --cream:#fffaf5;--ice:#f4fbff;--white:#fff;--line:#dceaf4;
-  --shadow:0 18px 50px rgba(6,59,120,.11);--r:28px;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff;line-height:1.55;overflow-x:hidden}
-img{display:block;max-width:100%} a{text-decoration:none;color:inherit}
-section{scroll-margin-top:88px}.container{width:min(1240px,calc(100% - 40px));margin:auto}
-.progress{position:fixed;z-index:3000;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--blue),var(--green),var(--orange))}
-header{position:sticky;top:0;z-index:2000;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid #edf2f6}
-.menu{width:min(1320px,calc(100% - 34px));min-height:78px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:26px}
-.brand{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:900;color:var(--navy);white-space:nowrap}
-.brand img{width:52px;height:52px;object-fit:contain}.brand span{color:var(--orange)}
-nav{display:flex;align-items:center;gap:28px;flex-wrap:wrap;justify-content:flex-end}
-nav a{font-size:14px;font-weight:800;color:var(--navy);position:relative}
-nav a:after{content:"";position:absolute;left:0;right:100%;bottom:-9px;height:3px;border-radius:3px;background:var(--orange);transition:.25s}
-nav a:hover:after{right:0}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-/* HERO */
-.hero{position:relative;min-height:690px;overflow:hidden;background:linear-gradient(115deg,#fff 0 66%,#fff8f1 100%)}
-.hero:before{content:"";position:absolute;right:-110px;top:80px;width:620px;height:500px;border:34px solid rgba(244,123,32,.10);border-left-color:transparent;border-bottom-color:transparent;border-radius:48%}
-.hero-inner{width:min(1320px,calc(100% - 40px));min-height:690px;margin:auto;display:grid;grid-template-columns:1.18fr .82fr;align-items:center;position:relative;z-index:2}
-.hero-copy{padding:58px 0 105px}.hero-logo{width:min(680px,100%);max-height:410px;object-fit:contain;object-position:left center}
-.hero-copy p{max-width:610px;margin:20px 0 0;font-size:21px;color:#425c73}
-.hero-child{align-self:stretch;position:relative;display:flex;align-items:flex-end;justify-content:flex-end;pointer-events:none}
-.hero-child img{width:min(500px,100%);max-height:590px;object-fit:contain;object-position:right bottom;animation:none!important;transform:none!important}
-.hero-child .fallback{display:none;font-size:120px;padding-bottom:130px}
-.wave{position:absolute;left:0;right:0;bottom:0;height:115px;overflow:hidden;pointer-events:none}
-.wave i{position:absolute;left:-4%;width:108%;height:100px;border-radius:50% 55% 0 0/100% 100% 0 0;transform-origin:center bottom}
-.wave .w1{bottom:-54px;background:#ffd4a9;transform:rotate(2deg)}.wave .w2{bottom:-68px;background:#cbe8c9;transform:rotate(-2deg)}
-.wave .w3{bottom:-78px;background:#72c8df;transform:rotate(1deg)}.wave .w4{bottom:-90px;background:#0874bd;transform:rotate(-1deg)}
+  <title>Projeto Transformar pelo Bem</title>
 
-/* COMMON */
-.section{padding:82px 0;position:relative}.section-head{text-align:center;max-width:900px;margin:0 auto 42px}
-.kicker{display:inline-flex;padding:8px 16px;border-radius:999px;background:#eef7fd;color:var(--navy);font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
-.section-head h2{margin:10px 0 8px;font-size:clamp(36px,5vw,56px);line-height:1.06;color:var(--navy)}
-.section-head p{font-size:18px;color:var(--muted)}.orange{color:var(--orange)}.green{color:var(--green)}.blue{color:var(--blue)}
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}.reveal.show{opacity:1;transform:none}
+  <meta
+    name="description"
+    content="Projeto Transformar pelo Bem - solidariedade, mobilização comunitária, voluntariado e apoio a crianças e famílias em Corumbá, Ladário e região."
+  >
 
-/* HISTÓRIA */
-.history{background:linear-gradient(135deg,#f4fbff 0%,#fff 48%,#fff8f1 100%)}
-.history-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:58px;align-items:center}
-.since{display:inline-flex;padding:9px 16px;border-radius:999px;background:#fff;color:var(--green);font-weight:900;box-shadow:0 7px 22px rgba(6,59,120,.07)}
-.history h2{font-size:clamp(38px,5vw,58px);line-height:1.05;color:var(--navy);margin:18px 0}.history h2 span{color:var(--orange)}
-.history .lead{font-size:22px;font-weight:900;color:var(--navy);margin-bottom:25px}.history p{font-size:18px;color:#435b70;margin-bottom:16px}
-.history-note{margin-top:24px;padding:19px 22px;background:#fff;border-left:5px solid var(--orange);border-radius:15px;font-weight:800;color:var(--navy);box-shadow:0 12px 30px rgba(6,59,120,.07)}
-.history-photo img{width:100%;border-radius:30px;box-shadow:var(--shadow)}
+  <style>
+    :root {
+      --azul: #0756a5;
+      --azul-escuro: #063d76;
+      --azul-claro: #edf6fc;
+      --azul-claro-2: #f6fbff;
+      --verde: #58a93f;
+      --laranja: #ee8a24;
+      --texto: #263746;
+      --texto-suave: #657687;
+      --branco: #ffffff;
+      --sombra: 0 14px 40px rgba(27, 67, 105, 0.12);
+      --raio: 22px;
+    }
 
-/* AÇÕES */
-.actions{background:linear-gradient(180deg,#fff,#f8fcff 50%,#fffaf5)}
-.actions .section-head h2{font-size:clamp(38px,5vw,54px)}
-.next-card{position:relative;overflow:hidden;display:grid;grid-template-columns:1.05fr .95fr;min-height:520px;background:#fff;border:1px solid #edf1f3;border-radius:34px;box-shadow:var(--shadow)}
-.next-copy{padding:38px 24px 105px 42px;position:relative;z-index:3}.next-badge{display:inline-flex;background:#fff1e6;color:#b95b15;padding:8px 16px;border-radius:999px;font-weight:900;letter-spacing:2px;font-size:12px}
-.next-title{font-size:clamp(40px,5vw,62px);line-height:1.03;color:var(--navy);margin:14px 0}.next-meta{display:flex;gap:28px;flex-wrap:wrap;margin:15px 0 12px;font-weight:900;color:var(--navy)}
-.next-meta .goal{color:var(--green)}.next-copy>p{font-size:18px;color:#40586e;max-width:650px}
-.items{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0 20px}.item{min-height:116px;padding:12px 8px;text-align:center;border-radius:18px;background:#fffaf6;font-weight:800;color:var(--navy)}
-.item b{display:block;font-size:37px;line-height:1.1;margin-bottom:6px}.item small{display:block;font-size:12px;color:var(--muted);font-weight:700}
-.cta{display:inline-flex;align-items:center;gap:18px;padding:14px 26px;border-radius:999px;background:linear-gradient(135deg,var(--orange),#ff4f12);color:#fff;font-weight:900;box-shadow:0 10px 25px rgba(244,123,32,.25);transition:.25s}.cta:hover{transform:translateY(-2px)}
-.next-art{position:relative;z-index:2;display:flex;align-items:flex-end;justify-content:flex-end;overflow:hidden}.next-art img{width:100%;max-height:500px;object-fit:contain;object-position:right bottom;animation:none!important;transform:none!important}
-.next-art .fallback{display:none;font-size:110px;padding:0 40px 120px 0}
-.next-card .wave{height:105px;z-index:1}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-/* história das ações */
-.story-title{text-align:center;padding:70px 0 30px}.story-title h3{font-size:clamp(31px,4vw,45px);color:var(--navy)}.story-title p{font-size:18px;color:var(--muted);margin-top:8px}
-.food-card{display:grid;grid-template-columns:1.18fr .82fr;gap:30px;background:#fff;border-radius:34px;padding:26px;box-shadow:var(--shadow)}
-.food-photos{display:grid;grid-template-columns:1.18fr .82fr;grid-template-rows:1fr 1fr;gap:10px;min-height:550px}.food-photos img{width:100%;height:100%;object-fit:cover;border-radius:20px;cursor:zoom-in}.food-photos img:first-child{grid-row:1/3}
-.food-info{padding:20px 12px;display:flex;flex-direction:column;justify-content:center}.food-info .kicker{align-self:flex-start}.food-info h3{font-size:clamp(38px,4vw,53px);line-height:1.04;color:var(--navy);margin:14px 0}.food-info p{font-size:18px;color:var(--muted)}
-.result{margin:24px 0 18px;padding:18px 20px;border-radius:18px;background:#eefaf0;color:#178b40;font-weight:900;font-size:20px}.result strong{font-size:46px;margin-right:10px}
-.history-btn{border:1px solid #cfe0ec;background:#fff;color:var(--navy);padding:14px 20px;border-radius:999px;font-weight:900;cursor:pointer;text-align:left}
-.history-panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s ease}.history-panel>div{overflow:hidden}.history-panel.open{grid-template-rows:1fr}
-.history-inner{margin-top:18px;padding:22px;border-radius:20px;background:#f7fbff;border:1px solid #e0edf5}.history-inner h4{font-size:23px;color:var(--navy);margin-bottom:8px}
-.fronts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}.front{padding:25px;border-radius:24px;background:#fff;border:1px solid #e6eef4;box-shadow:0 10px 28px rgba(6,59,120,.06);transition:.25s}.front:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-.front .label{font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:var(--green);font-weight:900}.front h4{font-size:25px;color:var(--navy);margin:8px 0}.front p{color:var(--muted)}
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--branco);
+      color: var(--texto);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
 
-/* IMPACT */
-.impact{background:linear-gradient(180deg,#f7fcff,#fff)}.impact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.impact-card{position:relative;text-align:center;padding:30px 20px;background:#fff;border:1px solid #e6eef4;border-radius:22px;box-shadow:0 10px 30px rgba(6,59,120,.07);overflow:hidden;transition:.25s}.impact-card:hover{transform:translateY(-4px)}
-.impact-card:before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--blue)}.impact-card:nth-child(2):before{background:var(--green)}.impact-card:nth-child(3):before{background:var(--orange)}
-.impact-icon{width:64px;height:64px;border-radius:50%;margin:0 auto 10px;display:grid;place-items:center;background:#eaf7ff;font-size:30px}.impact-card:nth-child(2) .impact-icon{background:#eef9ea}.impact-card:nth-child(3) .impact-icon{background:#fff1e7}
-.impact-card strong{display:block;font-size:46px;line-height:1.05;color:var(--navy)}.impact-card h3{color:var(--orange);font-size:21px}.impact-card p{color:var(--muted)}
-.soft-wave{height:70px;background:linear-gradient(168deg,transparent 0 45%,rgba(34,168,223,.18) 46% 55%,rgba(244,123,32,.14) 56% 65%,rgba(72,173,67,.14) 66% 75%,transparent 76%)}
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-/* PARTNERS / HELP / CONTACT */
-.partners{padding-top:55px}.partner-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.partner{min-height:185px;display:grid;place-items:center;background:#fff;border:1px solid #e8eef3;border-radius:22px;box-shadow:0 9px 25px rgba(6,59,120,.05);padding:24px}.partner img{max-height:115px;object-fit:contain}
-.help{background:linear-gradient(120deg,#fff8f0,#fff 45%,#f2fbff)}.help-grid{display:grid;grid-template-columns:1.1fr .75fr .75fr;gap:18px;align-items:stretch}.help-intro,.help-card{padding:28px;border-radius:25px;background:#fff;border:1px solid #e8eef3}.help-intro{background:transparent;border:0}.help-intro h2{font-size:42px;line-height:1.05;color:var(--navy)}.help-intro h2 span{color:var(--orange)}.help-intro p,.help-card p{color:var(--muted);margin:10px 0 18px}.help-card{text-align:center}.help-card b{font-size:22px;color:var(--navy)}.btn{display:inline-flex;padding:13px 20px;border-radius:999px;color:#fff;background:var(--navy);font-weight:900}.help-card:last-child .btn{background:var(--orange)}
-.contact{background:#f4fbff}.contact-box{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}.contact h2{font-size:43px;color:var(--navy)}.contact h2 span{color:var(--orange)}.contact p{color:var(--muted)}.contact-actions{display:grid;gap:12px}.contact-actions a{padding:14px 18px;border-radius:999px;text-align:center;font-weight:900;border:2px solid var(--navy);color:var(--navy);background:#fff}.contact-actions a:first-child{background:var(--navy);color:#fff}
-footer{padding:38px 20px;text-align:center;background:var(--navy);color:#fff}footer strong{font-size:21px}footer span{color:var(--orange)}footer p{opacity:.85;margin-top:6px}
+    a {
+      text-decoration: none;
+    }
 
-/* lightbox */
-.lightbox{position:fixed;inset:0;z-index:4000;background:rgba(2,18,34,.92);display:none;align-items:center;justify-content:center;padding:24px}.lightbox.open{display:flex}.lightbox img{max-width:94vw;max-height:88vh;border-radius:18px}.lightbox button{position:absolute;right:25px;top:20px;width:45px;height:45px;border:0;border-radius:50%;font-size:25px;cursor:pointer}
+    section {
+      scroll-margin-top: 92px;
+    }
 
-@media(max-width:950px){
- .hero-inner,.history-grid,.next-card,.food-card,.contact-box{grid-template-columns:1fr}.hero-child{min-height:360px}.hero-copy{padding-bottom:20px}
- .next-art{min-height:350px}.fronts,.impact-grid,.partner-grid{grid-template-columns:1fr 1fr}.help-grid{grid-template-columns:1fr}
- .food-photos{min-height:480px}
-}
-@media(max-width:700px){
- .menu{padding:12px 0;align-items:flex-start}.brand{font-size:16px}.brand img{width:42px;height:42px}nav{gap:10px 14px}nav a{font-size:12px}
- .hero,.hero-inner{min-height:auto}.hero-inner{padding-top:25px}.hero-logo{max-height:290px}.hero-copy p{font-size:17px}.hero-child{min-height:300px}
- .section{padding:58px 0}.container{width:min(100% - 28px,1240px)}
- .items{grid-template-columns:1fr 1fr}.next-copy{padding:28px 20px 95px}.next-title{font-size:42px}
- .food-photos{min-height:auto;grid-template-columns:1fr 1fr;grid-template-rows:260px 180px}.food-photos img:first-child{grid-column:1/3;grid-row:auto}
- .fronts,.impact-grid,.partner-grid{grid-template-columns:1fr}.contact h2,.help-intro h2{font-size:36px}
-}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}*{animation:none!important;transition-duration:.01ms!important}}
-</style>
+    header {
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid #e6edf3;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+    }
+
+    .menu {
+      max-width: 1220px;
+      margin: auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .marca {
+      color: var(--azul);
+      font-size: 20px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px 22px;
+    }
+
+    nav a {
+      color: var(--texto);
+      font-size: 14px;
+      font-weight: 700;
+      transition: color 0.25s ease;
+    }
+
+    nav a:hover {
+      color: var(--azul);
+    }
+
+    .hero {
+      background: var(--branco);
+      padding: 42px 24px 48px;
+      text-align: center;
+    }
+
+    .hero-conteudo { width:min(1320px,100%); max-width:none; display:grid; grid-template-columns:1.34fr .66fr; align-items:center; gap:34px; }
+
+    .logo-principal { width:min(990px,100%); margin:0; filter:none; mix-blend-mode:multiply; animation:logoFloat 4.2s ease-in-out infinite; transform-origin:center; }
+
+    .hero-frase { font-size:clamp(16px,1.7vw,19px); max-width:520px; margin:0 0 24px; }
+
+    .secao {
+      padding: 78px 24px;
+    }
+
+    .fundo-azul {
+      background: var(--azul-claro);
+    }
+
+    .fundo-suave {
+      background: var(--azul-claro-2);
+    }
+
+    .container {
+      width: min(1180px, 100%);
+      margin: auto;
+    }
+
+    .titulo-secao {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 48px;
+    }
+
+    .titulo-secao .etiqueta {
+      display: inline-block;
+      color: var(--azul);
+      background: #dceffc;
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .titulo-secao h2 {
+      color: var(--azul);
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .titulo-secao p {
+      color: var(--texto-suave);
+      font-size: 17px;
+    }
+
+    .historia-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      align-items: center;
+      gap: 58px;
+    }
+
+    .historia-conteudo {
+      position: relative;
+    }
+
+    .desde {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 16px;
+      color: var(--azul);
+      background: var(--branco);
+      border-radius: 999px;
+      box-shadow: 0 5px 16px rgba(7, 86, 165, 0.10);
+      font-weight: 800;
+      margin-bottom: 22px;
+    }
+
+    .historia-conteudo h2 {
+      color: var(--azul);
+      font-size: clamp(32px, 4vw, 46px);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .historia-conteudo .chamada {
+      color: var(--azul-escuro);
+      font-weight: 700;
+      font-size: 20px;
+      margin-bottom: 22px;
+    }
+
+    .historia-conteudo p {
+      font-size: 18px;
+      margin-bottom: 17px;
+      color: #354a5c;
+    }
+
+    .historia-destaque {
+      margin-top: 24px;
+      padding: 19px 21px;
+      background: var(--branco);
+      border-left: 5px solid var(--laranja);
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(27, 67, 105, 0.08);
+      font-weight: 700;
+      color: var(--azul-escuro);
+    }
+
+    .historia-foto {
+      position: relative;
+      max-width: 470px;
+      margin-left: auto;
+    }
+
+    .historia-foto img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: auto;
+      object-fit: contain;
+      display: block;
+      border-radius: 34px;
+      box-shadow: var(--sombra);
+    }
+
+    .historia-foto::before {
+      content: "";
+      position: absolute;
+      width: 72%;
+      height: 72%;
+      background: #d8edf9;
+      border-radius: 36px;
+      right: -18px;
+      bottom: -18px;
+      z-index: -1;
+    }
+
+    .acoes-lista {
+      display: flex;
+      flex-direction: column;
+      gap: 72px;
+    }
+
+    .acao {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 48px;
+      align-items: center;
+      background: var(--branco);
+      padding: 32px;
+      border-radius: 28px;
+      box-shadow: var(--sombra);
+    }
+
+    .acao.invertida {
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+
+    .acao.invertida .acao-texto {
+      order: 2;
+    }
+
+    .acao.invertida .mosaico {
+      order: 1;
+    }
+
+    .acao-numero {
+      color: var(--laranja);
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      margin-bottom: 9px;
+    }
+
+    .acao-texto h3 {
+      color: var(--azul);
+      font-size: clamp(26px, 3vw, 36px);
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .acao-texto p {
+      color: var(--texto-suave);
+      font-size: 17px;
+      margin-bottom: 20px;
+    }
+
+    .acao-tag {
+      display: inline-block;
+      padding: 7px 13px;
+      background: var(--azul-claro);
+      color: var(--azul);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .botao-campanha {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 20px;
+      background: var(--laranja);
+      color: white;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .botao-campanha:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px rgba(238, 138, 36, 0.28);
+    }
+
+    .mosaico {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 10px;
+      min-height: 390px;
+    }
+
+    .mosaico img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 18px;
+      cursor: zoom-in;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .mosaico img:hover {
+      transform: scale(1.015);
+      filter: brightness(1.03);
+    }
+
+    .mosaico img:first-child {
+      grid-row: 1 / 3;
+    }
+
+    .impacto-secao {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(4, 51, 93, 0.90), rgba(4, 51, 93, 0.90)),
+        url("Dia das crianças 2.jpeg") center/cover;
+      color: white;
+    }
+
+    .impacto-secao .titulo-secao h2,
+    .impacto-secao .titulo-secao p {
+      color: white;
+    }
+
+    .impacto-secao .etiqueta {
+      background: rgba(255, 255, 255, 0.16);
+      color: white;
+    }
+
+    .impacto-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .impacto-card {
+      text-align: center;
+      padding: 35px 24px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.20);
+      border-radius: 22px;
+      backdrop-filter: blur(8px);
+    }
+
+    .impacto-card strong {
+      display: block;
+      color: white;
+      font-size: clamp(40px, 6vw, 64px);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .impacto-card span {
+      color: #e8f5ff;
+      font-size: 16px;
+    }
+
+    .ajuda-box {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      padding: 48px 34px;
+      background: var(--branco);
+      border-radius: 28px;
+      box-shadow: var(--sombra);
+    }
+
+    .ajuda-box h2 {
+      color: var(--azul);
+      font-size: clamp(31px, 4vw, 45px);
+      margin-bottom: 13px;
+    }
+
+    .ajuda-box > p {
+      color: var(--texto-suave);
+      font-size: 18px;
+      max-width: 710px;
+      margin: 0 auto 28px;
+    }
+
+    .botoes {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 13px 24px;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-principal {
+      background: var(--azul);
+      color: white;
+      box-shadow: 0 8px 22px rgba(7, 86, 165, 0.22);
+    }
+
+    .btn-secundario {
+      background: white;
+      color: var(--azul);
+      border: 2px solid var(--azul);
+    }
+
+    .necessidade {
+      margin-top: 30px;
+      padding: 18px 20px;
+      border-radius: 15px;
+      background: #fff8eb;
+      color: #745017;
+      font-size: 15px;
+    }
+
+    footer {
+      background: var(--azul-escuro);
+      color: white;
+      padding: 42px 24px;
+      text-align: center;
+    }
+
+    footer strong {
+      font-size: 20px;
+    }
+
+    footer p {
+      margin-top: 7px;
+      color: #d9eaff;
+    }
+
+    .whatsapp-rodape {
+      display: inline-block;
+      margin-top: 16px;
+      color: white;
+      font-weight: 700;
+      border-bottom: 1px solid rgba(255,255,255,0.6);
+    }
+
+    .reveal-left,
+    .reveal-right,
+    .reveal-up {
+      opacity: 0;
+      transition:
+        opacity 0.75s ease,
+        transform 0.75s cubic-bezier(.2,.7,.2,1);
+    }
+
+    .reveal-left {
+      transform: translateX(-48px);
+    }
+
+    .reveal-right {
+      transform: translateX(48px);
+    }
+
+    .reveal-up {
+      transform: translateY(38px);
+    }
+
+    .visivel {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(5, 19, 33, 0.90);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 3000;
+      padding: 24px;
+    }
+
+    .lightbox.aberto {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: min(1000px, 94vw);
+      max-height: 88vh;
+      object-fit: contain;
+      border-radius: 18px;
+      box-shadow: 0 20px 70px rgba(0,0,0,0.40);
+    }
+
+    .fechar-lightbox {
+      position: fixed;
+      top: 22px;
+      right: 28px;
+      background: white;
+      color: var(--azul-escuro);
+      border: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      font-size: 24px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+      .historia-grid,
+      .acao,
+      .acao.invertida {
+        grid-template-columns: 1fr;
+      }
+
+      .acao.invertida .acao-texto,
+      .acao.invertida .mosaico {
+        order: initial;
+      }
+
+      .historia-foto {
+        margin: 12px auto 0;
+        max-width: 520px;
+      }
+
+      .impacto-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .acao {
+        gap: 28px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .menu {
+        flex-direction: column;
+        padding: 13px 16px;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 7px 14px;
+      }
+
+      nav a {
+        font-size: 13px;
+      }
+
+      .hero {
+        padding: 30px 18px 34px;
+      }
+
+      .logo-principal {
+        width: min(390px, 92vw);
+      }
+
+      .secao {
+        padding: 58px 18px;
+      }
+
+      .historia-grid {
+        gap: 34px;
+      }
+
+      .historia-conteudo p {
+        font-size: 17px;
+      }
+
+      .acao {
+        padding: 20px;
+        border-radius: 22px;
+      }
+
+      .mosaico {
+        min-height: auto;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 250px 170px;
+      }
+
+      .mosaico img:first-child {
+        grid-column: 1 / 3;
+        grid-row: auto;
+      }
+
+      .ajuda-box {
+        padding: 35px 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        scroll-behavior: auto !important;
+      }
+
+      .reveal-left,
+      .reveal-right,
+      .reveal-up {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+  
+
+    /* ===== Nova identidade Transformar pelo Bem ===== */
+    :root {
+      --azul: #0d5fb8;
+      --azul-escuro: #07386f;
+      --azul-profundo: #062d5c;
+      --azul-claro: #eaf5ff;
+      --azul-claro-2: #f7fbff;
+      --verde: #4cae32;
+      --verde-claro: #eef9ea;
+      --laranja: #ff8a1f;
+      --laranja-claro: #fff3e7;
+      --rosa: #ef3e78;
+      --texto: #253746;
+      --texto-suave: #617387;
+      --sombra: 0 18px 50px rgba(24,71,114,.13);
+    }
+
+    header { background: rgba(255,255,255,.94); border-bottom: 1px solid rgba(7,56,111,.08); backdrop-filter: blur(14px); box-shadow: 0 5px 22px rgba(17,62,106,.05); }
+    .marca { color: var(--azul-escuro); font-weight: 900; }
+    .marca span { color: var(--laranja); }
+    nav a { font-weight: 800; position: relative; }
+    nav a::after { content:""; position:absolute; left:0; bottom:-6px; width:0; height:2px; border-radius:999px; background:linear-gradient(90deg,var(--verde),var(--laranja)); transition:width .25s ease; }
+    nav a:hover::after { width:100%; }
+
+    .hero { position:relative; overflow:hidden; text-align:left; padding:46px 24px 52px; background:#ffffff; }
+    .hero-conteudo { width:min(1240px,100%); max-width:none; display:grid; grid-template-columns:1.1fr .9fr; align-items:center; gap:64px; }
+    .hero-logo-wrap { position:relative; display:flex; align-items:center; justify-content:flex-start; min-height:430px; overflow:visible; }
+    .hero-logo-wrap::before { content:none; }
+    .logo-principal { width:min(560px,92vw); margin:0; filter:drop-shadow(0 18px 24px rgba(24,71,114,.13)); animation:logoFloat 5.5s ease-in-out infinite; }
+    @keyframes logoFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-22px)} }
+
+    .hero-texto { max-width:560px; }
+    .hero-etiqueta { display:inline-flex; padding:8px 15px; border-radius:999px; background:rgba(76,174,50,.11); color:#287a21; font-size:13px; font-weight:900; letter-spacing:.8px; text-transform:uppercase; margin-bottom:18px; }
+    .hero-texto h1 { color:var(--azul-escuro); font-size:clamp(30px,3.8vw,48px); line-height:1.08; letter-spacing:-1px; margin-bottom:15px; }
+    .hero-texto h1 span { color:var(--laranja); }
+    .hero-frase { font-size:clamp(18px,2vw,22px); max-width:560px; margin:0 0 28px; }
+    .hero-pontos { display:flex; flex-wrap:wrap; gap:10px; }
+    .hero-ponto { display:inline-flex; padding:9px 13px; border-radius:999px; background:#fff; color:var(--azul-escuro); box-shadow:0 8px 20px rgba(24,71,114,.08); font-size:13px; font-weight:800; }
+
+    .fundo-azul { background:radial-gradient(circle at 6% 16%,rgba(76,174,50,.10),transparent 24%),radial-gradient(circle at 94% 88%,rgba(255,138,31,.11),transparent 26%),var(--azul-claro); }
+    .fundo-suave { background:linear-gradient(180deg,#fbfdff 0%,#f7fbff 55%,#fffaf6 100%); }
+    .titulo-secao h2,.historia-conteudo h2,.acao-texto h3,.ajuda-box h2 { color:var(--azul-escuro); }
+    .titulo-secao h2 { font-size:clamp(34px,4vw,48px); }
+    .titulo-secao p { font-size:18px; }
+    .titulo-secao .etiqueta { background:#fff; color:var(--azul-escuro); box-shadow:0 8px 20px rgba(24,71,114,.08); }
+    .desde { border:1px solid rgba(13,95,184,.08); color:var(--azul-escuro); font-weight:900; }
+    .historia-conteudo .chamada { font-size:21px; font-weight:800; }
+    .historia-destaque { background:linear-gradient(90deg,#fff,#fff9f4); border-left-color:var(--laranja); }
+    .historia-foto img { box-shadow:0 24px 60px rgba(17,62,106,.18); }
+    .historia-foto::before { background:linear-gradient(135deg,rgba(13,95,184,.18),rgba(76,174,50,.16)); }
+
+    .acoes-lista { gap:78px; }
+    .acao { grid-template-columns:.92fr 1.08fr; gap:40px; padding:34px; border-radius:30px; border:1px solid rgba(13,95,184,.06); position:relative; overflow:hidden; }
+    .acao.invertida { grid-template-columns:1.08fr .92fr; }
+    .acao-numero { display:inline-flex; padding:9px 14px; border-radius:999px; background:var(--laranja-claro); color:#c6670b; font-size:15px; font-weight:900; letter-spacing:1.5px; margin-bottom:14px; }
+    .acao-texto h3 { font-size:clamp(30px,3.4vw,40px); margin-bottom:16px; }
+    .acao-texto p { font-size:18px; }
+    .acao-tag { padding:9px 14px; background:var(--verde-claro); color:#2e7b28; font-size:14px; font-weight:900; }
+    .mosaico { min-height:410px; }
+    .mosaico img { border-radius:20px; }
+    .botao-campanha { background:linear-gradient(135deg,var(--laranja),#f06d18); min-height:50px; }
+
+    .impacto-secao { background:linear-gradient(180deg,#fff 0%,#f7fbff 100%); color:var(--texto); }
+    .impacto-secao .titulo-secao h2,.impacto-secao .titulo-secao p { color:initial; }
+    .impacto-secao .titulo-secao h2 { color:var(--azul-escuro); }
+    .impacto-secao .titulo-secao p { color:var(--texto-suave); }
+    .impacto-secao .etiqueta { background:#fff; color:var(--azul-escuro); }
+    .impacto-grid { gap:18px; }
+    .impacto-card { padding:27px 20px; background:#fff; border:1px solid rgba(13,95,184,.06); box-shadow:0 12px 30px rgba(24,71,114,.08); backdrop-filter:none; position:relative; overflow:hidden; }
+    .impacto-card::before { content:""; position:absolute; top:0; left:0; width:100%; height:4px; background:linear-gradient(90deg,var(--azul),var(--verde),var(--laranja)); }
+    .impacto-card strong { color:var(--azul-escuro); font-size:clamp(34px,4vw,48px); }
+    .impacto-card span { color:var(--texto-suave); font-size:15px; }
+
+    .parceiros-secao[hidden] { display:none!important; }
+    .parceiros-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:18px; }
+    .parceiro-card { min-height:120px; display:grid; place-items:center; background:#fff; border-radius:18px; padding:18px; }
+
+    .ajuda-box { max-width:980px; padding:50px 36px; border-radius:30px; }
+    .ajuda-opcoes { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-top:28px; }
+    .ajuda-card { text-align:left; background:#fff; border-radius:22px; padding:26px; border:1px solid rgba(13,95,184,.06); box-shadow:0 12px 28px rgba(24,71,114,.07); }
+    .ajuda-card h3 { color:var(--azul-escuro); font-size:23px; margin-bottom:8px; }
+    .ajuda-card p { color:var(--texto-suave); font-size:15px; margin-bottom:18px; }
+    .btn-principal { background:linear-gradient(135deg,var(--azul),var(--azul-escuro)); color:#fff; }
+    .btn-secundario { background:linear-gradient(135deg,var(--laranja),#ef6c16); color:#fff; border:0; }
+    footer { background:radial-gradient(circle at 15% 20%,rgba(76,174,50,.12),transparent 22%),radial-gradient(circle at 85% 75%,rgba(255,138,31,.12),transparent 24%),var(--azul-profundo); padding:40px 24px; }
+
+    @media(max-width:980px){
+      .hero-conteudo,.historia-grid,.acao,.acao.invertida{grid-template-columns:1fr}
+      .hero-logo-wrap{justify-content:center;min-height:auto}
+      .hero-logo-wrap::before{left:50%;transform:translate(-50%,-50%)}
+      .hero-texto{text-align:center;margin:auto}
+      .hero-pontos{justify-content:center}
+    }
+    @media(max-width:720px){
+      .logo-principal{width:min(650px,98vw)}
+      .hero{padding:28px 18px 38px}
+      .acao{padding:21px;border-radius:23px}
+      .acao-texto p{font-size:17px}
+      .ajuda-opcoes{grid-template-columns:1fr}
+    }
+
+
+    /* ===== Refinamento profissional 2.0 ===== */
+    .menu { min-height: 76px; }
+    .marca { letter-spacing: -.25px; }
+    .hero::after { content:none; }
+    .acao,.ajuda-box,.impacto-card,.contato-box {
+      transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
+    }
+    .acao:hover,.ajuda-box:hover,.contato-box:hover {
+      transform:translateY(-3px);
+      box-shadow:0 24px 60px rgba(24,71,114,.14);
+    }
+    .impacto-card:hover { transform:translateY(-4px); }
+    .contato-secao {
+      background:radial-gradient(circle at 20% 20%,rgba(76,174,50,.08),transparent 25%),
+                 radial-gradient(circle at 85% 70%,rgba(255,138,31,.10),transparent 26%),#fff;
+    }
+    .contato-box {
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:34px;
+      align-items:center;
+      max-width:1040px;
+      margin:auto;
+      padding:42px;
+      border-radius:30px;
+      background:linear-gradient(135deg,#fff 0%,#f8fbff 65%,#fffaf4 100%);
+      border:1px solid rgba(13,95,184,.08);
+      box-shadow:var(--sombra);
+    }
+    .contato-etiqueta {
+      display:inline-flex;
+      padding:8px 14px;
+      border-radius:999px;
+      background:var(--azul-claro);
+      color:var(--azul-escuro);
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      margin-bottom:14px;
+    }
+    .contato-box h2 {
+      color:var(--azul-escuro);
+      font-size:clamp(30px,4vw,44px);
+      line-height:1.1;
+      margin-bottom:12px;
+    }
+    .contato-box p { color:var(--texto-suave); font-size:17px; max-width:650px; }
+    .contato-acoes { display:flex; justify-content:flex-end; }
+    .contato-acoes .btn { width:100%; text-align:center; white-space:nowrap; padding-inline:18px; font-size:14px; }
+    .email-rodape {
+      display:inline-block;
+      margin-top:12px;
+      color:#fff;
+      font-weight:700;
+      opacity:.92;
+      border-bottom:1px solid rgba(255,255,255,.35);
+    }
+    @media(max-width:900px){
+      .contato-box{grid-template-columns:1fr;text-align:center}
+      .contato-acoes{justify-content:center}
+    }
+    @media(max-width:680px){
+      .contato-box{padding:30px 20px;border-radius:24px}
+      .marca{white-space:normal;text-align:center}
+      .contato-acoes .btn{white-space:normal;font-size:13px}
+    }
+
+
+    /* ===== Seção Como Ajudar - versão compacta ===== */
+    #ajudar.secao { padding:58px 24px; }
+    .ajuda-box {
+      max-width:980px;
+      padding:38px 34px 34px;
+      border-radius:28px;
+    }
+    .ajuda-box h2 {
+      font-size:clamp(29px,3.5vw,40px);
+      margin-bottom:10px;
+    }
+    .ajuda-box > p {
+      font-size:17px;
+      margin-bottom:22px;
+    }
+    .ajuda-opcoes {
+      gap:16px;
+      margin-top:22px;
+    }
+    .ajuda-card {
+      position:relative;
+      padding:24px 24px 22px;
+      border-radius:20px;
+      overflow:hidden;
+      background:#fff;
+    }
+    .ajuda-card::before {
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:4px;
+      background:var(--azul);
+    }
+    .ajuda-card:nth-child(2)::before {
+      background:var(--laranja);
+    }
+    .ajuda-card h3 {
+      font-size:21px;
+      margin-bottom:7px;
+    }
+    .ajuda-card p {
+      margin-bottom:16px;
+    }
+
+
+    /* ===== Nosso Impacto - versão moderna ===== */
+    #impacto.secao { padding:58px 24px; }
+    .impacto-secao .titulo-secao { margin-bottom:34px; }
+    .impacto-grid { gap:16px; }
+    .impacto-card {
+      min-height:185px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      padding:28px 22px 24px;
+      border-radius:20px;
+    }
+    .impacto-card strong {
+      font-size:clamp(36px,4vw,50px);
+      margin-bottom:10px;
+    }
+    .impacto-card .impacto-local {
+      font-size:clamp(26px,3vw,36px);
+      line-height:1.05;
+    }
+    .impacto-card .impacto-titulo {
+      display:block;
+      color:var(--azul-escuro);
+      font-size:17px;
+      font-weight:800;
+      margin-bottom:5px;
+    }
+    .impacto-card small {
+      color:var(--texto-suave);
+      font-size:14px;
+      line-height:1.45;
+    }
+
+
+    /* ===== Correção final da abertura ===== */
+    .hero {
+      background: #ffffff !important;
+    }
+
+    .hero-conteudo {
+      width: min(1320px, 100%) !important;
+      max-width: none !important;
+      grid-template-columns: 1.25fr .75fr !important;
+      gap: 34px !important;
+    }
+
+    .hero-logo-wrap {
+      min-height: 440px !important;
+      overflow: visible !important;
+      justify-content: flex-start !important;
+    }
+
+    .hero-logo-wrap::before,
+    .hero::after {
+      content: none !important;
+      display: none !important;
+    }
+
+    .logo-principal {
+      width: min(730px, 100%) !important;
+      max-width: none !important;
+      margin: 0 !important;
+      filter: none !important;
+      mix-blend-mode: multiply !important;
+      animation: logoFloatFinal 3.8s ease-in-out infinite !important;
+      transform-origin: center center !important;
+    }
+
+    @keyframes logoFloatFinal {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-30px); }
+    }
+
+    @media (max-width: 980px) {
+      .hero-conteudo {
+        grid-template-columns: 1fr !important;
+      }
+
+      .hero-logo-wrap {
+        justify-content: center !important;
+        min-height: 360px !important;
+      }
+
+      .logo-principal {
+        width: min(650px, 96vw) !important;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .hero-logo-wrap {
+        min-height: 300px !important;
+      }
+
+      .logo-principal {
+        width: min(560px, 96vw) !important;
+        animation: logoFloatFinal 4.2s ease-in-out infinite !important;
+      }
+
+      @keyframes logoFloatFinal {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+      }
+    }
+
+
+    /* ===== Ajuste final da abertura - v4 ===== */
+    .hero-conteudo {
+      width: min(1380px, 100%) !important;
+      grid-template-columns: 1.42fr .58fr !important;
+      gap: 28px !important;
+    }
+
+    .hero-logo-wrap {
+      min-height: 470px !important;
+      overflow: visible !important;
+      justify-content: flex-start !important;
+    }
+
+    .logo-principal {
+      width: min(1020px, 100%) !important;
+      max-width: none !important;
+      margin: 0 !important;
+      filter: none !important;
+      mix-blend-mode: multiply !important;
+      animation: logoFloatFluid 6s cubic-bezier(.45,0,.55,1) infinite !important;
+      transform-origin: center center !important;
+      will-change: transform;
+      backface-visibility: hidden;
+    }
+
+    @keyframes logoFloatFluid {
+      0%   { transform: translate3d(0, 0, 0); }
+      25%  { transform: translate3d(0, -13px, 0); }
+      50%  { transform: translate3d(0, -26px, 0); }
+      75%  { transform: translate3d(0, -13px, 0); }
+      100% { transform: translate3d(0, 0, 0); }
+    }
+
+    .hero-texto h1 {
+      font-size: clamp(26px, 3.1vw, 40px) !important;
+      line-height: 1.08 !important;
+      letter-spacing: -.7px !important;
+      margin-bottom: 14px !important;
+    }
+
+    .hero-frase {
+      font-size: clamp(15px, 1.45vw, 18px) !important;
+      max-width: 500px !important;
+    }
+
+    @media (max-width: 980px) {
+      .hero-conteudo {
+        grid-template-columns: 1fr !important;
+      }
+
+      .hero-logo-wrap {
+        min-height: 380px !important;
+        justify-content: center !important;
+      }
+
+      .logo-principal {
+        width: min(760px, 98vw) !important;
+      }
+
+      .hero-texto h1 {
+        font-size: clamp(28px, 5.2vw, 42px) !important;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .hero-logo-wrap {
+        min-height: 320px !important;
+      }
+
+      .logo-principal {
+        width: min(620px, 98vw) !important;
+        animation-duration: 6.5s !important;
+      }
+
+      .hero-texto h1 {
+        font-size: clamp(27px, 8vw, 38px) !important;
+      }
+    }
+
+
+    /* ===== Ajuste de posicionamento do texto da abertura - v5 ===== */
+    @media (min-width: 981px) {
+      .hero-conteudo {
+        width: min(1500px, 96%) !important;
+        grid-template-columns: minmax(0, 1.35fr) minmax(390px, .65fr) !important;
+        column-gap: 72px !important;
+      }
+
+      .hero-texto {
+        justify-self: end !important;
+        width: 100% !important;
+        max-width: 510px !important;
+        margin-left: auto !important;
+        padding-left: 20px !important;
+      }
+
+      .hero-texto h1 {
+        max-width: 500px !important;
+      }
+
+      .hero-frase {
+        max-width: 480px !important;
+      }
+    }
+
+    @media (min-width: 1250px) {
+      .hero-conteudo {
+        width: min(1580px, 97%) !important;
+        grid-template-columns: minmax(0, 1.45fr) minmax(400px, .55fr) !important;
+        column-gap: 90px !important;
+      }
+
+      .hero-texto {
+        transform: translateX(34px);
+      }
+    }
+
+    @media (max-width: 980px) {
+      .hero-texto {
+        transform: none !important;
+        margin-inline: auto !important;
+        padding-left: 0 !important;
+      }
+    }
+
+
+    /* ===== Ajuste solicitado - v6 ===== */
+    @media (min-width: 981px) {
+      /* Logo: redução de 15% em relação à versão v5 */
+      .logo-principal {
+        width: min(867px, 85%) !important;
+      }
+
+      /* Texto ao lado da logo: aumento de 10% */
+      .hero-texto h1 {
+        font-size: clamp(29px, 3.41vw, 44px) !important;
+        line-height: 1.08 !important;
+      }
+
+      .hero-frase {
+        font-size: clamp(16.5px, 1.595vw, 19.8px) !important;
+        line-height: 1.6 !important;
+      }
+
+      .hero-texto .eyebrow,
+      .hero-texto .tag,
+      .hero-texto > span:first-child {
+        font-size: 110% !important;
+      }
+    }
+
+  
+    /* ===== Atualização 29/08/2026 ===== */
+    .parceiros-secao { background: #ffffff; }
+    .parceiros-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 920px; margin: 0 auto; }
+    .parceiro-card { min-height: 180px; border: 1px solid rgba(13,95,184,.08); box-shadow: 0 12px 28px rgba(24,71,114,.07); }
+    .parceiro-card img { width: 100%; max-width: 240px; max-height: 120px; object-fit: contain; }
+    .social-links { margin-top: 18px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+    .facebook-link { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 11px 20px; border-radius: 999px; background: #ffffff; color: var(--azul-escuro); border: 2px solid var(--azul); font-weight: 800; }
+    @media (max-width: 900px) { .parceiros-grid { grid-template-columns: 1fr; max-width: 520px; } }
+
+  
+    /* =========================================================
+       EXPERIÊNCIA VISUAL 2026 — MODERNA, DINÂMICA E PROFISSIONAL
+       ========================================================= */
+
+    html {
+      background: #f7fbff;
+    }
+
+    body {
+      position: relative;
+      background:
+        radial-gradient(circle at 8% 4%, rgba(13,95,184,.08), transparent 28%),
+        radial-gradient(circle at 92% 18%, rgba(255,138,31,.07), transparent 26%),
+        linear-gradient(180deg, #ffffff 0%, #f8fbff 44%, #ffffff 100%);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -2;
+      background:
+        radial-gradient(circle at var(--mx, 50%) var(--my, 20%), rgba(13,95,184,.08), transparent 22%),
+        radial-gradient(circle at 78% 78%, rgba(76,174,50,.055), transparent 24%);
+      transition: background-position .2s linear;
+    }
+
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 5000;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--azul), var(--verde), var(--laranja), var(--rosa));
+      box-shadow: 0 0 16px rgba(13,95,184,.35);
+      pointer-events: none;
+    }
+
+    section {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+    }
+
+    /* Fundo vivo e elegante na abertura */
+    .hero {
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(120deg, rgba(255,255,255,.94), rgba(246,251,255,.92)),
+        radial-gradient(circle at 14% 35%, rgba(13,95,184,.16), transparent 32%),
+        radial-gradient(circle at 87% 18%, rgba(255,138,31,.12), transparent 28%) !important;
+    }
+
+    .hero::before {
+      content: "" !important;
+      display: block !important;
+      position: absolute;
+      width: 540px;
+      height: 540px;
+      left: -160px;
+      top: -180px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 35% 35%, rgba(255,255,255,.95), rgba(13,95,184,.16) 42%, rgba(13,95,184,.02) 72%);
+      filter: blur(2px);
+      animation: orbHeroA 14s ease-in-out infinite;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "" !important;
+      display: block !important;
+      position: absolute;
+      width: 430px;
+      height: 430px;
+      right: -110px;
+      bottom: -190px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 42% 38%, rgba(255,255,255,.9), rgba(255,138,31,.15) 44%, rgba(239,62,120,.05) 72%);
+      animation: orbHeroB 16s ease-in-out infinite;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    @keyframes orbHeroA {
+      0%,100% { transform: translate3d(0,0,0) scale(1); }
+      50% { transform: translate3d(80px,55px,0) scale(1.08); }
+    }
+
+    @keyframes orbHeroB {
+      0%,100% { transform: translate3d(0,0,0) scale(1); }
+      50% { transform: translate3d(-70px,-45px,0) scale(1.10); }
+    }
+
+    .hero-texto {
+      position: relative;
+      padding: 30px 0;
+    }
+
+    .hero-texto::before {
+      content: "";
+      position: absolute;
+      inset: -22px -26px;
+      border-radius: 34px;
+      background: rgba(255,255,255,.56);
+      border: 1px solid rgba(255,255,255,.75);
+      box-shadow: 0 24px 70px rgba(24,71,114,.10);
+      backdrop-filter: blur(18px);
+      z-index: -1;
+    }
+
+    .hero-etiqueta {
+      box-shadow: 0 10px 25px rgba(76,174,50,.10);
+    }
+
+    .hero-texto h1 span {
+      background: linear-gradient(90deg, var(--laranja), #ef5f39, var(--rosa));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    /* Nossa História — fundo editorial, não chapado */
+    #historia {
+      background:
+        radial-gradient(circle at 4% 18%, rgba(76,174,50,.12), transparent 25%),
+        radial-gradient(circle at 96% 86%, rgba(13,95,184,.13), transparent 27%),
+        linear-gradient(135deg, #edf8ff 0%, #f8fcff 47%, #f3fbef 100%) !important;
+    }
+
+    #historia::after {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      right: -230px;
+      top: 8%;
+      border: 70px solid rgba(13,95,184,.045);
+      border-radius: 50%;
+      z-index: -1;
+      animation: slowRotate 35s linear infinite;
+    }
+
+    @keyframes slowRotate {
+      to { transform: rotate(360deg); }
+    }
+
+    .historia-foto img {
+      transition: transform .7s cubic-bezier(.2,.7,.2,1), filter .7s ease;
+    }
+
+    .historia-foto:hover img {
+      transform: scale(1.025) rotate(.35deg);
+      filter: saturate(1.04) contrast(1.02);
+    }
+
+    /* Ações — cenário claro com luzes em movimento */
+    #acoes {
+      background:
+        radial-gradient(circle at 10% 12%, rgba(255,138,31,.085), transparent 24%),
+        radial-gradient(circle at 92% 46%, rgba(13,95,184,.08), transparent 26%),
+        radial-gradient(circle at 20% 88%, rgba(76,174,50,.07), transparent 25%),
+        linear-gradient(180deg, #ffffff 0%, #f8fbff 48%, #fffaf5 100%) !important;
+      background-size: 120% 120%;
+      animation: ambientShift 18s ease-in-out infinite alternate;
+    }
+
+    @keyframes ambientShift {
+      from { background-position: 0% 0%; }
+      to { background-position: 100% 70%; }
+    }
+
+    .acao {
+      background: rgba(255,255,255,.74) !important;
+      border: 1px solid rgba(255,255,255,.86) !important;
+      box-shadow:
+        0 22px 65px rgba(24,71,114,.10),
+        inset 0 1px 0 rgba(255,255,255,.90);
+      backdrop-filter: blur(18px);
+      transform-style: preserve-3d;
+    }
+
+    .acao::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(115deg, transparent 18%, rgba(255,255,255,.72) 42%, transparent 64%);
+      transform: translateX(-120%);
+      transition: transform 1s ease;
+      pointer-events: none;
+    }
+
+    .acao:hover::before {
+      transform: translateX(120%);
+    }
+
+    .acao:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 32px 82px rgba(24,71,114,.16);
+      border-color: rgba(13,95,184,.12) !important;
+    }
+
+    .acao-destaque {
+      border: 1px solid rgba(255,138,31,.22) !important;
+      box-shadow:
+        0 28px 80px rgba(238,138,36,.13),
+        0 14px 40px rgba(13,95,184,.08);
+    }
+
+    .acao-destaque::after {
+      content: "";
+      position: absolute;
+      width: 190px;
+      height: 190px;
+      right: -70px;
+      top: -70px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,138,31,.16), transparent 70%);
+      pointer-events: none;
+    }
+
+    .mosaico {
+      overflow: hidden;
+      border-radius: 22px;
+    }
+
+    .mosaico img {
+      transform-origin: center;
+      transition: transform .55s cubic-bezier(.2,.7,.2,1), filter .55s ease;
+    }
+
+    .mosaico img:hover {
+      transform: scale(1.045);
+      filter: brightness(1.04) saturate(1.05);
+      z-index: 2;
+    }
+
+    /* Impacto — fundo luminoso com profundidade */
+    #impacto {
+      background:
+        radial-gradient(circle at 14% 20%, rgba(13,95,184,.11), transparent 25%),
+        radial-gradient(circle at 84% 78%, rgba(76,174,50,.09), transparent 27%),
+        linear-gradient(145deg, #f8fcff 0%, #ffffff 46%, #f4fbf0 100%) !important;
+    }
+
+    #impacto::before {
+      content: "";
+      position: absolute;
+      inset: auto -10% -58% -10%;
+      height: 520px;
+      background: radial-gradient(ellipse at center, rgba(13,95,184,.075), transparent 63%);
+      z-index: -1;
+      animation: impactGlow 9s ease-in-out infinite alternate;
+    }
+
+    @keyframes impactGlow {
+      from { transform: scaleX(.94); opacity: .65; }
+      to { transform: scaleX(1.08); opacity: 1; }
+    }
+
+    .impacto-card {
+      background: rgba(255,255,255,.78) !important;
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,.92) !important;
+      box-shadow: 0 18px 50px rgba(24,71,114,.09);
+    }
+
+    .impacto-card::after {
+      content: "";
+      position: absolute;
+      width: 90px;
+      height: 90px;
+      right: -34px;
+      bottom: -34px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(13,95,184,.12), transparent 70%);
+      transition: transform .45s ease;
+    }
+
+    .impacto-card:hover::after {
+      transform: scale(1.45);
+    }
+
+    /* Parceiros — fundo premium */
+    .parceiros-secao {
+      background:
+        radial-gradient(circle at 15% 25%, rgba(239,62,120,.07), transparent 24%),
+        radial-gradient(circle at 88% 76%, rgba(13,95,184,.09), transparent 27%),
+        linear-gradient(135deg, #fff 0%, #fbf9ff 48%, #f7fbff 100%) !important;
+    }
+
+    .parceiro-card {
+      position: relative;
+      overflow: hidden;
+      background: rgba(255,255,255,.82) !important;
+      backdrop-filter: blur(12px);
+      transition: transform .4s cubic-bezier(.2,.7,.2,1), box-shadow .4s ease;
+    }
+
+    .parceiro-card::before {
+      content: "";
+      position: absolute;
+      inset: -60% auto auto -80%;
+      width: 120%;
+      height: 220%;
+      transform: rotate(24deg);
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.78), transparent);
+      transition: left .8s ease;
+      pointer-events: none;
+    }
+
+    .parceiro-card:hover {
+      transform: translateY(-8px) scale(1.015);
+      box-shadow: 0 25px 58px rgba(24,71,114,.13);
+    }
+
+    .parceiro-card:hover::before {
+      left: 110%;
+    }
+
+    .parceiro-card img {
+      transition: transform .45s ease, filter .45s ease;
+    }
+
+    .parceiro-card:hover img {
+      transform: scale(1.045);
+      filter: contrast(1.02);
+    }
+
+    /* Como ajudar — fundo mais emocional e dinâmico */
+    #ajudar {
+      background:
+        radial-gradient(circle at 0% 30%, rgba(13,95,184,.15), transparent 30%),
+        radial-gradient(circle at 100% 75%, rgba(255,138,31,.15), transparent 30%),
+        linear-gradient(135deg, #eaf6ff 0%, #f7fbff 48%, #fff4e8 100%) !important;
+    }
+
+    #ajudar::before {
+      content: "";
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,.85), transparent 68%);
+      filter: blur(10px);
+      animation: helpPulse 8s ease-in-out infinite;
+      z-index: -1;
+    }
+
+    @keyframes helpPulse {
+      0%,100% { transform: translate(-50%,-50%) scale(.90); opacity:.65; }
+      50% { transform: translate(-50%,-50%) scale(1.16); opacity:1; }
+    }
+
+    .ajuda-box {
+      background: rgba(255,255,255,.72) !important;
+      border: 1px solid rgba(255,255,255,.90);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 28px 80px rgba(24,71,114,.12);
+    }
+
+    .ajuda-card {
+      transition: transform .35s ease, box-shadow .35s ease;
+    }
+
+    .ajuda-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 20px 50px rgba(24,71,114,.12);
+    }
+
+    /* Contato — final com iluminação suave */
+    .contato-secao {
+      background:
+        radial-gradient(circle at 18% 25%, rgba(76,174,50,.09), transparent 24%),
+        radial-gradient(circle at 82% 74%, rgba(255,138,31,.11), transparent 26%),
+        linear-gradient(145deg, #ffffff, #f5faff 52%, #fff9f3) !important;
+    }
+
+    .contato-box {
+      background: rgba(255,255,255,.74) !important;
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255,255,255,.94) !important;
+    }
+
+    /* Botões com efeito de luz controlado */
+    .btn,
+    .botao-campanha,
+    .facebook-link {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .btn::after,
+    .botao-campanha::after,
+    .facebook-link::after {
+      content: "";
+      position: absolute;
+      top: -40%;
+      left: -70%;
+      width: 42%;
+      height: 180%;
+      transform: rotate(25deg);
+      background: rgba(255,255,255,.28);
+      transition: left .6s ease;
+      z-index: -1;
+    }
+
+    .btn:hover::after,
+    .botao-campanha:hover::after,
+    .facebook-link:hover::after {
+      left: 130%;
+    }
+
+    /* Animação de entrada mais sofisticada */
+    .reveal-left,
+    .reveal-right,
+    .reveal-up {
+      filter: blur(7px);
+      transition:
+        opacity .85s ease,
+        transform .9s cubic-bezier(.16,1,.3,1),
+        filter .85s ease;
+    }
+
+    .reveal-left {
+      transform: translate3d(-52px, 16px, 0) scale(.985);
+    }
+
+    .reveal-right {
+      transform: translate3d(52px, 16px, 0) scale(.985);
+    }
+
+    .reveal-up {
+      transform: translate3d(0, 42px, 0) scale(.985);
+    }
+
+    .visivel {
+      opacity: 1;
+      transform: translate3d(0,0,0) scale(1);
+      filter: blur(0);
+    }
+
+    .acoes-lista .acao:nth-child(2) { transition-delay: .04s; }
+    .acoes-lista .acao:nth-child(3) { transition-delay: .08s; }
+    .acoes-lista .acao:nth-child(4) { transition-delay: .12s; }
+
+    /* Header flutuante */
+    header {
+      background: rgba(255,255,255,.78) !important;
+      backdrop-filter: blur(20px) saturate(1.2) !important;
+      border-bottom: 1px solid rgba(255,255,255,.68) !important;
+      box-shadow: 0 9px 32px rgba(24,71,114,.07) !important;
+    }
+
+    /* Responsividade e desempenho */
+    @media (max-width: 980px) {
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-texto::before {
+        inset: -18px -12px;
+      }
+
+      .impacto-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .hero::before {
+        width: 340px;
+        height: 340px;
+        left: -160px;
+      }
+
+      .hero::after {
+        width: 300px;
+        height: 300px;
+        right: -150px;
+      }
+
+      .impacto-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .acao:hover,
+      .parceiro-card:hover,
+      .ajuda-card:hover {
+        transform: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero::before,
+      .hero::after,
+      #historia::after,
+      #acoes,
+      #impacto::before,
+      #ajudar::before,
+      .logo-principal {
+        animation: none !important;
+      }
+
+      .reveal-left,
+      .reveal-right,
+      .reveal-up {
+        filter: none !important;
+      }
+    }
+
+  
+    /* =========================================================
+       EXPERIÊNCIA VISUAL 2026 — V3 MAIS VIBRANTE E MAIS ANIMADA
+       ========================================================= */
+
+    :root{
+      --azul-vivo:#0b78e3;
+      --ciano:#22b8ff;
+      --verde-vivo:#55c53f;
+      --laranja-vivo:#ff941f;
+      --rosa-vivo:#ff4f8b;
+      --roxo-vivo:#7a5cff;
+    }
+
+    /* Camadas globais de luz em movimento */
+    body::after{
+      content:"";
+      position:fixed;
+      inset:-20%;
+      z-index:-3;
+      pointer-events:none;
+      background:
+        radial-gradient(circle at 15% 18%, rgba(34,184,255,.12), transparent 20%),
+        radial-gradient(circle at 82% 26%, rgba(255,79,139,.09), transparent 22%),
+        radial-gradient(circle at 70% 78%, rgba(85,197,63,.10), transparent 22%),
+        radial-gradient(circle at 28% 82%, rgba(255,148,31,.10), transparent 22%);
+      filter:blur(20px);
+      animation:globalAurora 18s ease-in-out infinite alternate;
+      transform-origin:center;
+    }
+
+    @keyframes globalAurora{
+      0%{transform:translate3d(-2%,-1%,0) scale(1);}
+      50%{transform:translate3d(3%,2%,0) scale(1.05) rotate(1deg);}
+      100%{transform:translate3d(-1%,3%,0) scale(1.08) rotate(-1deg);}
+    }
+
+    /* partículas decorativas leves */
+    .floating-decor{
+      position:absolute;
+      border-radius:50%;
+      pointer-events:none;
+      filter:blur(.2px);
+      opacity:.65;
+      z-index:-1;
+      animation:floatDecor 10s ease-in-out infinite;
+    }
+    .floating-decor.d1{width:18px;height:18px;background:rgba(34,184,255,.34);left:7%;top:18%;animation-delay:-2s}
+    .floating-decor.d2{width:12px;height:12px;background:rgba(255,148,31,.36);left:17%;top:68%;animation-delay:-6s}
+    .floating-decor.d3{width:22px;height:22px;background:rgba(85,197,63,.28);right:12%;top:28%;animation-delay:-4s}
+    .floating-decor.d4{width:14px;height:14px;background:rgba(255,79,139,.30);right:23%;bottom:14%;animation-delay:-7s}
+
+    @keyframes floatDecor{
+      0%,100%{transform:translate3d(0,0,0) scale(1)}
+      50%{transform:translate3d(10px,-20px,0) scale(1.18)}
+    }
+
+    /* HERO mais vivo */
+    .hero{
+      background:
+        linear-gradient(125deg,rgba(255,255,255,.92),rgba(242,249,255,.90)),
+        radial-gradient(circle at 10% 30%,rgba(34,184,255,.22),transparent 30%),
+        radial-gradient(circle at 88% 20%,rgba(255,148,31,.18),transparent 28%),
+        radial-gradient(circle at 78% 85%,rgba(255,79,139,.12),transparent 26%) !important;
+      background-size:140% 140%;
+      animation:heroBreath 12s ease-in-out infinite alternate;
+    }
+
+    @keyframes heroBreath{
+      from{background-position:0% 20%}
+      to{background-position:100% 80%}
+    }
+
+    .hero-texto::after{
+      content:"";
+      position:absolute;
+      width:120px;
+      height:4px;
+      left:0;
+      bottom:10px;
+      border-radius:999px;
+      background:linear-gradient(90deg,var(--azul-vivo),var(--verde-vivo),var(--laranja-vivo),var(--rosa-vivo));
+      background-size:220% 100%;
+      animation:gradientLine 5s linear infinite;
+    }
+
+    @keyframes gradientLine{
+      to{background-position:220% 0}
+    }
+
+    /* todas as seções ganham formas de fundo em movimento */
+    #historia::before,
+    #acoes::before,
+    #impacto::after,
+    #parceiros::before,
+    #ajudar::after,
+    #contato::before{
+      content:"";
+      position:absolute;
+      width:460px;
+      height:460px;
+      border-radius:50%;
+      filter:blur(8px);
+      pointer-events:none;
+      z-index:-1;
+      animation:sectionOrb 15s ease-in-out infinite alternate;
+    }
+
+    #historia::before{
+      left:-220px;bottom:-170px;
+      background:radial-gradient(circle,rgba(34,184,255,.14),transparent 68%);
+    }
+    #acoes::before{
+      right:-220px;top:28%;
+      background:radial-gradient(circle,rgba(255,148,31,.13),transparent 68%);
+      animation-delay:-4s;
+    }
+    #impacto::after{
+      left:-180px;top:15%;
+      background:radial-gradient(circle,rgba(85,197,63,.13),transparent 68%);
+      animation-delay:-7s;
+    }
+    #parceiros::before{
+      right:-180px;bottom:-160px;
+      background:radial-gradient(circle,rgba(255,79,139,.12),transparent 68%);
+      animation-delay:-2s;
+    }
+    #ajudar::after{
+      left:-160px;top:-140px;
+      background:radial-gradient(circle,rgba(122,92,255,.11),transparent 68%);
+      animation-delay:-8s;
+    }
+    #contato::before{
+      right:-180px;top:-150px;
+      background:radial-gradient(circle,rgba(34,184,255,.12),transparent 68%);
+      animation-delay:-5s;
+    }
+
+    @keyframes sectionOrb{
+      0%{transform:translate3d(0,0,0) scale(.92)}
+      100%{transform:translate3d(70px,-45px,0) scale(1.13)}
+    }
+
+    /* divisores suaves e coloridos entre seções */
+    #historia::after,
+    #acoes::after,
+    #impacto::before,
+    #parceiros::after,
+    #ajudar::before{
+      opacity:.72;
+    }
+
+    /* seção de ações mais vibrante */
+    #acoes{
+      background:
+        radial-gradient(circle at 12% 10%,rgba(255,148,31,.14),transparent 24%),
+        radial-gradient(circle at 88% 34%,rgba(34,184,255,.13),transparent 26%),
+        radial-gradient(circle at 20% 84%,rgba(85,197,63,.11),transparent 24%),
+        radial-gradient(circle at 78% 92%,rgba(255,79,139,.09),transparent 24%),
+        linear-gradient(180deg,#ffffff 0%,#f5fbff 45%,#fff8f1 100%) !important;
+      background-size:150% 150%;
+      animation:acoesFlow 16s ease-in-out infinite alternate;
+    }
+
+    @keyframes acoesFlow{
+      from{background-position:0% 0%}
+      to{background-position:100% 100%}
+    }
+
+    /* cartões com leve inclinação e luz interna */
+    .acao{
+      transition:
+        transform .45s cubic-bezier(.16,1,.3,1),
+        box-shadow .45s ease,
+        border-color .45s ease;
+    }
+
+    .acao:hover{
+      transform:translateY(-10px) scale(1.012);
+      box-shadow:
+        0 34px 90px rgba(24,71,114,.18),
+        0 10px 30px rgba(255,148,31,.06);
+    }
+
+    .acao-numero{
+      background:linear-gradient(90deg,rgba(255,148,31,.16),rgba(255,79,139,.11)) !important;
+      color:#b95b0a !important;
+      box-shadow:0 8px 22px rgba(255,148,31,.10);
+    }
+
+    .acao-tag{
+      background:linear-gradient(90deg,rgba(85,197,63,.13),rgba(34,184,255,.09)) !important;
+      color:#28742c !important;
+    }
+
+    /* destaque ainda maior para a ação recente */
+    .acao-destaque{
+      background:
+        linear-gradient(135deg,rgba(255,255,255,.88),rgba(255,249,241,.82)) !important;
+    }
+
+    .acao-destaque .acao-numero{
+      color:#fff !important;
+      background:linear-gradient(90deg,var(--laranja-vivo),var(--rosa-vivo)) !important;
+      box-shadow:0 10px 28px rgba(255,105,65,.22);
+    }
+
+    /* impacto com números mais vivos */
+    .impacto-card strong{
+      background:linear-gradient(135deg,var(--azul-vivo),var(--roxo-vivo),var(--rosa-vivo));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent !important;
+    }
+
+    .impacto-card:nth-child(2) strong{
+      background:linear-gradient(135deg,var(--verde-vivo),var(--azul-vivo));
+      -webkit-background-clip:text;background-clip:text;
+    }
+    .impacto-card:nth-child(3) strong{
+      background:linear-gradient(135deg,var(--laranja-vivo),var(--rosa-vivo));
+      -webkit-background-clip:text;background-clip:text;
+    }
+
+    .impacto-card{
+      animation:cardBreathe 7s ease-in-out infinite;
+    }
+    .impacto-card:nth-child(2){animation-delay:-1.8s}
+    .impacto-card:nth-child(3){animation-delay:-3.5s}
+    .impacto-card:nth-child(4){animation-delay:-5.2s}
+
+    @keyframes cardBreathe{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-4px)}
+    }
+
+    /* parceiros mais dinâmicos */
+    .parceiro-card{
+      animation:partnerFloat 8s ease-in-out infinite;
+    }
+    .parceiro-card:nth-child(2){animation-delay:-2.5s}
+    .parceiro-card:nth-child(3){animation-delay:-5s}
+
+    @keyframes partnerFloat{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-6px)}
+    }
+
+    /* CTA mais vibrante */
+    #ajudar{
+      background:
+        radial-gradient(circle at 8% 25%,rgba(34,184,255,.19),transparent 27%),
+        radial-gradient(circle at 92% 72%,rgba(255,148,31,.20),transparent 28%),
+        radial-gradient(circle at 50% 100%,rgba(255,79,139,.10),transparent 26%),
+        linear-gradient(135deg,#e9f7ff 0%,#f8fbff 45%,#fff0e1 100%) !important;
+      background-size:140% 140%;
+      animation:ajudarFlow 14s ease-in-out infinite alternate;
+    }
+
+    @keyframes ajudarFlow{
+      from{background-position:0% 0%}
+      to{background-position:100% 90%}
+    }
+
+    .btn-principal{
+      background:linear-gradient(135deg,var(--azul-vivo),var(--roxo-vivo)) !important;
+      box-shadow:0 12px 28px rgba(13,95,184,.23);
+    }
+    .btn-secundario{
+      background:linear-gradient(135deg,var(--laranja-vivo),var(--rosa-vivo)) !important;
+      box-shadow:0 12px 28px rgba(255,105,65,.20);
+    }
+
+    .btn:hover,
+    .botao-campanha:hover,
+    .facebook-link:hover{
+      transform:translateY(-3px) scale(1.02);
+    }
+
+    /* footer com fundo animado */
+    footer{
+      position:relative;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 18% 10%,rgba(34,184,255,.18),transparent 24%),
+        radial-gradient(circle at 82% 90%,rgba(255,148,31,.16),transparent 26%),
+        linear-gradient(135deg,#052b56,#083d76 50%,#052c5c) !important;
+      background-size:130% 130%;
+      animation:footerFlow 14s ease-in-out infinite alternate;
+    }
+
+    @keyframes footerFlow{
+      from{background-position:0% 0%}
+      to{background-position:100% 100%}
+    }
+
+    /* melhora visual no mobile sem perder movimento */
+    @media(max-width:680px){
+      body::after{opacity:.75}
+      .floating-decor{opacity:.45}
+      .acao:hover,
+      .parceiro-card:hover,
+      .btn:hover{
+        transform:none;
+      }
+      .impacto-card,
+      .parceiro-card{
+        animation-duration:10s;
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      body::after,
+      .floating-decor,
+      .hero,
+      #acoes,
+      #ajudar,
+      footer,
+      .impacto-card,
+      .parceiro-card,
+      #historia::before,
+      #acoes::before,
+      #impacto::after,
+      #parceiros::before,
+      #ajudar::after,
+      #contato::before{
+        animation:none !important;
+      }
+    }
+
+  
+    /* =========================================================
+       V4 — REFINAMENTO PREMIUM / ORGANIZAÇÃO E MICROINTERAÇÕES
+       ========================================================= */
+
+    /* Header com comportamento mais sofisticado ao rolar */
+    header {
+      transition:
+        min-height .35s ease,
+        background .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+    }
+
+    header.header-scrolled {
+      background: rgba(255,255,255,.90) !important;
+      box-shadow: 0 14px 40px rgba(24,71,114,.12) !important;
+      border-bottom-color: rgba(13,95,184,.12) !important;
+    }
+
+    header.header-scrolled .menu {
+      min-height: 64px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    .menu {
+      transition: min-height .35s ease, padding .35s ease;
+    }
+
+    /* Links do menu com realce elegante */
+    nav a {
+      transition: color .25s ease, transform .25s ease;
+    }
+
+    nav a:hover {
+      transform: translateY(-1px);
+    }
+
+    /* Hero com profundidade editorial extra */
+    .hero-logo-wrap::after {
+      content: "";
+      position: absolute;
+      width: 72%;
+      height: 72%;
+      left: 8%;
+      top: 10%;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle,
+          rgba(34,184,255,.16) 0%,
+          rgba(85,197,63,.08) 32%,
+          rgba(255,148,31,.06) 52%,
+          transparent 72%);
+      filter: blur(26px);
+      animation: heroLogoGlow 9s ease-in-out infinite;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    @keyframes heroLogoGlow {
+      0%,100% { transform: scale(.92); opacity:.72; }
+      50% { transform: scale(1.08); opacity:1; }
+    }
+
+    /* Faixa narrativa discreta no topo de cada seção */
+    .secao::marker { display:none; }
+
+    #historia .container::before,
+    #acoes .container::before,
+    #impacto .container::before,
+    #parceiros .container::before,
+    #ajudar .container::before,
+    #contato .container::before {
+      content: "";
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      width: min(640px, 72vw);
+      height: 1px;
+      transform: translateX(-50%);
+      background:
+        linear-gradient(90deg,
+          transparent,
+          rgba(13,95,184,.20),
+          rgba(85,197,63,.18),
+          rgba(255,148,31,.18),
+          transparent);
+      opacity:.7;
+      pointer-events:none;
+    }
+
+    #historia .container,
+    #acoes .container,
+    #impacto .container,
+    #parceiros .container,
+    #ajudar .container,
+    #contato .container {
+      position: relative;
+    }
+
+    /* Títulos das seções com linha de energia sutil */
+    .titulo-secao h2,
+    .historia-conteudo h2,
+    .ajuda-box h2,
+    .contato-box h2 {
+      position: relative;
+      display: inline-block;
+    }
+
+    .titulo-secao h2::after,
+    .historia-conteudo h2::after,
+    .ajuda-box h2::after,
+    .contato-box h2::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 58%;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--azul-vivo), var(--verde-vivo), var(--laranja-vivo));
+      transform-origin: left;
+      transform: scaleX(.62);
+      transition: transform .45s ease;
+    }
+
+    .titulo-secao:hover h2::after,
+    .historia-conteudo:hover h2::after,
+    .ajuda-box:hover h2::after,
+    .contato-box:hover h2::after {
+      transform: scaleX(1);
+    }
+
+    /* Nossa História com efeito de profundidade */
+    .historia-conteudo {
+      transition: transform .45s cubic-bezier(.16,1,.3,1);
+    }
+
+    .historia-grid:hover .historia-conteudo {
+      transform: translateY(-3px);
+    }
+
+    /* Microinterações dos textos das ações */
+    .acao-texto {
+      position: relative;
+      transition:
+        transform .4s cubic-bezier(.16,1,.3,1),
+        filter .4s ease;
+    }
+
+    .acao:hover .acao-texto {
+      transform: translateY(-5px) scale(1.012);
+    }
+
+    .acao-texto h3 {
+      transition:
+        transform .35s ease,
+        letter-spacing .35s ease,
+        color .35s ease,
+        text-shadow .35s ease;
+      transform-origin: left center;
+    }
+
+    .acao:hover .acao-texto h3 {
+      transform: translateX(5px) scale(1.025);
+      color: var(--azul-vivo);
+      letter-spacing: .1px;
+      text-shadow: 0 8px 24px rgba(13,95,184,.10);
+    }
+
+    .acao-texto p {
+      transition:
+        color .35s ease,
+        transform .35s ease;
+    }
+
+    .acao:hover .acao-texto p {
+      color: #44586a;
+      transform: translateX(3px);
+    }
+
+    .acao-numero,
+    .acao-tag {
+      transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        filter .35s ease;
+    }
+
+    .acao:hover .acao-numero {
+      transform: translateY(-2px) scale(1.035);
+      box-shadow: 0 12px 28px rgba(255,138,31,.14);
+    }
+
+    .acao:hover .acao-tag {
+      transform: translateY(-2px) scale(1.025);
+      box-shadow: 0 10px 24px rgba(76,174,50,.10);
+      filter: saturate(1.05);
+    }
+
+    /* Cada ação recebe personalidade cromática sem perder padrão */
+    .acoes-lista .acao:nth-child(1) {
+      background:
+        linear-gradient(135deg,rgba(255,255,255,.90),rgba(255,248,242,.84)) !important;
+    }
+
+    .acoes-lista .acao:nth-child(2) {
+      background:
+        linear-gradient(135deg,rgba(255,255,255,.90),rgba(243,250,255,.84)) !important;
+    }
+
+    .acoes-lista .acao:nth-child(3) {
+      background:
+        linear-gradient(135deg,rgba(255,255,255,.90),rgba(255,250,238,.84)) !important;
+    }
+
+    .acoes-lista .acao:nth-child(4) {
+      background:
+        linear-gradient(135deg,rgba(255,255,255,.90),rgba(244,252,240,.84)) !important;
+    }
+
+    .acoes-lista .acao:nth-child(5) {
+      background:
+        linear-gradient(135deg,rgba(255,255,255,.90),rgba(249,244,255,.84)) !important;
+    }
+
+    .acoes-lista .acao:nth-child(6) {
+      background:
+        linear-gradient(135deg,rgba(255,255,255,.90),rgba(245,250,255,.84)) !important;
+    }
+
+    /* Próxima ação com tratamento visual próprio */
+    .acoes-lista .acao:nth-child(4) .acao-numero {
+      background: linear-gradient(90deg, rgba(85,197,63,.18), rgba(34,184,255,.14)) !important;
+      color: #2a7a33 !important;
+    }
+
+    .acoes-lista .acao:nth-child(4):hover {
+      box-shadow:
+        0 34px 88px rgba(76,174,50,.12),
+        0 14px 34px rgba(34,184,255,.08);
+    }
+
+    /* Nosso Impacto: três cards mais equilibrados */
+    #impacto .impacto-grid {
+      grid-template-columns: repeat(3, minmax(0,1fr)) !important;
+      max-width: 1040px;
+      margin: 0 auto;
+      gap: 22px;
+    }
+
+    #impacto .impacto-card {
+      min-height: 205px;
+    }
+
+    #impacto .impacto-card strong {
+      font-size: clamp(40px, 4.5vw, 58px);
+    }
+
+    #impacto .impacto-card .impacto-local {
+      font-size: clamp(27px, 3vw, 38px) !important;
+    }
+
+    /* Parceiros com aparência premium e coerência dimensional */
+    .parceiro-card {
+      min-height: 190px !important;
+    }
+
+    .parceiro-card img {
+      max-width: 230px !important;
+      max-height: 112px !important;
+      object-fit: contain !important;
+    }
+
+    /* Como Ajudar: conteúdo totalmente centralizado e simétrico */
+    .ajuda-card {
+      text-align: center !important;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 250px;
+    }
+
+    .ajuda-card h3,
+    .ajuda-card p {
+      text-align: center !important;
+      width: 100%;
+    }
+
+    .ajuda-card p {
+      max-width: 360px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .ajuda-card .btn {
+      margin-left: auto;
+      margin-right: auto;
+      min-width: 220px;
+    }
+
+    .ajuda-card:hover h3 {
+      color: var(--azul-vivo);
+      transform: translateY(-2px);
+    }
+
+    .ajuda-card h3 {
+      transition: transform .35s ease, color .35s ease;
+    }
+
+    /* Contato com melhor sensação de fechamento */
+    .contato-box {
+      overflow: hidden;
+    }
+
+    .contato-box::after {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      right: -80px;
+      bottom: -110px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle,
+          rgba(34,184,255,.12),
+          rgba(255,148,31,.06) 42%,
+          transparent 72%);
+      animation: contactPulse 9s ease-in-out infinite;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    @keyframes contactPulse {
+      0%,100% { transform: scale(.9); opacity:.65; }
+      50% { transform: scale(1.12); opacity:1; }
+    }
+
+    /* Ritmo visual de entrada: cards aparecem em sequência */
+    .acao:nth-child(1) { --stagger: 0ms; }
+    .acao:nth-child(2) { --stagger: 55ms; }
+    .acao:nth-child(3) { --stagger: 110ms; }
+    .acao:nth-child(4) { --stagger: 165ms; }
+    .acao:nth-child(5) { --stagger: 220ms; }
+    .acao:nth-child(6) { --stagger: 275ms; }
+
+    .acao.reveal-up,
+    .acao .reveal-left,
+    .acao .reveal-right {
+      transition-delay: var(--stagger, 0ms);
+    }
+
+    /* Mobile: mantém elegância sem excesso */
+    @media (max-width: 900px) {
+      #impacto .impacto-grid {
+        grid-template-columns: 1fr !important;
+        max-width: 560px;
+      }
+
+      .ajuda-card {
+        min-height: auto;
+      }
+
+      .acao:hover .acao-texto,
+      .acao:hover .acao-texto h3,
+      .acao:hover .acao-texto p,
+      .acao:hover .acao-numero,
+      .acao:hover .acao-tag {
+        transform: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-logo-wrap::after,
+      .contato-box::after {
+        animation: none !important;
+      }
+    }
+
+  </style>
 </head>
+
 <body>
-<div class="progress" id="progress"></div>
-<header>
- <div class="menu">
-  <a class="brand" href="#inicio"><img src="logo-projeto-transformar-pelo-bem.png" alt=""><b>Projeto Transformar <span>pelo Bem</span></b></a>
-  <nav><a href="#inicio">Início</a><a href="#historia">Nossa História</a><a href="#acoes">Nossas Ações</a><a href="#impacto">Nosso Impacto</a><a href="#parceiros">Parceiros</a><a href="#ajudar">Como Ajudar</a><a href="#contato">Contato</a></nav>
- </div>
-</header>
-<main>
-<section class="hero" id="inicio">
- <div class="hero-inner">
-  <div class="hero-copy reveal">
-   <img class="hero-logo" src="logo-projeto-transformar-pelo-bem.png" alt="Logo oficial do Projeto Transformar pelo Bem">
-   <p>Mobilização comunitária, cuidado, voluntariado e ações que aproximam pessoas dispostas a contribuir de quem precisa de apoio.</p>
-  </div>
-  <div class="hero-child"><img src="crianca-hero.png" alt="" onerror="this.style.display='none'"></div>
- </div>
- <div class="wave"><i class="w1"></i><i class="w2"></i><i class="w3"></i><i class="w4"></i></div>
-</section>
 
-<section class="section history" id="historia">
- <div class="container history-grid">
-  <div class="reveal">
-   <span class="since">Desde 2009</span>
-   <h2>Nossa <span>História</span></h2>
-   <p class="lead">Uma iniciativa que nasceu da vontade de ajudar o próximo.</p>
-   <p>Em 2009, ao se mudar para sua comunidade, Cecília passou a conviver de perto com famílias que enfrentavam grandes dificuldades, incluindo falta de alimentação e de recursos básicos.</p>
-   <p>Mesmo sem possuir muitos recursos, decidiu começar com aquilo que estava ao seu alcance. Procurava alimentos que ainda pudessem ser aproveitados e preparava refeições para ajudar famílias da comunidade.</p>
-   <p>Com o passar dos anos, as ações cresceram. Alimentação, campanhas para crianças, acolhimento e mobilização comunitária passaram a fazer parte dessa trajetória.</p>
-   <p>Hoje, mesmo conciliando o projeto com o trabalho e contando com estrutura limitada, Cecília continua reunindo pessoas, doações e voluntários para levar cuidado, alimento, alegria e acolhimento.</p>
-   <div class="history-note">Uma história construída com solidariedade, proximidade e disposição para transformar pequenas iniciativas em ações que alcançam muitas pessoas.</div>
-  </div>
-  <div class="history-photo reveal"><img src="nossa-historia-transformar-pelo-bem.jpg" alt="Voluntários do Projeto Transformar pelo Bem em ação comunitária"></div>
- </div>
-</section>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
-<section class="section actions" id="acoes">
- <div class="container">
-  <div class="section-head reveal"><span class="kicker">Nossas ações</span><h2>O que fazemos</h2><p>Acompanhe a próxima mobilização do Transformar pelo Bem e conheça nossas frentes permanentes de atuação. Em cada frente, a edição mais recente fica em destaque e as anteriores permanecem preservadas no histórico.</p></div>
+  <header>
+    <div class="menu">
+      <div class="marca">Projeto Transformar <span>pelo Bem</span></div>
 
-  <article class="next-card reveal">
-   <div class="next-copy">
-    <span class="next-badge">PRÓXIMA AÇÃO</span>
-    <h3 class="next-title">Dia das <span class="orange">Crianças</span> 2026</h3>
-    <div class="next-meta"><span>📅 11 de outubro de 2026 (domingo)</span><span class="goal">👥 Meta: 150 crianças da nossa comunidade</span></div>
-    <p>Vamos proporcionar um dia especial, com muito sabor, alegria e convivência. As crianças vão receber:</p>
-    <div class="items">
-     <div class="item"><b>🌭</b>Cachorro-quente</div>
-     <div class="item"><b>🥤</b>Mini refrigerante</div>
-     <div class="item"><b>🧊</b>Geladinho</div>
-     <div class="item"><b>🍬</b>Saquinho de doces<small>com pipoca doce, balas, pirulitos e outros</small></div>
+      <nav>
+        <a href="#inicio">Início</a>
+        <a href="#historia">Nossa História</a>
+        <a href="#acoes">Nossas Ações</a>
+        <a href="#impacto">Nosso Impacto</a>
+        <a href="#parceiros">Parceiros</a>
+        <a href="#ajudar">Como Ajudar</a>
+        <a href="#contato">Contato</a>
+      </nav>
     </div>
-    <a class="cta" href="https://wa.me/5567996023875?text=Ol%C3%A1%2C%20Cec%C3%ADlia%21%20Gostaria%20de%20contribuir%20com%20a%20a%C3%A7%C3%A3o%20Dia%20das%20Crian%C3%A7as%202026%20do%20Projeto%20Transformar%20pelo%20Bem." target="_blank" rel="noopener">Quero contribuir →</a>
-   </div>
-   <div class="next-art"><img src="criancas-dia-das-criancas-2026.png" alt="" onerror="this.style.display='none'"></div>
-   <div class="wave"><i class="w1"></i><i class="w2"></i><i class="w3"></i><i class="w4"></i></div>
-  </article>
+  </header>
 
-  <div class="story-title reveal"><h3><span class="blue">Ações</span> que fazem parte da <span class="orange">nossa história</span></h3><p>Algumas iniciativas acompanham o Transformar pelo Bem ao longo do tempo. Cada nova edição soma pessoas, experiências e novos capítulos a essa história de solidariedade.</p></div>
+  <main>
 
-  <article class="food-card reveal">
-   <div class="food-photos">
-    <img class="zoom" src="macarronada-solidaria-preparo.jpg" alt="Preparo da Macarronada Solidária">
-    <img class="zoom" src="macarronada-solidaria-refeicoes.jpg" alt="Refeições da Macarronada Solidária">
-    <img class="zoom" src="macarronada-solidaria-entrega.jpg" alt="Entrega da Macarronada Solidária">
-   </div>
-   <div class="food-info">
-    <span class="kicker">Alimentação Solidária · edição mais recente</span>
-    <h3>Macarronada <span class="orange">Solidária</span></h3>
-    <p>Realizada em 29 de agosto de 2026, esta edição reuniu voluntários, doadores e empresas parceiras para o preparo e a distribuição de refeições à comunidade.</p>
-    <div class="result"><strong>110</strong> refeições distribuídas</div>
-    <button class="history-btn" type="button" aria-expanded="false" aria-controls="historico-alimentacao">Ver histórico da Alimentação Solidária →</button>
-    <div class="history-panel" id="historico-alimentacao"><div>
-      <div class="history-inner">
-       <h4>Histórico da Alimentação Solidária</h4>
-       <p>As edições anteriores desta frente ficam preservadas aqui. À medida que novos registros, datas, resultados e fotografias forem organizados, eles podem ser acrescentados sem substituir as ações já realizadas.</p>
+    <section class="hero" id="inicio"><span class="floating-decor d1"></span><span class="floating-decor d2"></span><span class="floating-decor d3"></span><span class="floating-decor d4"></span>
+      <div class="hero-conteudo">
+        <div class="hero-logo-wrap reveal-left">
+          <img class="logo-principal" src="logo-projeto-transformar-pelo-bem.png" alt="Logo oficial do Projeto Transformar pelo Bem">
+        </div>
+        <div class="hero-texto reveal-right">
+          <span class="hero-etiqueta">Solidariedade em movimento</span>
+          <h1>Pessoas que se unem para <span>transformar pelo bem.</span></h1>
+          <p class="hero-frase">Mobilização comunitária, cuidado, voluntariado e ações que aproximam pessoas dispostas a contribuir de quem precisa de apoio.</p>
+        </div>
       </div>
-    </div></div>
-   </div>
-  </article>
+    </section>
 
-  <div class="fronts">
-   <article class="front reveal"><span class="label">Frente permanente</span><h4>Alimentação Solidária</h4><p>Preparação, organização e distribuição de refeições para pessoas e famílias em situação de vulnerabilidade, do preparo à entrega direta à comunidade.</p></article>
-   <article class="front reveal"><span class="label">Próxima edição · 11/10/2026</span><h4>Dia das Crianças</h4><p>Uma frente dedicada a criar momentos de cuidado, convivência e alegria para as crianças. Cada edição permanece registrada no histórico do projeto.</p></article>
-   <article class="front reveal"><span class="label">Natal</span><h4>Adote uma Cartinha</h4><p>Campanha de Natal em que crianças compartilham suas histórias e pedidos, aproximando pessoas dispostas a contribuir.</p></article>
-   <article class="front reveal"><span class="label">Páscoa</span><h4>Páscoa Solidária</h4><p>Mobilização para arrecadação, preparação e entrega de kits e lembranças de Páscoa às crianças das comunidades atendidas.</p></article>
-   <article class="front reveal"><span class="label">Acolhimento</span><h4>Acolhimento e Solidariedade</h4><p>Ações de acolhimento em diferentes espaços, destinadas a crianças e pessoas idosas conforme as necessidades identificadas e os recursos disponíveis.</p></article>
+    <section class="secao fundo-azul" id="historia"><span class="floating-decor d1"></span><span class="floating-decor d2"></span><span class="floating-decor d3"></span><span class="floating-decor d4"></span>
+      <div class="container">
+
+        <div class="historia-grid">
+
+          <div class="historia-conteudo reveal-left">
+
+            <div class="desde">Desde 2009</div>
+
+            <h2>Nossa História</h2>
+
+            <p class="chamada">
+              Uma iniciativa que nasceu da vontade de ajudar o próximo.
+            </p>
+
+            <p>
+              Em 2009, ao se mudar para sua comunidade, Cecília passou a conviver
+              de perto com famílias que enfrentavam grandes dificuldades, incluindo
+              falta de alimentação e de recursos básicos.
+            </p>
+
+            <p>
+              Mesmo sem possuir muitos recursos, decidiu começar com aquilo que
+              estava ao seu alcance. Procurava alimentos que ainda pudessem ser
+              aproveitados e preparava refeições para ajudar famílias da comunidade.
+            </p>
+
+            <p>
+              Com o passar dos anos, as ações cresceram. Alimentação, brinquedos,
+              campanhas para crianças, acolhimento e mobilização comunitária passaram
+              a fazer parte dessa trajetória.
+            </p>
+
+            <p>
+              Hoje, mesmo conciliando o projeto com o trabalho e contando com
+              estrutura limitada, Cecília continua reunindo pessoas, doações e
+              voluntários para levar cuidado, alimento, alegria e acolhimento.
+            </p>
+
+            <div class="historia-destaque">
+              Uma história construída com solidariedade, proximidade e disposição
+              para transformar pequenas iniciativas em ações que alcançam muitas pessoas.
+            </div>
+
+          </div>
+
+          <div class="historia-foto reveal-right">
+
+            <img
+              src="nossa-historia-transformar-pelo-bem.jpg"
+              alt="Voluntários do Projeto Transformar pelo Bem reunidos em ação comunitária"
+            >
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="secao fundo-suave" id="acoes"><span class="floating-decor d1"></span><span class="floating-decor d2"></span><span class="floating-decor d3"></span><span class="floating-decor d4"></span>
+      <div class="container">
+
+        <div class="titulo-secao reveal-up">
+
+          <span class="etiqueta">O que fazemos</span>
+
+          <h2>Nossas Ações</h2>
+
+          <p>
+            Estas são algumas das iniciativas que mobilizam pessoas, doações e
+            voluntários para transformar cuidado em ação concreta na comunidade.
+          </p>
+
+        </div>
+
+        <div class="acoes-lista">
+
+          <article class="acao invertida reveal-up acao-destaque">
+
+            <div class="acao-texto">
+
+              <div class="acao-numero">AÇÃO MAIS RECENTE</div>
+
+              <h3>Macarronada Solidária</h3>
+
+              <p>
+                Ação de preparo e distribuição de refeições à comunidade, realizada
+                com o apoio de voluntários, doadores e empresas parceiras. Nesta edição,
+                110 refeições foram distribuídas, levando alimento, cuidado e solidariedade
+                às pessoas atendidas.
+              </p>
+
+              <span class="acao-tag">
+                110 refeições distribuídas
+              </span>
+
+            </div>
+
+            <div class="mosaico">
+
+              <img
+                src="macarronada-solidaria-preparo.jpg"
+                alt="Voluntários preparando as refeições da Macarronada Solidária"
+                class="foto-ampliavel"
+              >
+
+              <img
+                src="macarronada-solidaria-refeicoes.jpg"
+                alt="Refeições prontas para distribuição na Macarronada Solidária"
+                class="foto-ampliavel"
+              >
+
+              <img
+                src="macarronada-solidaria-entrega.jpg"
+                alt="Entrega de refeições à comunidade durante a Macarronada Solidária"
+                class="foto-ampliavel"
+              >
+
+            </div>
+
+          </article>
+
+
+          <article class="acao reveal-up">
+
+            <div class="acao-texto">
+
+              <div class="acao-numero">AÇÃO 01</div>
+
+              <h3>Alimentação Solidária</h3>
+
+              <p>
+                Preparação, organização e distribuição de refeições para pessoas
+                e famílias em situação de vulnerabilidade. A ação envolve desde
+                o preparo dos alimentos até a entrega direta à comunidade.
+              </p>
+
+              <span class="acao-tag">
+                Alimento que se transforma em cuidado
+              </span>
+
+            </div>
+
+            <div class="mosaico">
+
+              <img
+                src="Alimentação solidaria 1.jpeg"
+                alt="Preparação de refeições da Alimentação Solidária"
+                class="foto-ampliavel"
+              >
+
+              <img
+                src="Alimentação solidaria 2.jpeg"
+                alt="Refeições preparadas para distribuição"
+                class="foto-ampliavel"
+              >
+
+              <img
+                src="Alimentação solidaria 3.jpeg"
+                alt="Entrega de refeição à comunidade"
+                class="foto-ampliavel"
+              >
+
+            </div>
+
+          </article>
+
+          <article class="acao invertida reveal-up">
+
+            <div class="acao-texto">
+
+              <div class="acao-numero">AÇÃO 02</div>
+
+              <h3>Adote uma Cartinha</h3>
+
+              <p>
+                Uma iniciativa de Natal que nasceu a partir das próprias crianças.
+                Elas compartilham um pouco de suas histórias e fazem um pedido ao
+                Papai Noel. Pessoas da comunidade podem participar ajudando a
+                transformar esses pedidos em presentes e momentos especiais.
+              </p>
+
+              <span class="acao-tag">
+                Campanha especial de Natal
+              </span>
+
+              <a
+                class="botao-campanha"
+                href="https://wa.me/5567996023875?text=Ol%C3%A1%2C%20Cec%C3%ADlia%21%20Conheci%20a%20campanha%20Adote%20uma%20Cartinha%20pelo%20site%20Transformar%20pelo%20Bem%20e%20gostaria%20de%20saber%20como%20posso%20participar."
+                target="_blank"
+                rel="noopener"
+              >
+                Quero saber sobre a campanha
+              </a>
+
+            </div>
+
+            <div class="mosaico">
+
+              <img
+                src="Adote uma cartinha 1.jpeg"
+                alt="Entrega de presente na campanha Adote uma Cartinha"
+                class="foto-ampliavel"
+              >
+
+              <img
+                src="Adote uma cartinha 2.jpeg"
+                alt="Crianças participando da campanha de Natal"
+                class="foto-ampliavel"
+              >
+
+              <img
+                src="Adote uma cartinha 3.jpeg"
+                alt="Presentes arrecadados para a campanha"
+                class="foto-ampliavel"
+              >
+
+            </div>
+
+          </article>
+
+          <article class="acao reveal-up">
+
+            <div class="acao-texto">
+
+              <div class="acao-numero">PRÓXIMA AÇÃO</div>
+
+              <h3>Dia das Crianças</h3>
+
+              <p>
+                A próxima mobilização do projeto será dedicada às crianças, com
+                brincadeiras, integração comunitária e distribuição de brinquedos
+                e presentes. O objetivo é criar um dia especial e proporcionar
+                momentos de alegria, convivência e cuidado.
+              </p>
+
+              <span class="acao-tag">
+                Alegria, convivência e comunidade
+              </span>
+
+            </div>
+
+            <div class="mosaico">
+
+              <img
+                src="Dia das crianças 2.jpeg"
+                alt="Crianças reunidas em ação comunitária"
+                class="foto-ampliavel"
+              >
+
+              <img
+                src="Dia das crianças 1.jpeg"
+                alt="Personagens interagindo com as crianças"
+                class="foto-ampliavel"
+              >
+
+              <img
+                src="Dia das crianças 3.jpeg"
+                alt="Entrega de brinquedo no Dia das Crianças"
+                class="foto-ampliavel"
+              >
+
+            </div>
+
+          </article>
+
+          <article class="acao invertida reveal-up">
+
+            <div class="acao-texto">
+
+              <div class="acao-numero">AÇÃO 04</div>
+
+              <h3>Páscoa Solidária</h3>
+
+              <p>
+                Mobilização para arrecadação, preparação e entrega de kits e
+                lembranças de Páscoa às crianças das comunidades atendidas,
+                transformando a data em um momento de encontro e solidariedade.
+              </p>
+
+              <span class="acao-tag">
+                Partilhar também é celebrar
+              </span>
+
+            </div>
+
+            <div class="mosaico">
+
+              <img
+                src="pascoa 1.jpeg"
+                alt="Crianças com kits da Páscoa Solidária"
+                class="foto-ampliavel"
+              >
+
+              <img
+                src="pascoa 2.jpeg"
+                alt="Organização da ação de Páscoa"
+                class="foto-ampliavel"
+              >
+
+              <img
+                src="pascoa 3.jpeg"
+                alt="Itens preparados para distribuição na Páscoa"
+                class="foto-ampliavel"
+              >
+
+            </div>
+
+          </article>
+
+          <article class="acao reveal-up">
+
+            <div class="acao-texto">
+
+              <div class="acao-numero">AÇÃO 05</div>
+
+              <h3>Acolhimento e Solidariedade</h3>
+
+              <p>
+                O trabalho também alcança outros espaços, incluindo ações de
+                acolhimento com crianças em ambiente hospitalar e iniciativas
+                destinadas a pessoas idosas, conforme as possibilidades e
+                recursos disponíveis.
+              </p>
+
+              <span class="acao-tag">
+                Presença que acolhe
+              </span>
+
+            </div>
+
+            <div class="mosaico">
+
+              <img
+                src="Acolhimento e solidariedade 1.jpeg"
+                alt="Ação de acolhimento em ambiente hospitalar"
+                class="foto-ampliavel"
+              >
+
+              <img
+                src="Acolhimento e solidariedade 2.jpeg"
+                alt="Atividade lúdica de acolhimento"
+                class="foto-ampliavel"
+              >
+
+              <img
+                src="Acolhimento e solidariedade 3.jpeg"
+                alt="Personagem participando da ação de acolhimento"
+                class="foto-ampliavel"
+              >
+
+            </div>
+
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="secao impacto-secao" id="impacto"><span class="floating-decor d1"></span><span class="floating-decor d2"></span><span class="floating-decor d3"></span><span class="floating-decor d4"></span>
+      <div class="container">
+        <div class="titulo-secao reveal-up">
+          <span class="etiqueta">Alcance das ações</span>
+          <h2>Nosso Impacto</h2>
+          <p>Resultados que ajudam a dimensionar o alcance das nossas iniciativas.</p>
+        </div>
+        <div class="impacto-grid">
+          <div class="impacto-card reveal-up"><strong>200+</strong><span class="impacto-titulo">Crianças alcançadas</span><small>em diferentes ações realizadas</small></div>
+          <div class="impacto-card reveal-up"><strong>85+</strong><span class="impacto-titulo">Famílias alcançadas</span><small>pelas iniciativas do projeto</small></div>
+                    <div class="impacto-card reveal-up"><strong class="impacto-local">Corumbá e Ladário</strong><span class="impacto-titulo">Região de atuação</span><small>incluindo localidades próximas</small></div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="secao parceiros-secao" id="parceiros"><span class="floating-decor d1"></span><span class="floating-decor d2"></span><span class="floating-decor d3"></span><span class="floating-decor d4"></span>
+      <div class="container">
+        <div class="titulo-secao reveal-up">
+          <span class="etiqueta">Empresas parceiras</span>
+          <h2>Quem transforma com a gente</h2>
+          <p>Empresas que apoiam e fortalecem as ações do Projeto Transformar pelo Bem.</p>
+        </div>
+
+        <div class="parceiros-grid">
+          <div class="parceiro-card reveal-up">
+            <img src="parceiro-grafiotex.jpg" alt="Grafiotex Camisetas">
+          </div>
+          <div class="parceiro-card reveal-up">
+            <img src="parceiro-visootica.jpg" alt="Visootica">
+          </div>
+          <div class="parceiro-card reveal-up">
+            <img src="parceiro-bem-cuidadas.jpg" alt="Bem Cuidadas - Estética e Beleza">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao fundo-azul" id="ajudar"><span class="floating-decor d1"></span><span class="floating-decor d2"></span><span class="floating-decor d3"></span><span class="floating-decor d4"></span>
+      <div class="container">
+        <div class="ajuda-box reveal-up">
+          <h2>Faça parte dessa história</h2>
+          <p>O Projeto Transformar pelo Bem é construído por pessoas dispostas a contribuir. Você pode participar oferecendo seu tempo como voluntário ou ajudando com doações para as ações.</p>
+          <div class="ajuda-opcoes">
+            <div class="ajuda-card reveal-left">
+              <h3>Quero ser voluntário</h3>
+              <p>Participe das ações e ajude com seu tempo, disposição e colaboração.</p>
+              <a class="btn btn-principal" href="https://wa.me/5567999021152?text=Ol%C3%A1%21%20Conheci%20a%20Transformar%20pelo%20Bem%20pelo%20site%20e%20gostaria%20de%20participar%20como%20volunt%C3%A1rio.%20Como%20posso%20ajudar%3F" target="_blank" rel="noopener">Quero ser voluntário</a>
+            </div>
+            <div class="ajuda-card reveal-right">
+              <h3>Quero fazer uma doação</h3>
+              <p>Contribua com alimentos, brinquedos, presentes ou outros itens para as campanhas.</p>
+              <a class="btn btn-secundario" href="https://wa.me/5567996023875?text=Ol%C3%A1%2C%20Cec%C3%ADlia%21%20Conheci%20a%20Transformar%20pelo%20Bem%20pelo%20site%20e%20gostaria%20de%20contribuir%20com%20uma%20doa%C3%A7%C3%A3o.%20Como%20posso%20ajudar%3F" target="_blank" rel="noopener">Quero fazer uma doação</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="secao contato-secao" id="contato"><span class="floating-decor d1"></span><span class="floating-decor d2"></span><span class="floating-decor d3"></span><span class="floating-decor d4"></span>
+      <div class="container">
+        <div class="contato-box reveal-up">
+          <div>
+            <span class="contato-etiqueta">Contato institucional</span>
+            <h2>Vamos transformar juntos?</h2>
+            <p>Para parcerias, apoio às campanhas, voluntariado ou informações sobre o projeto, fale com a nossa equipe.</p>
+          </div>
+          <div class="contato-acoes" style="flex-direction:column; gap:12px;">
+            <a class="btn btn-principal" href="mailto:projetotransformarpelobem@outlook.com">
+              projetotransformarpelobem@outlook.com
+            </a>
+            <a class="facebook-link" href="https://www.facebook.com/share/1DVMB7E72h/" target="_blank" rel="noopener">
+              Facebook do projeto
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <strong>Projeto Transformar pelo Bem</strong>
+    <p>Solidariedade, mobilização e cuidado em ação.</p>
+  </footer>
+
+  <div
+    class="lightbox"
+    id="lightbox"
+    aria-hidden="true"
+  >
+
+    <button
+      class="fechar-lightbox"
+      id="fecharLightbox"
+      aria-label="Fechar imagem"
+    >
+      ×
+    </button>
+
+    <img
+      id="lightboxImagem"
+      src=""
+      alt=""
+    >
+
   </div>
- </div>
-</section>
 
-<section class="section impact" id="impacto">
- <div class="container">
-  <div class="section-head reveal"><span class="kicker">Alcance das ações</span><h2>Nosso <span class="orange">Impacto</span></h2><p>Resultados que ajudam a dimensionar o alcance das nossas iniciativas.</p></div>
-  <div class="impact-grid">
-   <div class="impact-card reveal"><div class="impact-icon">👥</div><strong>200+</strong><h3>Crianças alcançadas</h3><p>em diferentes ações realizadas</p></div>
-   <div class="impact-card reveal"><div class="impact-icon">👥</div><strong>85+</strong><h3>Famílias alcançadas</h3><p>pelas iniciativas do projeto</p></div>
-   <div class="impact-card reveal"><div class="impact-icon">📍</div><strong style="font-size:34px">Corumbá e Ladário</strong><h3>Região de atuação</h3><p>incluindo localidades próximas</p></div>
-  </div>
- </div>
-</section>
-<div class="soft-wave"></div>
+  <script>
 
-<section class="section partners" id="parceiros">
- <div class="container">
-  <div class="section-head reveal"><span class="kicker">Empresas parceiras</span><h2>Quem transforma <span class="orange">com a gente</span></h2><p>Empresas que apoiam e fortalecem as ações do Projeto Transformar pelo Bem.</p></div>
-  <div class="partner-grid">
-   <div class="partner reveal"><img src="parceiro-grafiotex.jpg" alt="Grafiotex Camisetas"></div>
-   <div class="partner reveal"><img src="parceiro-visootica.jpg" alt="Visootica"></div>
-   <div class="partner reveal"><img src="parceiro-bem-cuidadas.jpg" alt="Bem Cuidadas - Estética e Beleza"></div>
-  </div>
- </div>
-</section>
+    document.querySelectorAll(".acao").forEach((acao) => {
+      const texto = acao.querySelector(".acao-texto");
+      const mosaico = acao.querySelector(".mosaico");
+      if (acao.classList.contains("invertida")) {
+        texto?.classList.add("reveal-right");
+        mosaico?.classList.add("reveal-left");
+      } else {
+        texto?.classList.add("reveal-left");
+        mosaico?.classList.add("reveal-right");
+      }
+    });
 
-<section class="section help" id="ajudar">
- <div class="container help-grid">
-  <div class="help-intro reveal"><span class="kicker">Faça parte dessa história</span><h2>Vamos transformar <span>juntos?</span></h2><p>O Projeto Transformar pelo Bem é construído por pessoas dispostas a contribuir. Você pode participar oferecendo seu tempo como voluntário ou ajudando com doações para as ações.</p></div>
-  <div class="help-card reveal"><div class="impact-icon">👥</div><b>Quero ser voluntário</b><p>Participe das ações e ajude com seu tempo, disposição e colaboração.</p><a class="btn" href="https://wa.me/5567999021152?text=Ol%C3%A1%21%20Conheci%20a%20Transformar%20pelo%20Bem%20pelo%20site%20e%20gostaria%20de%20participar%20como%20volunt%C3%A1rio.%20Como%20posso%20ajudar%3F" target="_blank" rel="noopener">Quero ser voluntário →</a></div>
-  <div class="help-card reveal"><div class="impact-icon">♡</div><b>Quero fazer uma doação</b><p>Contribua com alimentos, itens para campanhas ou outros recursos necessários às ações.</p><a class="btn" href="https://wa.me/5567996023875?text=Ol%C3%A1%2C%20Cec%C3%ADlia%21%20Conheci%20a%20Transformar%20pelo%20Bem%20pelo%20site%20e%20gostaria%20de%20contribuir%20com%20uma%20doa%C3%A7%C3%A3o.%20Como%20posso%20ajudar%3F" target="_blank" rel="noopener">Quero fazer uma doação →</a></div>
- </div>
-</section>
+    const elementosAnimados = document.querySelectorAll(
+      ".reveal-left, .reveal-right, .reveal-up"
+    );
 
-<section class="section contact" id="contato">
- <div class="container contact-box reveal">
-  <div><span class="kicker">Contato institucional</span><h2>Vamos <span>conversar?</span></h2><p>Para parcerias, apoio às campanhas, voluntariado ou informações sobre o projeto, fale com a nossa equipe.</p></div>
-  <div class="contact-actions"><a href="mailto:projetotransformarpelobem@outlook.com">✉ projetotransformarpelobem@outlook.com</a><a href="https://www.facebook.com/share/1DVMB7E72h/" target="_blank" rel="noopener">Facebook do projeto</a></div>
- </div>
-</section>
-</main>
-<footer><strong>Projeto Transformar <span>pelo Bem</span></strong><p>Solidariedade, mobilização e cuidado em ação.</p></footer>
+    const observador = new IntersectionObserver(
+      (entradas) => {
 
-<div class="lightbox" id="lightbox"><button type="button" aria-label="Fechar">×</button><img alt=""></div>
-<script>
-const progress=document.getElementById('progress');
-addEventListener('scroll',()=>{const d=document.documentElement;progress.style.width=((d.scrollTop/(d.scrollHeight-d.clientHeight))*100)+'%'},{passive:true});
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+        entradas.forEach((entrada) => {
 
-const hb=document.querySelector('.history-btn'), hp=document.getElementById('historico-alimentacao');
-hb.addEventListener('click',()=>{
- const open=hp.classList.toggle('open');
- hb.setAttribute('aria-expanded',open);
- hb.textContent=open?'Fechar histórico da Alimentação Solidária ↑':'Ver histórico da Alimentação Solidária →';
- if(open) setTimeout(()=>hp.scrollIntoView({behavior:'smooth',block:'nearest'}),180);
-});
+          if (entrada.isIntersecting) {
 
-const lb=document.getElementById('lightbox'),lbi=lb.querySelector('img');
-document.querySelectorAll('.zoom').forEach(img=>img.addEventListener('click',()=>{lbi.src=img.src;lbi.alt=img.alt;lb.classList.add('open')}));
-function closeLB(){lb.classList.remove('open');lbi.src=''}
-lb.querySelector('button').onclick=closeLB;lb.addEventListener('click',e=>{if(e.target===lb)closeLB()});addEventListener('keydown',e=>{if(e.key==='Escape')closeLB()});
-</script>
+            entrada.target.classList.add("visivel");
+
+            observador.unobserve(entrada.target);
+
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.13
+      }
+    );
+
+    elementosAnimados.forEach((elemento) => {
+
+      observador.observe(elemento);
+
+    });
+
+    const lightbox = document.getElementById("lightbox");
+
+    const lightboxImagem =
+      document.getElementById("lightboxImagem");
+
+    const fecharLightbox =
+      document.getElementById("fecharLightbox");
+
+    document
+      .querySelectorAll(".foto-ampliavel")
+      .forEach((foto) => {
+
+        foto.addEventListener("click", () => {
+
+          lightboxImagem.src = foto.src;
+
+          lightboxImagem.alt = foto.alt;
+
+          lightbox.classList.add("aberto");
+
+          lightbox.setAttribute(
+            "aria-hidden",
+            "false"
+          );
+
+          document.body.style.overflow = "hidden";
+
+        });
+
+      });
+
+    function fecharGaleria() {
+
+      lightbox.classList.remove("aberto");
+
+      lightbox.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+      lightboxImagem.src = "";
+
+      document.body.style.overflow = "";
+
+    }
+
+    fecharLightbox.addEventListener(
+      "click",
+      fecharGaleria
+    );
+
+    lightbox.addEventListener(
+      "click",
+      (evento) => {
+
+        if (evento.target === lightbox) {
+
+          fecharGaleria();
+
+        }
+
+      }
+    );
+
+    document.addEventListener(
+      "keydown",
+      (evento) => {
+
+        if (evento.key === "Escape") {
+
+          fecharGaleria();
+
+        }
+
+      }
+    );
+
+  
+    // ===== Efeitos profissionais adicionais =====
+    const scrollProgress = document.getElementById("scrollProgress");
+
+    function atualizarProgressoRolagem() {
+      const alturaDocumento = document.documentElement.scrollHeight - window.innerHeight;
+      const progresso = alturaDocumento > 0 ? (window.scrollY / alturaDocumento) * 100 : 0;
+      if (scrollProgress) scrollProgress.style.width = `${progresso}%`;
+    }
+
+    window.addEventListener("scroll", atualizarProgressoRolagem, { passive: true });
+    atualizarProgressoRolagem();
+
+    // Spotlight sutil que acompanha o cursor em telas com mouse.
+    if (window.matchMedia("(pointer:fine)").matches &&
+        !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      window.addEventListener("pointermove", (evento) => {
+        const x = (evento.clientX / window.innerWidth) * 100;
+        const y = (evento.clientY / window.innerHeight) * 100;
+        document.body.style.setProperty("--mx", `${x}%`);
+        document.body.style.setProperty("--my", `${y}%`);
+      }, { passive: true });
+    }
+
+    // Parallax discreto da abertura, sem bibliotecas externas.
+    const hero = document.querySelector(".hero");
+    const heroLogo = document.querySelector(".logo-principal");
+    const heroTexto = document.querySelector(".hero-texto");
+
+    if (hero && heroLogo && heroTexto &&
+        window.matchMedia("(pointer:fine)").matches &&
+        !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      hero.addEventListener("pointermove", (evento) => {
+        const rect = hero.getBoundingClientRect();
+        const px = (evento.clientX - rect.left) / rect.width - 0.5;
+        const py = (evento.clientY - rect.top) / rect.height - 0.5;
+
+        heroTexto.style.transform = `translate3d(${px * -5}px, ${py * -3}px, 0)`;
+      });
+
+      hero.addEventListener("pointerleave", () => {
+        heroTexto.style.transform = "";
+      });
+    }
+
+  
+    // V3: profundidade e movimento contínuo controlado
+    const cardsV3 = document.querySelectorAll(".acao, .impacto-card, .parceiro-card, .ajuda-card");
+    cardsV3.forEach((card, index) => {
+      card.style.setProperty("--delay-v3", `${(index % 6) * 70}ms`);
+    });
+
+    // Parallax suave dos fundos nas seções em telas com mouse.
+    if (window.matchMedia("(pointer:fine)").matches &&
+        !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const secoesParallax = document.querySelectorAll("#historia, #acoes, #impacto, #parceiros, #ajudar, #contato");
+
+      window.addEventListener("scroll", () => {
+        const scrollY = window.scrollY;
+        secoesParallax.forEach((secao, index) => {
+          const fator = (index % 2 === 0 ? 1 : -1) * 0.018;
+          secao.style.backgroundPosition = `center ${scrollY * fator}px`;
+        });
+      }, { passive:true });
+    }
+
+  
+    // ===== V4: refinamentos de interação =====
+
+    const cabecalho = document.querySelector("header");
+
+    function atualizarCabecalho() {
+      if (!cabecalho) return;
+      cabecalho.classList.toggle("header-scrolled", window.scrollY > 34);
+    }
+
+    window.addEventListener("scroll", atualizarCabecalho, { passive:true });
+    atualizarCabecalho();
+
+    // Profundidade leve nos cards em desktop.
+    if (window.matchMedia("(pointer:fine)").matches &&
+        !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+
+      document.querySelectorAll(".acao").forEach((card) => {
+        card.addEventListener("pointermove", (evento) => {
+          const rect = card.getBoundingClientRect();
+          const x = (evento.clientX - rect.left) / rect.width - .5;
+          const y = (evento.clientY - rect.top) / rect.height - .5;
+
+          const rotY = x * 1.8;
+          const rotX = y * -1.2;
+
+          card.style.transform =
+            `translateY(-8px) scale(1.008) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+        });
+
+        card.addEventListener("pointerleave", () => {
+          card.style.transform = "";
+        });
+      });
+    }
+
+  </script>
+
 </body>
 </html>
