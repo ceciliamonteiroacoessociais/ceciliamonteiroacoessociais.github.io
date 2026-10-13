@@ -2804,22 +2804,188 @@ a:focus-visible,button:focus-visible,.foto-ampliavel:focus-visible {outline:3px 
 @media(max-width:760px){#acoes .evento-essencial .criancas-numero{margin-top:18px!important}}
 </style>
 
-<style id="ajuste-alimentacao-historico-2025-2026">
-/* Duas ações distintas: 2026 em destaque e 2025 no histórico, sem mosaicos empilhados. */
-.alimentacao-2026{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.03fr);gap:clamp(22px,3vw,42px);align-items:center}
-.alimentacao-2026 .acao-texto{min-width:0}
-.alimentacao-2026 .macarronada-subtitulo{font-size:clamp(1.1rem,2vw,1.5rem);font-weight:700;color:#315d7c;margin:6px 0 18px}
-.alimentacao-2026 .mosaico-macarronada-destaque{margin:0;display:grid;grid-template-columns:1.35fr 1fr;grid-template-rows:repeat(2,145px);gap:10px;min-width:0}
-.alimentacao-2026 .mosaico-macarronada-destaque img{display:block;width:100%;height:100%;object-fit:cover;border-radius:14px;cursor:zoom-in}
-.alimentacao-2026 .mosaico-macarronada-destaque img:first-child{grid-row:span 2}
-.alimentacao-2026 .alimentacao-historico-2025{grid-column:1/-1;margin-top:10px;padding:24px 0 0;border-top:1px solid #dfe8ee;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.03fr);gap:clamp(20px,3vw,42px);align-items:center}
-.alimentacao-historico-rotulo{font-size:.75rem;font-weight:800;letter-spacing:.13em;color:#8b6750}
-.alimentacao-historico-2025 h4{font-size:clamp(1.2rem,2vw,1.55rem);color:#16354f;margin:7px 0 10px}
-.alimentacao-historico-2025 p{font-size:.96rem;line-height:1.7;color:#5e7181;margin:0}
-.alimentacao-historico-fotos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
-.alimentacao-historico-fotos img{display:block;width:100%;height:150px;object-fit:cover;border-radius:12px;cursor:zoom-in}
-@media(max-width:760px){.alimentacao-2026{grid-template-columns:1fr}.alimentacao-2026 .mosaico-macarronada-destaque{grid-template-rows:repeat(2,125px)}.alimentacao-2026 .alimentacao-historico-2025{grid-template-columns:1fr}.alimentacao-historico-fotos img{height:100px}}
+<style id="harmonia-visual-acoes-equipe-2026">
+/* Refinamento visual: preserva a identidade e o conteúdo já aprovados. */
+#historia .historia-fotos-equipe {
+  display: grid;
+  gap: 18px;
+  width: 100%;
+  max-width: 470px;
+  align-self: center;
+}
+#historia .historia-fotos-equipe img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  height: auto;
+  object-fit: cover;
+  border-radius: 22px;
+  box-shadow: 0 14px 34px rgba(15, 53, 88, .12);
+  transition: transform .5s cubic-bezier(.2,.7,.2,1), box-shadow .5s ease, filter .5s ease;
+}
+#historia .historia-fotos-equipe img:hover {
+  transform: translateY(-5px) scale(1.012);
+  box-shadow: 0 22px 44px rgba(15, 53, 88, .18);
+}
+#historia .historia-fotos-equipe img:nth-child(2) {
+  transition-delay: 55ms;
+}
+/* Mesma linguagem de interação nas fotos do Dia das Crianças. */
+#acoes .evento-essencial .criancas-galeria {
+  isolation: isolate;
+}
+#acoes .evento-essencial .criancas-galeria img {
+  cursor: zoom-in;
+  transform: translateY(0) scale(1);
+  filter: saturate(1);
+  box-shadow: 0 7px 20px rgba(15,53,88,.09) !important;
+  transition: transform .42s cubic-bezier(.2,.7,.2,1),
+              box-shadow .42s ease, filter .42s ease !important;
+  will-change: auto;
+}
+@media (hover:hover) and (pointer:fine) {
+  #acoes .evento-essencial .criancas-galeria img:hover {
+    transform: translateY(-5px) scale(1.018) !important;
+    filter: saturate(1.07);
+    box-shadow: 0 16px 32px rgba(15,53,88,.19) !important;
+    position: relative;
+    z-index: 1;
+  }
+}
+#acoes .evento-essencial .criancas-galeria img:focus-visible {
+  outline: 3px solid var(--laranja);
+  outline-offset: 3px;
+}
+/* Entrada progressiva suave, alinhada aos demais elementos reveal do site. */
+#acoes .evento-essencial .criancas-abertura,
+#acoes .evento-essencial .criancas-relato,
+#acoes .evento-essencial .criancas-galeria img {
+  transition-property: opacity, transform, box-shadow, filter;
+}
+#acoes .evento-essencial .criancas-abertura,
+#acoes .evento-essencial .criancas-relato {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1);
+}
+#acoes .evento-essencial .criancas-abertura.animado,
+#acoes .evento-essencial .criancas-relato.animado {
+  opacity: 1;
+  transform: translateY(0);
+}
+#acoes .evento-essencial .criancas-galeria img:not(.animado) {
+  opacity: 0;
+  transform: translateY(14px) scale(.99);
+}
+#acoes .evento-essencial .criancas-galeria img.animado {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+@media (max-width: 760px) {
+  #historia .historia-fotos-equipe {max-width: 520px;gap: 12px;}
+  #historia .historia-fotos-equipe img {border-radius: 16px;}
+  #acoes .evento-essencial .criancas-galeria img {box-shadow: 0 4px 14px rgba(15,53,88,.08) !important;}
+}
+@media (prefers-reduced-motion: reduce) {
+  #historia .historia-fotos-equipe img,
+  #acoes .evento-essencial .criancas-galeria img,
+  #acoes .evento-essencial .criancas-abertura,
+  #acoes .evento-essencial .criancas-relato {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
 </style>
+
+<style id="refinamento-institucional-outubro-2026">
+/* Identidade institucional: azul profundo, branco e laranja usado com moderação. */
+:root {
+  --azul: #163954;
+  --azul-escuro: #102b42;
+  --texto: #233747;
+  --texto-suave: #526574;
+  --laranja: #bb7348;
+}
+#acoes .evento-essencial {
+  border: 1px solid #dfe7ec !important;
+  border-radius: 18px !important;
+  box-shadow: 0 14px 38px rgba(16, 43, 66, .075) !important;
+  background: #fff !important;
+}
+#acoes .evento-essencial .criancas-abertura {
+  background: linear-gradient(180deg, #f7f9fb 0%, #fff 100%) !important;
+}
+#acoes .evento-essencial h3,
+#acoes .evento-essencial .criancas-chamada h4 {
+  color: #163954 !important;
+}
+#acoes .evento-essencial .criancas-abertura .criancas-subtitulo {
+  color: #a7613d !important;
+}
+#acoes .evento-essencial .criancas-chamada > span {
+  color: #a7613d !important;
+}
+/* Mesma leitura de Alimentação Solidária: corpo 17px, espaçamento 1.7. */
+#acoes .evento-essencial .criancas-historia p,
+#acoes .evento-essencial .criancas-abertura p:not(.criancas-subtitulo) {
+  font-size: 17px !important;
+  line-height: 1.7 !important;
+  color: #526574 !important;
+  letter-spacing: normal !important;
+}
+#acoes .evento-essencial .criancas-historia p {
+  margin-bottom: 20px !important;
+}
+#acoes .evento-essencial .criancas-historia strong {
+  color: #163954 !important;
+}
+#acoes .evento-essencial .criancas-numero strong {
+  color: #a7613d !important;
+}
+#acoes .evento-essencial .criancas-galeria {
+  gap: 12px !important;
+}
+#acoes .evento-essencial .criancas-galeria img {
+  border-radius: 12px !important;
+  box-shadow: 0 5px 18px rgba(16,43,66,.10) !important;
+  transition: opacity .65s ease, transform .5s cubic-bezier(.2,.7,.2,1),
+              box-shadow .5s ease, filter .5s ease !important;
+}
+@media (hover:hover) and (pointer:fine) {
+  #acoes .evento-essencial .criancas-galeria img.animado:hover {
+    transform: translateY(-5px) scale(1.015) !important;
+    box-shadow: 0 16px 32px rgba(16,43,66,.20) !important;
+    filter: saturate(1.04);
+  }
+}
+#historia .historia-fotos-equipe {
+  gap: 16px;
+}
+#historia .historia-fotos-equipe img {
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(16,43,66,.12);
+}
+@media (max-width:760px) {
+  #acoes .evento-essencial .criancas-historia p,
+  #acoes .evento-essencial .criancas-abertura p:not(.criancas-subtitulo) {
+    font-size: 17px !important;
+    line-height: 1.65 !important;
+  }
+  #acoes .evento-essencial .criancas-galeria {gap: 8px !important;}
+}
+@media (prefers-reduced-motion:reduce) {
+  #acoes .evento-essencial .criancas-abertura,
+  #acoes .evento-essencial .criancas-relato,
+  #acoes .evento-essencial .criancas-galeria img {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+</style>
+
 </head>
 
 <body>
@@ -2910,13 +3076,15 @@ a:focus-visible,button:focus-visible,.foto-ampliavel:focus-visible {outline:3px 
 
           </div>
 
-          <div class="historia-foto reveal-right">
-
+          <div class="historia-foto historia-fotos-equipe reveal-right">
+            <img
+              src="equipe-transformar-pelo-bem-2026.jpg"
+              alt="Equipe de voluntários com as camisetas do Projeto Transformar pelo Bem"
+              loading="lazy" decoding="async">
             <img
               src="nossa-historia-transformar-pelo-bem.jpg"
               alt="Voluntários do Projeto Transformar pelo Bem reunidos em ação comunitária"
-             loading="lazy" decoding="async">
-
+              loading="lazy" decoding="async">
           </div>
 
         </div>
@@ -2968,34 +3136,56 @@ a:focus-visible,button:focus-visible,.foto-ampliavel:focus-visible {outline:3px 
             </div>
           </article>
 
-          <article class="acao reveal-up alimentacao-2026" id="historico-alimentacao">
+          <article class="acao reveal-up">
+
             <div class="acao-texto">
-              <div class="acao-numero">AÇÃO 01 · DESTAQUE 2026</div>
+
+              <div class="acao-numero">AÇÃO 01</div>
+
               <h3>Alimentação Solidária</h3>
-              <h4 class="macarronada-subtitulo">Macarronada Solidária</h4>
-              <p>Em 29 de agosto de 2026, o Projeto Transformar pelo Bem realizou a Macarronada Solidária. Com a colaboração de doadores, voluntários e apoiadores, foi possível preparar e distribuir <strong>110 refeições</strong> à comunidade. Da arrecadação ao preparo e à entrega, cada etapa foi resultado de um esforço coletivo.</p>
-              <span class="acao-tag">29 de agosto de 2026 · 110 refeições distribuídas</span>
+
+              <p>
+                Preparação, organização e distribuição de refeições para pessoas
+                e famílias em situação de vulnerabilidade. A ação envolve desde
+                o preparo dos alimentos até a entrega direta à comunidade.
+                Em 29 de agosto de 2026, a Macarronada Solidária distribuiu
+                110 refeições, com a participação de voluntários e apoiadores.
+              </p>
+
+              <span class="acao-tag">
+                Alimentação Solidária · Macarronada de 29/08/2026: 110 refeições
+              </span>
+
             </div>
-            <div class="mosaico mosaico-macarronada-destaque" aria-label="Fotografias da Macarronada Solidária de 2026">
-              <img src="macarronada-solidaria-preparo.jpg" alt="Preparo da Macarronada Solidária de 2026" class="foto-ampliavel" loading="lazy" decoding="async">
-              <img src="macarronada-solidaria-refeicoes.jpg" alt="Refeições preparadas para distribuição" class="foto-ampliavel" loading="lazy" decoding="async">
-              <img src="macarronada-solidaria-entrega.jpg" alt="Distribuição de refeições na Macarronada Solidária" class="foto-ampliavel" loading="lazy" decoding="async">
+
+            <div class="mosaico">
+
+              <img
+                src="Alimentação solidaria 1.jpeg"
+                alt="Preparação de refeições da Alimentação Solidária"
+                class="foto-ampliavel"
+               loading="lazy" decoding="async">
+
+              <img
+                src="Alimentação solidaria 2.jpeg"
+                alt="Refeições preparadas para distribuição"
+                class="foto-ampliavel"
+               loading="lazy" decoding="async">
+
+              <img
+                src="Alimentação solidaria 3.jpeg"
+                alt="Entrega de refeição à comunidade"
+                class="foto-ampliavel"
+               loading="lazy" decoding="async">
+
             </div>
-            <section class="alimentacao-historico-2025" aria-label="Histórico de alimentação solidária em 2025">
-              <div class="alimentacao-historico-cabecalho">
-                <div>
-                  <span class="alimentacao-historico-rotulo">NOSSA TRAJETÓRIA</span>
-                  <h4>Histórico de 2025</h4>
-                  <p>Antes da Macarronada de 2026, a Alimentação Solidária já mobilizava voluntários no preparo e na entrega de refeições à comunidade. Confira alguns registros dessa caminhada.</p>
-                </div>
-              </div>
-              <div class="alimentacao-historico-fotos">
-                <img src="Alimentação solidaria 1.jpeg" alt="Voluntários preparando refeições em ação anterior de Alimentação Solidária" class="foto-ampliavel" loading="lazy" decoding="async">
-                <img src="Alimentação solidaria 2.jpeg" alt="Refeições de uma ação anterior de Alimentação Solidária" class="foto-ampliavel" loading="lazy" decoding="async">
-                <img src="Alimentação solidaria 3.jpeg" alt="Entrega de refeições em ação anterior de Alimentação Solidária" class="foto-ampliavel" loading="lazy" decoding="async">
-              </div>
-            </section>
-          </article>
+            <div class="mosaico mosaico-macarronada-historico" aria-label="Registros da Macarronada Solidária de 2026">
+              <img src="macarronada-solidaria-preparo.jpg" alt="Preparo das refeições na Macarronada Solidária de 2026" class="foto-ampliavel" loading="lazy" decoding="async">
+              <img src="macarronada-solidaria-refeicoes.jpg" alt="Refeições da Macarronada Solidária" class="foto-ampliavel" loading="lazy" decoding="async">
+              <img src="macarronada-solidaria-entrega.jpg" alt="Distribuição de refeições da Macarronada Solidária" class="foto-ampliavel" loading="lazy" decoding="async">
+            </div>
+
+                    </article>
 
           <article class="acao invertida reveal-up">
 
@@ -3522,5 +3712,33 @@ a:focus-visible,button:focus-visible,.foto-ampliavel:focus-visible {outline:3px 
 
   </script>
 
+
+<script id="animacao-integrada-dia-criancas">
+(() => {
+  const itens = document.querySelectorAll(
+    '#dia-criancas-2026 .criancas-abertura, #dia-criancas-2026 .criancas-galeria img, #dia-criancas-2026 .criancas-relato'
+  );
+  if (!itens.length) return;
+  const semAnimacao = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (semAnimacao || !('IntersectionObserver' in window)) {
+    itens.forEach(item => item.classList.add('animado'));
+    return;
+  }
+  const observador = new IntersectionObserver((entradas) => {
+    entradas.forEach(entrada => {
+      if (!entrada.isIntersecting) return;
+      const item = entrada.target;
+      const galeria = item.closest('.criancas-galeria');
+      if (galeria) {
+        const posicao = Array.from(galeria.children).indexOf(item);
+        item.style.transitionDelay = `${Math.min(posicao * 65, 195)}ms`;
+      }
+      item.classList.add('animado');
+      observador.unobserve(item);
+    });
+  }, { threshold: .08, rootMargin: '0px 0px 50px 0px' });
+  itens.forEach(item => observador.observe(item));
+})();
+</script>
 </body>
 </html>
