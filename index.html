@@ -2986,6 +2986,41 @@ a:focus-visible,button:focus-visible,.foto-ampliavel:focus-visible {outline:3px 
 }
 </style>
 
+<style id="ajuste-exclusivo-alimentacao-2026">
+/* Apenas Alimentação Solidária: 2026 em destaque e 2025 em histórico compacto. */
+.alimentacao-2026 .mosaico { min-width:0; }
+.alimentacao-historico-2025 {
+  display:grid; grid-template-columns:minmax(0, .85fr) minmax(0, 1.15fr);
+  align-items:center; gap:clamp(22px,4vw,56px);
+  padding:clamp(24px,3vw,42px);
+  margin:24px 0 52px;
+  background:#f7f9fa; border:1px solid #e1e8ec;
+  border-radius:20px;
+}
+.alimentacao-historico-texto {min-width:0;}
+.alimentacao-historico-etiqueta {display:inline-block; font-size:12px; font-weight:800; letter-spacing:.09em; color:#a7613d; margin-bottom:10px;}
+.alimentacao-historico-texto h4 {font-size:clamp(21px,2.1vw,28px); line-height:1.2; margin:0 0 12px; color:#163954;}
+.alimentacao-historico-texto p {font-size:16px; line-height:1.7; color:#526574; margin:0;}
+.alimentacao-historico-2025 .alimentacao-historico-fotos {
+ display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:10px; height:200px; min-width:0;
+}
+.alimentacao-historico-2025 .alimentacao-historico-fotos img {
+ width:100%; height:100%; min-height:0; object-fit:cover;
+ border-radius:12px; cursor:zoom-in; transition:transform .3s ease,box-shadow .3s ease;
+}
+@media(hover:hover) {
+ .alimentacao-historico-2025 .alimentacao-historico-fotos img:hover {
+  transform:translateY(-4px); box-shadow:0 10px 25px rgba(16,43,66,.16);
+ }
+}
+@media(max-width:760px) {
+ .alimentacao-historico-2025 {grid-template-columns:1fr;gap:20px;}
+ .alimentacao-historico-2025 .alimentacao-historico-fotos {height:150px;}
+}
+@media(prefers-reduced-motion:reduce) {
+ .alimentacao-historico-2025 .alimentacao-historico-fotos img {transition:none;}
+}
+</style>
 </head>
 
 <body>
@@ -3136,56 +3171,38 @@ a:focus-visible,button:focus-visible,.foto-ampliavel:focus-visible {outline:3px 
             </div>
           </article>
 
-          <article class="acao reveal-up">
-
+          <article class="acao alimentacao-2026 reveal-up" id="historico-alimentacao">
             <div class="acao-texto">
-
-              <div class="acao-numero">AÇÃO 01</div>
-
+              <div class="acao-numero">AÇÃO 01 · 2026</div>
               <h3>Alimentação Solidária</h3>
-
               <p>
-                Preparação, organização e distribuição de refeições para pessoas
-                e famílias em situação de vulnerabilidade. A ação envolve desde
-                o preparo dos alimentos até a entrega direta à comunidade.
-                Em 29 de agosto de 2026, a Macarronada Solidária distribuiu
-                110 refeições, com a participação de voluntários e apoiadores.
+                A Macarronada Solidária, realizada em 29 de agosto de 2026,
+                reuniu voluntários e apoiadores na preparação e distribuição
+                de 110 refeições para a comunidade. Cada etapa, do preparo à
+                entrega, foi possível graças à colaboração de quem contribuiu
+                com tempo, trabalho e doações.
               </p>
-
-              <span class="acao-tag">
-                Alimentação Solidária · Macarronada de 29/08/2026: 110 refeições
-              </span>
-
+              <span class="acao-tag">Macarronada Solidária · 29/08/2026 · 110 refeições</span>
             </div>
-
             <div class="mosaico">
-
-              <img
-                src="Alimentação solidaria 1.jpeg"
-                alt="Preparação de refeições da Alimentação Solidária"
-                class="foto-ampliavel"
-               loading="lazy" decoding="async">
-
-              <img
-                src="Alimentação solidaria 2.jpeg"
-                alt="Refeições preparadas para distribuição"
-                class="foto-ampliavel"
-               loading="lazy" decoding="async">
-
-              <img
-                src="Alimentação solidaria 3.jpeg"
-                alt="Entrega de refeição à comunidade"
-                class="foto-ampliavel"
-               loading="lazy" decoding="async">
-
+              <img src="macarronada-solidaria-preparo.jpg" alt="Preparação da Macarronada Solidária de 2026" class="foto-ampliavel" loading="lazy" decoding="async">
+              <img src="macarronada-solidaria-refeicoes.jpg" alt="Refeições preparadas para a Macarronada Solidária" class="foto-ampliavel" loading="lazy" decoding="async">
+              <img src="macarronada-solidaria-entrega.jpg" alt="Distribuição da Macarronada Solidária à comunidade" class="foto-ampliavel" loading="lazy" decoding="async">
             </div>
-            <div class="mosaico mosaico-macarronada-historico" aria-label="Registros da Macarronada Solidária de 2026">
-              <img src="macarronada-solidaria-preparo.jpg" alt="Preparo das refeições na Macarronada Solidária de 2026" class="foto-ampliavel" loading="lazy" decoding="async">
-              <img src="macarronada-solidaria-refeicoes.jpg" alt="Refeições da Macarronada Solidária" class="foto-ampliavel" loading="lazy" decoding="async">
-              <img src="macarronada-solidaria-entrega.jpg" alt="Distribuição de refeições da Macarronada Solidária" class="foto-ampliavel" loading="lazy" decoding="async">
-            </div>
+          </article>
 
-                    </article>
+          <article class="alimentacao-historico-2025 reveal-up" aria-label="Histórico da Alimentação Solidária de 2025">
+            <div class="alimentacao-historico-texto">
+              <span class="alimentacao-historico-etiqueta">HISTÓRICO · 2025</span>
+              <h4>Alimentação Solidária — registros anteriores</h4>
+              <p>Registros da preparação e entrega de refeições em ações anteriores do projeto. Uma trajetória de cuidado com famílias e pessoas da comunidade.</p>
+            </div>
+            <div class="alimentacao-historico-fotos mosaico">
+              <img src="Alimentação solidaria 1.jpeg" alt="Preparação de refeições em ação anterior" class="foto-ampliavel" loading="lazy" decoding="async">
+              <img src="Alimentação solidaria 2.jpeg" alt="Refeições preparadas em ação anterior" class="foto-ampliavel" loading="lazy" decoding="async">
+              <img src="Alimentação solidaria 3.jpeg" alt="Distribuição de refeições em ação anterior" class="foto-ampliavel" loading="lazy" decoding="async">
+            </div>
+          </article>
 
           <article class="acao invertida reveal-up">
 
